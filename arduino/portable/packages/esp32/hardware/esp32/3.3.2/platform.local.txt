@@ -1,0 +1,2 @@
+# Prelink-Hook, identisch wie beim 8266
+recipe.hooks.linking.prelink.90.pattern="{runtime.ide.path}\portable\cores_precompiled\inject_core.bat" "{build.path}" "{build.core}" "{build.inject_core}"

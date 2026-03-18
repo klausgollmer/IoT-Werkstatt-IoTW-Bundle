@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="variable_number_LoRaPayload" id="1241">
+                    <Location>
+                        <X>456</X>
+                        <Y>640</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1238" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1238">
+                    <Label>Setze Zahl-Variable</Label>
+                    <Location>
+                        <X>272</X>
+                        <Y>613</Y>
+                    </Location>
+                    <BeforeBlockId>1237</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1239" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="1241" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1239">
+                    <Label>Wiederholungszeit_s</Label>
+                    <Location>
+                        <X>456</X>
+                        <Y>616</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1238" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_RxCallback" id="1237">
+                    <Location>
+                        <X>103</X>
+                        <Y>605</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Bei Hochwassergefah´r kann ich dem Pegel über das LoRaWAN Funknetz eine schnellere Abtastzeit verordnen</Text>
+                        <Location>
+                            <X>836</X>
+                            <Y>597</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>299</Width>
+                            <Height>82</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1238" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Befehle" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1236">
+                    <Label>Wiederholungszeit_s</Label>
+                    <Location>
+                        <X>404</X>
+                        <Y>500</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="598" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1235">
+                    <Label>300</Label>
+                    <Location>
+                        <X>463</X>
+                        <Y>135</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1232" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1232">
+                    <Location>
+                        <X>265</X>
+                        <Y>108</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Lege fest, wie oft gemessen werden soll</Text>
+                        <Location>
+                            <X>823</X>
+                            <Y>96</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>282</Width>
+                            <Height>53</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>292</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1233" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="1235" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1233">
+                    <Label>Wiederholungszeit_s</Label>
+                    <Location>
+                        <X>463</X>
+                        <Y>111</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1232" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="sleep32" id="598">
+                    <Location>
+                        <X>264</X>
+                        <Y>497</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Tiefschlaf, 300 = 5 Minuten. Eine Batterie versorgt den Pegel  Jahre</Text>
+                        <Location>
+                            <X>837</X>
+                            <Y>444</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>266</Width>
+                            <Height>77</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>1215</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1236" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="sendTTN_RFM95_ota" id="1215">
+                    <Location>
+                        <X>264</X>
+                        <Y>251</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Messdaten über LoRaWAN ins Internet senden. Babyphonefrequenz funktioniert  im Feld über mehrere Kilometer</Text>
+                        <Location>
+                            <X>826</X>
+                            <Y>250</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>279</Width>
+                            <Height>87</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>1209</BeforeBlockId>
+                    <AfterBlockId>598</AfterBlockId>
+                    <Sockets num-sockets="10">
+                        <BlockConnector con-block-id="1216" connector-kind="socket" connector-type="string" init-type="string" label="Dev EUI" position-type="single"/>
+                        <BlockConnector con-block-id="1217" connector-kind="socket" connector-type="string" init-type="string" label="App EUI" position-type="single"/>
+                        <BlockConnector con-block-id="1218" connector-kind="socket" connector-type="string" init-type="string" label="App Key" position-type="single"/>
+                        <BlockConnector con-block-id="1219" connector-kind="socket" connector-type="number" init-type="number" label="Port" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 1" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 2" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 3" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 4" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 5" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 6" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1219">
+                    <Label>10</Label>
+                    <Location>
+                        <X>416</X>
+                        <Y>326</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1215" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_APPKEY" id="1218">
+                    <Label>00000000000000000000000000000000 (16 Byte)</Label>
+                    <Location>
+                        <X>416</X>
+                        <Y>302</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1215" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_APPEUI" id="1217">
+                    <Label>0000000000000000</Label>
+                    <Location>
+                        <X>416</X>
+                        <Y>278</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1215" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_DEVEUI" id="1216">
+                    <Label>0000000000000000 (8 Byte)</Label>
+                    <Location>
+                        <X>416</X>
+                        <Y>254</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1215" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="GetMaxbotix2" id="1212">
+                    <Location>
+                        <X>462</X>
+                        <Y>200</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1209" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1213" connector-kind="socket" connector-type="number" init-type="number" label="rx GPIO" position-type="single"/>
+                        <BlockConnector con-block-id="1214" connector-kind="socket" connector-type="number" init-type="number" label="serial" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="UART_SW" id="1214">
+                    <Location>
+                        <X>706</X>
+                        <Y>224</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1212" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1213">
+                    <Label>16</Label>
+                    <Location>
+                        <X>706</X>
+                        <Y>200</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1212" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1209">
+                    <Location>
+                        <X>264</X>
+                        <Y>173</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Pegelstand mit Ultraschall messen
+(serielle Kommunikation)</Text>
+                        <Location>
+                            <X>824</X>
+                            <Y>168</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>282</Width>
+                            <Height>50</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>292</BeforeBlockId>
+                    <AfterBlockId>1215</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1210" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="1212" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1210">
+                    <Label>Pegel</Label>
+                    <Location>
+                        <X>462</X>
+                        <Y>176</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1209" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="292">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1232" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="1209" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

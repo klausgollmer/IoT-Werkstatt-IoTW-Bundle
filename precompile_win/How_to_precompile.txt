@@ -1,0 +1,75 @@
+Bei den vorcompilierten Libraries gibt es zwei Gruppen:
+
+1. Normale Libraries z.B. IOTW_ADPS9999
+Diese kopiert man in den Ordner \libraries_2precompile\
+Bei Adafruit gibt es Abhängigkeiten, also Adafruit_GFX mit Adrafruit_BusIO usw. Alle müssen dann im _2precompile stehen.
+IoTW_config braucht Adafruit Neopixel und GFX
+Start von IoT-Werkstatt-precompile-libs.bat
+Dieses Skript erzeugt in \libraries_precompiled\ eine entspreched vorcompilierte Version
+Zusätzliche Ordner noch von Hand ergänzen z.B. Font bei Adafruit_GFX oder Force_deps.cpp bei IoTW_conf 
+Dann die Originallibs in \sketchbook\libaries\ per Hand löschen und durch die Precompilate ersetzen
+
+2. Core Libraries z.B. WiFi
+Start von IoT-Werkstatt-precompile-net.bat
+Dieses Skript erzeugt in portable\core_libraries_precompiled\ eine entspreched vorcompilierte Version
+Dann precompilierte Version in \sketchbook\libaries\ kopieren (ggf. alte Versionen vorher löschen)
+
+
+Beim Core müssen wir einen core.a aus dem arduino-cache Cache per hand in portable\cores_precompiled\esp8266_pre\ oder \esp32_pre\ kopieren.
+Vorgehen ist identisch für esp32 und 8266
+Im Package zwei Varianten erstellen 
+E:\IoTW\arduino\portable\packages\esp8266\hardware\esp8266\3.1.2\cores\esp8266
+E:\IoTW\arduino\portable\packages\esp8266\hardware\esp8266\3.1.2\cores\esp8266_pre 
+In der Variante _pre sind alle .cpp und .c und .s gelöscht, nur .h bleiben
+Unter Boards.txt dann ein Menüpunkt inject einbauen, dieser entscheidet über esp8266_pre oder normal
+octopus_core_cpp ist die alte, flexible version, die anderen sind vom menü eingeschrängt, erstellen den core.a (damit -fqbn=esp32:esp32:makey_v1:inject=on,... konstant bleibt)
+platform.local.text erstellen, inhalt:
+recipe.hooks.linking.prelink.90.pattern="{runtime.ide.path}/portable/cores_precompiled/inject_core.bat" "{build.path}" "{build.core}" "{build.inject_core}" 
+
+batch-Skript zum Umschalten in Abhängigkeit von menü injected erstellen \portable\cores_precompiled/inject_core.bat
+@echo off
+setlocal ENABLEDELAYEDEXPANSION
+rem Args:
+rem   %1 = {build.path}
+rem   %2 = {build.core}
+rem   %3 = {build.inject_core}
+
+rem --- Argumente in eigene Variablen übernehmen (keine Klammer-Blöcke!) ---
+set "BUILD=%~1"
+set "CORE=%~2"
+set "FLAG=%~3"
+
+echo [inject] BUILD="%BUILD%" CORE="%CORE%" FLAG="%FLAG%"
+echo [inject] SCRIPT.DIR="%~dp0"
+
+if "%FLAG%" NEQ "1" (
+  echo [inject] INJECT=OFF -> skip
+  exit /b 0
+)
+
+rem --- Pfade aufbauen ---
+set "SRC=%~dp0%CORE%\core.a"
+set "DST_DIR=%BUILD%\core"
+set "DST=%DST_DIR%\core.a"
+
+echo [inject] SRC="%SRC%"
+echo [inject] DST_DIR="%DST_DIR%"
+echo [inject] DST="%DST%"
+
+if not exist "%SRC%" (
+  echo [inject][ERROR] SRC not found: "%SRC%"
+  exit /b 2
+)
+
+if not exist "%DST_DIR%" (
+  echo [inject] MKDIR "%DST_DIR%"
+  mkdir "%DST_DIR%" 2>nul || (echo [inject][ERROR] MKDIR failed & exit /b 3)
+)
+
+echo [inject] COPY "%SRC%" -> "%DST%"
+copy /y "%SRC%" "%DST%" >nul || (echo [inject][ERROR] COPY failed & exit /b 4)
+
+for %%A in ("%DST%") do set "SZ=%%~zA"
+echo [inject] Copied core.a size=!SZ! bytes
+echo [inject] DONE
+exit /b 0

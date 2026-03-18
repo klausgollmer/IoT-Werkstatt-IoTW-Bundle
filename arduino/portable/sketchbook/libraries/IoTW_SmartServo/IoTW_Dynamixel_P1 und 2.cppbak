@@ -1,0 +1,283 @@
+/*
+*  Copyright (c) 2025  IoT2-Werkstatt <Klaus-Uwe Gollmer>
+*  SPDX-License-Identifier: MIT
+*  Diese Datei ist Teil der Bibliothek IoT-Werkstatt
+
+*  Sie nutzt Robotis dynamixel2arduino lib, tested with AX 12+ (Protocol 1.0)
+*   https://github.com/ROBOTIS-GIT/Dynamixel2Arduino
+*  Apache-2.0 license Ver 2.0 http://www.apache.org/licenses/
+*  Custom port_handler.cpp, BitBang on GPIO 17, no hardware UART, no additional HW 
+*  maximal 57.600 Baud, change servo baudrate extern, max. 20 servo (ID 0 to 19)
+*/
+#ifdef ESP32 
+
+#include <Dynamixel2Arduino.h>
+#include <IoTW_config.h>
+#include <math.h>
+#include <Arduino.h>
+
+extern int IOTW_debug_level;
+#define MAX_DXL_ID_SCAN 20   
+#define DXL_RANGE_DEG 300.0
+static int last_protocol = 1;
+#define BROADCAST_ID 0xFE
+
+
+
+HardwareSerial* activeSerial = nullptr;
+Dynamixel2Arduino dxl(Serial2, -1);  // Default Serial2
+
+using namespace ControlTableItem;
+
+uint8_t robotisProtokoll[MAX_DXL_ID_SCAN+1]; 
+
+//------------------------------------- Robotis Begin
+
+void robotis_begin(int ser, int rx, int tx, int baud) {
+  switch (ser) {
+    case 0: activeSerial = &Serial; break;
+    case 1: activeSerial = &Serial1; break;
+    case 2: activeSerial = &Serial2; break;
+	case 3: activeSerial = nullptr;
+       IOTW_PRINT(F("sorry, no softwareserial on feetech "));
+	   return;
+    break;
+	 
+    default:
+      IOTW_PRINT(F("unknown serial in dynamixel "));
+      return;
+  }
+
+  activeSerial->end();
+  activeSerial->begin(baud, SERIAL_8N1, rx, tx);
+
+  dxl = Dynamixel2Arduino(*activeSerial, -1);
+  dxl.begin(baud);
+  dxl.setPortProtocolVersion(1.0);  // AX-12A+
+
+  IOTW_PRINT(F("Dynamixel ready on ser=")); IOTW_PRINT(ser);IOTW_PRINT(F(" baud=")); IOTW_PRINTLN(baud);
+}
+
+int robotis_scan() { 
+  if (activeSerial == nullptr) return 0;
+  dxl.setPortProtocolVersion(1.0);
+  robotisProtokoll[0] = 1; // Broadcast id 0 is protocoll 1.0
+  last_protocol = 1;
+  delay(10);            // ESP32 + BitBang settle time
+  int cnt_p1=0;
+  int cnt_p2=0;
+  IOTW_PRINT(F("scan id 1-20, torque off: "));
+  
+  for (int id = 1; id<MAX_DXL_ID_SCAN;id++) {
+    if (dxl.ping(id)) {
+      robotisProtokoll[id]=1;
+      dxl.torqueOff(id);
+      IOTW_PRINT(id);IOTW_PRINT(F(" "));
+	  cnt_p1++;
+    } 
+    else {
+      robotisProtokoll[id]=0;
+    }
+  }
+  dxl.setPortProtocolVersion(2.0);   // Protokoll 2
+  last_protocol = 2;
+  for (int id = 1; id<MAX_DXL_ID_SCAN;id++) {
+	if (robotisProtokoll[id] == 0) { 
+		if (dxl.ping(id)) {
+		  robotisProtokoll[id]=2;
+		  dxl.torqueOff(id);
+		  IOTW_PRINT(id);IOTW_PRINT(F(" "));
+		  cnt_p2++;
+		}
+	}
+  }
+  IOTW_PRINT(F("\n"));
+  IOTW_PRINT(cnt_p1+cnt_p2);
+  IOTW_PRINTLN(F(" servos detected"));
+  return cnt_p1+cnt_p2;
+}
+
+//------------------------------------- Robotis set 
+void robotis_set(uint8_t id, int mode, float wert){
+  if (activeSerial == nullptr) return;
+  int rawpos;
+  Serial.println("test");
+  Serial.println(id);
+  Serial.println(mode);
+  Serial.println(wert);
+  Serial.println(robotisProtokoll[id]);
+  
+  if ((wert < 4086) && ((robotisProtokoll[id] > 0) || (id==BROADCAST_ID))){ // servo active or broadcast  
+  Serial.println("ok");
+    if (last_protocol  != robotisProtokoll[id]) {
+  Serial.println("proto");
+		dxl.setPortProtocolVersion((float)robotisProtokoll[id]);
+	    last_protocol  = robotisProtokoll[id];
+    }
+    if (IOTW_debug_level > 1) {IOTW_PRINT(F("\n servo id "));IOTW_PRINT(id);}
+	
+    switch (mode) {
+    case 0: { // Goal Angle
+      if (robotisProtokoll[id]==1) {
+        rawpos = (wert * 1023. / 300.0f + 0.5f);
+      } 
+      else {
+        rawpos = (wert * 4095. / 300.0f + 0.5f);
+      }
+      if (IOTW_debug_level > 1) {IOTW_PRINT(F(" position "));IOTW_PRINT(wert);IOTW_PRINT(" raw ");IOTW_PRINT(rawpos);}
+      dxl.setGoalPosition(id, rawpos);
+	  delay(2);
+    break;
+	}
+    case 1: {// Torque enable
+      if (IOTW_debug_level > 1) {IOTW_PRINT(F(" torque enable "));IOTW_PRINT(wert);}
+	  if (id == 0) { // broadcast protocol 1 not reliable
+       for (uint8_t id=1; id<=MAX_DXL_ID_SCAN; id++) {
+	     if (robotisProtokoll[id]==1) {
+		   if ((int) wert==0) dxl.torqueOff(id);else dxl.torqueOn(id);
+		 }
+	   }
+	  } 
+	  if ((int) wert==0) dxl.torqueOff(id);else dxl.torqueOn(id);
+    break;
+	}
+    case 2: {// Torque Limit in %
+	  uint16_t torque_raw = (uint16_t)(wert * 10.23f + 0.5f);  // % → 0-1023
+	  torque_raw = constrain(torque_raw, 0, 1023);
+	  if (robotisProtokoll[id]==1) {
+		dxl.writeControlTableItem(TORQUE_LIMIT, id, torque_raw);
+	  } else {
+		dxl.writeControlTableItem(CURRENT_LIMIT, id, torque_raw);  // XL: ~mA, approx. OK
+	  }
+  	  if (IOTW_debug_level > 1) {IOTW_PRINT(F(" torque limit %"));IOTW_PRINT(wert);}
+    break;
+	}
+    case 3:{ // Moving Speed ±%
+	  float percent = constrain(wert, -100.0f, 100.0f);
+	  uint16_t speed_raw;
+	  if (robotisProtokoll[id]==1) {
+		// AX P1: Joint 0-1023 (CCW), Wheel 0-2047 (signed via Bit)
+		if (percent >= 0) {
+		  speed_raw = (uint16_t)(percent * 10.23f + 0.5f);  // 0-1023
+		} else {
+		  speed_raw = 1024 + (uint16_t)(-percent * 10.23f + 0.5f);  // 1024-2047 CW
+		}
+		dxl.writeControlTableItem(MOVING_SPEED, id, speed_raw);
+	  } else {
+		// XL P2: PROFILE_VELOCITY 0-32767 (unsigned, Direction via Goal Pos)
+		speed_raw = (uint16_t)(abs(percent) * 327.67f + 0.5f);
+		dxl.writeControlTableItem(PROFILE_VELOCITY, id, speed_raw);
+	  }
+	  if (IOTW_debug_level > 1) {IOTW_PRINT(F(" speed ±%"));IOTW_PRINT(percent);}
+    break;
+	}
+	case 4: {// Goal Position
+      dxl.setGoalPosition(id, (int) wert);
+      if (IOTW_debug_level > 1) {IOTW_PRINT(F(" position "));IOTW_PRINT(wert);}
+    break;
+    }
+	case 5: {// Wheel Mode ON (Continuous)
+	   dxl.torqueOff(id);
+	   if (wert > 0.5) {
+		   dxl.setOperatingMode(id, OP_VELOCITY);
+	   } else {
+  	       dxl.setOperatingMode(id, OP_POSITION);
+	   }
+       dxl.torqueOn(id);
+ 	   if (IOTW_debug_level > 1) IOTW_PRINTLN(F(" wheel mode ON"));  // Clean
+    break;
+	}
+	case 6:{ // Wheel Velocity ±% (nach Wheel Mode case 5)
+	  float percent = constrain(wert, -100.0f, 100.0f);
+	  dxl.setGoalVelocity(id, percent, UNIT_PERCENT);
+	  if (IOTW_debug_level > 1) {IOTW_PRINT(F(" wheel vel ±%"));IOTW_PRINT(percent);}
+	  break;
+	}
+	case 7: {// ID Change (1-253)
+	  int new_id = constrain(wert, 0,254);
+      if(dxl.setID(id, new_id) == true){
+		if (IOTW_debug_level > 1) {IOTW_PRINT(F(" ID change to "));IOTW_PRINT((int)wert);}
+	  } else {
+		if (IOTW_debug_level > 1) {IOTW_PRINT(F(" ID change error "));}
+	  }
+ 	break;
+	}
+   }
+ }
+}
+
+//------------------------------------- Robotis get 
+float robotis_get(uint8_t id, int mode){  
+  if (activeSerial == nullptr) return NAN;
+	
+  float out = NAN;
+  int raw;
+  if (robotisProtokoll[id] > 0) { // servo active
+    if (last_protocol  != robotisProtokoll[id]) {
+		dxl.setPortProtocolVersion(robotisProtokoll[id] == 1 ? 1.0f : 2.0f);
+	    last_protocol  = robotisProtokoll[id];
+    }
+    if (IOTW_debug_level > 1) {IOTW_PRINT(F("\n servo id "));IOTW_PRINT(id);}
+
+    switch (mode) {
+    case 0:{ // current Angle
+      raw = dxl.getPresentPosition(id);
+	  if (raw == 0) raw = dxl.getPresentPosition(id); // qnd bugfix erste Abfrage 0
+
+	 // Serial.println(raw);
+      if (robotisProtokoll[id]==1) 
+        out = raw * DXL_RANGE_DEG / 1023.; 
+      else 
+        out = raw * DXL_RANGE_DEG / 4095.; 
+      if (IOTW_debug_level > 1){
+       IOTW_PRINT(F(" current pos "));
+       IOTW_PRINT(out);
+	  }
+	break;
+	}
+    case 1: {// Torque enable
+      out = dxl.readControlTableItem(TORQUE_ENABLE, id);
+      if (IOTW_debug_level > 1) {IOTW_PRINT(F(" current torque enable "));IOTW_PRINT(out);}
+    break;
+	}
+    case 2: { // Signed Load ±%
+	  int16_t load_signed;
+	  if (robotisProtokoll[id] == 1) {  // AX: 0-1023 CCW, 1024-2047 CW
+		uint16_t raw = dxl.readControlTableItem(PRESENT_LOAD, id);
+		load_signed = (raw > 1023) ? (int16_t)(raw - 2048) : (int16_t)raw;  // -1023..+1023
+	  } else {  // XL: Bereits signed mA
+		load_signed = dxl.readControlTableItem(PRESENT_CURRENT, id);
+	  }
+	  out = load_signed / 10.23f;  // ±100%
+	  if (IOTW_debug_level > 1) {IOTW_PRINT(F(" signed load %"));IOTW_PRINT(out);}
+      break;
+    }
+
+    case 3:{ // is Moving
+      out =  dxl.readControlTableItem(MOVING, id);
+      if (IOTW_debug_level > 1) {IOTW_PRINT(F(" is moving "));IOTW_PRINT(out);}
+    break;
+	}
+    case 4: {// Temperature
+      out =  dxl.readControlTableItem(PRESENT_TEMPERATURE, id);
+     if (IOTW_debug_level > 1) {IOTW_PRINT(F(" temperature "));IOTW_PRINT(out);}
+    break;
+	}
+	case 5:{ // current Position
+      raw = dxl.getPresentPosition(id);
+	  if (raw == 0) raw = dxl.getPresentPosition(id); // qnd bugfix erste Abfrage 0
+      out = raw; 
+      if (IOTW_debug_level > 1){IOTW_PRINT(F(" current pos "));IOTW_PRINT(out);}
+	break;
+	}
+   } 
+  }
+  return out;
+}
+
+#else
+//void robotis_begin(int ser, int rx, int tx, int baud) {};
+//float robotis_get(uint8_t id, int mode){return NAN;}
+//void robotis_set(uint8_t id, int mode, float wert){};
+//int  robotis_scan() { return 0; }
+#endif

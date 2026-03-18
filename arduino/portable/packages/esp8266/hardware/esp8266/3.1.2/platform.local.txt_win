@@ -1,0 +1,2 @@
+recipe.hooks.linking.prelink.90.pattern="{runtime.ide.path}/portable/cores_precompiled/inject_core.bat" "{build.path}" "{build.core}" "{build.inject_core}" 
+#recipe.hooks.linking.prelink.90.pattern="{runtime.ide.path}/portable/cores_precompiled/inject_esp8266_core.bat" "{build.path}"

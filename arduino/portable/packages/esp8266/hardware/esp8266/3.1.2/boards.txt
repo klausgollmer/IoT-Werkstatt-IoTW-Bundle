@@ -1,0 +1,546 @@
+#
+# Do not create pull-requests for this file only, CI will not accept them.
+# You *must* edit/modify/run boards.txt.py to regenerate boards.txt.
+# All modified files after running with option "--allgen" must be included in the pull-request.
+#
+
+menu.BoardModel=Model
+menu.ESPModule=Module
+menu.UploadTool=Upload Tool
+menu.led=Builtin Led
+menu.baud=Upload Speed
+# Menügruppe anlegen
+menu.inject=Core-Injection
+
+
+##############################################################
+
+SI-Labs.name=Makey / Octopus Board
+SI-Labs.build.board=SILABSBOARD_ID
+SI-Labs.hide=true
+SI-Labs.vid.0=0x10C4
+SI-Labs.pid.0=0xEA60
+
+ch340board.name=CH340 Board
+ch340board.build.board=CH340BOARD_ID
+ch340board.hide=true
+# VID/PID aus dem Geräte-Manager: z.B. 0x1A86:0x7523
+ch340board.vid.0=0x1A86
+ch340board.pid.0=0x7523
+
+ch9102board.name=CH9102 Board
+ch9102board.build.board=CH340BOARD_ID
+ch9102board.hide=true
+# VID/PID aus dem Geräte-Manager: z.B. 0x1A86:0x7523
+ch9102board.vid.0=0x1A86
+ch9102board.pid.0=0x55D4
+
+
+##############################################################
+
+
+
+
+##############################################################
+octopus.name=Octopus
+octopus.build.board=ESP8266_NODEMCU_ESP12E
+octopus.build.variant=octopus
+octopus.build.core=esp8266_pre      
+octopus.build.mcu=esp8266
+octopus.build.extra_flags=-DCFG_sx1276_radio=1
+
+# === feste Core-Parameter (an dein core.a anpassen!) ===
+octopus.build.f_cpu=80000000L
+octopus.build.vtable_flags=-DVTABLES_IN_FLASH
+octopus.build.exception_flags=-fno-exceptions
+octopus.build.stdcpp_lib=-lstdc++
+octopus.build.stacksmash_flags=
+octopus.build.sslflags=
+octopus.build.mmuflags=-DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x8000
+octopus.build.non32xferflags=
+# LwIP: wähle eine Variante und setze die 3 Zeilen passend:
+#  HB2F:
+octopus.build.lwip_include=lwip2/include
+octopus.build.lwip_lib=-llwip2-1460-feat
+octopus.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+#  ODER LM2F:
+# octopus.build.lwip_include=lwip2/include
+# octopus.build.lwip_lib=-llwip2-536-feat
+# octopus.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+
+octopus.build.debug_port=
+octopus.build.debug_level=
+
+# === Upload/sonstiges (ok) ===
+octopus.upload.tool=esptool
+octopus.upload.speed=512000
+octopus.upload.wait_for_upload_port=true
+octopus.upload.erase_cmd=
+octopus.upload.maximum_data_size=81920
+octopus.serial.disableDTR=true
+octopus.serial.disableRTS=true
+octopus.upload.resetmethod=--before default_reset --after hard_reset
+octopus.build.flash_mode=dio
+octopus.build.flash_flags=-DFLASHMODE_DIO
+octopus.build.flash_freq=40
+octopus.build.spiffs_pagesize=256
+
+# === Menüs, die bleiben dürfen ===
+
+
+# Inject-Menü: schaltet Core UND Flag
+octopus.menu.inject.on=ON (use precompiled core.a)
+octopus.menu.inject.on.build.core=esp8266_pre
+octopus.menu.inject.on.build.inject_core=1
+
+octopus.menu.inject.off=OFF (compile full core)
+octopus.menu.inject.off.build.core=esp8266
+octopus.menu.inject.off.build.inject_core=0
+
+#octopus.menu.led.2=2
+#octopus.menu.led.2.build.led=-DLED_BUILTIN=2
+#octopus.menu.led.16=16
+#octopus.menu.led.16.build.led=-DLED_BUILTIN=16
+
+octopus.menu.baud.921600=921600
+octopus.menu.baud.921600.upload.speed=921600
+octopus.menu.baud.115200=115200
+octopus.menu.baud.115200.upload.speed=115200
+
+octopus.menu.eesz.4M2M=4MB (FS:2MB OTA:~1019KB)
+octopus.menu.eesz.4M2M.build.flash_size=4M
+octopus.menu.eesz.4M2M.build.flash_ld=eagle.flash.4m2m.ld
+octopus.menu.eesz.4M2M.build.spiffs_pagesize=256
+octopus.menu.eesz.4M2M.build.rfcal_addr=0x3FC000
+octopus.menu.eesz.4M2M.build.spiffs_start=0x200000
+octopus.menu.eesz.4M2M.build.spiffs_end=0x3FA000
+octopus.menu.eesz.4M2M.build.spiffs_blocksize=8192
+# (weitere eesz-/wipe-Optionen nach Bedarf)
+
+
+##############################################################
+nodemcuv2.name=NodeMCU 1.0 (ESP-12E Module)
+nodemcuv2.build.board=ESP8266_NODEMCU_ESP12E
+nodemcuv2.build.variant=nodemcu
+nodemcuv2.upload.tool=esptool
+nodemcuv2.upload.maximum_data_size=81920
+nodemcuv2.upload.wait_for_upload_port=true
+nodemcuv2.upload.erase_cmd=
+nodemcuv2.serial.disableDTR=true
+nodemcuv2.serial.disableRTS=true
+nodemcuv2.build.mcu=esp8266
+nodemcuv2.build.core=esp8266
+nodemcuv2.build.spiffs_pagesize=256
+nodemcuv2.build.debug_port=
+nodemcuv2.build.debug_level=
+nodemcuv2.menu.xtal.80=80 MHz
+nodemcuv2.menu.xtal.80.build.f_cpu=80000000L
+nodemcuv2.menu.xtal.160=160 MHz
+nodemcuv2.menu.xtal.160.build.f_cpu=160000000L
+nodemcuv2.menu.vt.flash=Flash
+nodemcuv2.menu.vt.flash.build.vtable_flags=-DVTABLES_IN_FLASH
+nodemcuv2.menu.vt.heap=Heap
+nodemcuv2.menu.vt.heap.build.vtable_flags=-DVTABLES_IN_DRAM
+nodemcuv2.menu.vt.iram=IRAM
+nodemcuv2.menu.vt.iram.build.vtable_flags=-DVTABLES_IN_IRAM
+nodemcuv2.menu.exception.disabled=Disabled (new aborts on oom)
+nodemcuv2.menu.exception.disabled.build.exception_flags=-fno-exceptions
+nodemcuv2.menu.exception.disabled.build.stdcpp_lib=-lstdc++
+nodemcuv2.menu.exception.enabled=Enabled
+nodemcuv2.menu.exception.enabled.build.exception_flags=-fexceptions
+nodemcuv2.menu.exception.enabled.build.stdcpp_lib=-lstdc++-exc
+nodemcuv2.menu.stacksmash.disabled=Disabled
+nodemcuv2.menu.stacksmash.disabled.build.stacksmash_flags=
+nodemcuv2.menu.stacksmash.enabled=Enabled
+nodemcuv2.menu.stacksmash.enabled.build.stacksmash_flags=-fstack-protector
+nodemcuv2.menu.ssl.all=All SSL ciphers (most compatible)
+nodemcuv2.menu.ssl.all.build.sslflags=
+nodemcuv2.menu.ssl.basic=Basic SSL ciphers (lower ROM use)
+nodemcuv2.menu.ssl.basic.build.sslflags=-DBEARSSL_SSL_BASIC
+nodemcuv2.menu.mmu.3232=32KB cache + 32KB IRAM (balanced)
+nodemcuv2.menu.mmu.3232.build.mmuflags=-DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x8000
+nodemcuv2.menu.mmu.4816=16KB cache + 48KB IRAM (IRAM)
+nodemcuv2.menu.mmu.4816.build.mmuflags=-DMMU_IRAM_SIZE=0xC000 -DMMU_ICACHE_SIZE=0x4000
+nodemcuv2.menu.mmu.4816H=16KB cache + 48KB IRAM and 2nd Heap (shared)
+nodemcuv2.menu.mmu.4816H.build.mmuflags=-DMMU_IRAM_SIZE=0xC000 -DMMU_ICACHE_SIZE=0x4000 -DMMU_IRAM_HEAP
+nodemcuv2.menu.mmu.3216=16KB cache + 32KB IRAM + 16KB 2nd Heap (not shared)
+nodemcuv2.menu.mmu.3216.build.mmuflags=-DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x4000 -DMMU_SEC_HEAP=0x40108000 -DMMU_SEC_HEAP_SIZE=0x4000
+nodemcuv2.menu.mmu.ext128k=128K Heap External 23LC1024
+nodemcuv2.menu.mmu.ext128k.build.mmuflags=-DMMU_EXTERNAL_HEAP=128 -DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x8000
+nodemcuv2.menu.mmu.ext8192k=8M w/256K Heap External 64 MBit PSRAM
+nodemcuv2.menu.mmu.ext8192k.build.mmuflags=-DMMU_EXTERNAL_HEAP=256 -DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x8000
+nodemcuv2.menu.non32xfer.fast=Use pgm_read macros for IRAM/PROGMEM
+nodemcuv2.menu.non32xfer.fast.build.non32xferflags=
+nodemcuv2.menu.non32xfer.safe=Byte/Word access to IRAM/PROGMEM (very slow)
+nodemcuv2.menu.non32xfer.safe.build.non32xferflags=-DNON32XFER_HANDLER
+nodemcuv2.upload.resetmethod=--before default_reset --after hard_reset
+nodemcuv2.build.flash_mode=dio
+nodemcuv2.build.flash_flags=-DFLASHMODE_DIO
+nodemcuv2.build.flash_freq=40
+nodemcuv2.menu.eesz.4M2M=4MB (FS:2MB OTA:~1019KB)
+nodemcuv2.menu.eesz.4M2M.build.flash_size=4M
+nodemcuv2.menu.eesz.4M2M.build.flash_ld=eagle.flash.4m2m.ld
+nodemcuv2.menu.eesz.4M2M.build.spiffs_pagesize=256
+nodemcuv2.menu.eesz.4M2M.build.rfcal_addr=0x3FC000
+nodemcuv2.menu.eesz.4M2M.build.spiffs_start=0x200000
+nodemcuv2.menu.eesz.4M2M.build.spiffs_end=0x3FA000
+nodemcuv2.menu.eesz.4M2M.build.spiffs_blocksize=8192
+nodemcuv2.menu.eesz.4M3M=4MB (FS:3MB OTA:~512KB)
+nodemcuv2.menu.eesz.4M3M.build.flash_size=4M
+nodemcuv2.menu.eesz.4M3M.build.flash_ld=eagle.flash.4m3m.ld
+nodemcuv2.menu.eesz.4M3M.build.spiffs_pagesize=256
+nodemcuv2.menu.eesz.4M3M.build.rfcal_addr=0x3FC000
+nodemcuv2.menu.eesz.4M3M.build.spiffs_start=0x100000
+nodemcuv2.menu.eesz.4M3M.build.spiffs_end=0x3FA000
+nodemcuv2.menu.eesz.4M3M.build.spiffs_blocksize=8192
+nodemcuv2.menu.eesz.4M1M=4MB (FS:1MB OTA:~1019KB)
+nodemcuv2.menu.eesz.4M1M.build.flash_size=4M
+nodemcuv2.menu.eesz.4M1M.build.flash_ld=eagle.flash.4m1m.ld
+nodemcuv2.menu.eesz.4M1M.build.spiffs_pagesize=256
+nodemcuv2.menu.eesz.4M1M.build.rfcal_addr=0x3FC000
+nodemcuv2.menu.eesz.4M1M.build.spiffs_start=0x300000
+nodemcuv2.menu.eesz.4M1M.build.spiffs_end=0x3FA000
+nodemcuv2.menu.eesz.4M1M.build.spiffs_blocksize=8192
+nodemcuv2.menu.eesz.4M=4MB (FS:none OTA:~1019KB)
+nodemcuv2.menu.eesz.4M.build.flash_size=4M
+nodemcuv2.menu.eesz.4M.build.flash_ld=eagle.flash.4m.ld
+nodemcuv2.menu.eesz.4M.build.spiffs_pagesize=256
+nodemcuv2.menu.eesz.4M.build.rfcal_addr=0x3FC000
+nodemcuv2.menu.led.2=2
+nodemcuv2.menu.led.2.build.led=-DLED_BUILTIN=2
+nodemcuv2.menu.led.16=16
+nodemcuv2.menu.led.16.build.led=-DLED_BUILTIN=16
+nodemcuv2.menu.ip.lm2f=v2 Lower Memory
+nodemcuv2.menu.ip.lm2f.build.lwip_include=lwip2/include
+nodemcuv2.menu.ip.lm2f.build.lwip_lib=-llwip2-536-feat
+nodemcuv2.menu.ip.lm2f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+nodemcuv2.menu.ip.hb2f=v2 Higher Bandwidth
+nodemcuv2.menu.ip.hb2f.build.lwip_include=lwip2/include
+nodemcuv2.menu.ip.hb2f.build.lwip_lib=-llwip2-1460-feat
+nodemcuv2.menu.ip.hb2f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+nodemcuv2.menu.ip.lm2n=v2 Lower Memory (no features)
+nodemcuv2.menu.ip.lm2n.build.lwip_include=lwip2/include
+nodemcuv2.menu.ip.lm2n.build.lwip_lib=-llwip2-536
+nodemcuv2.menu.ip.lm2n.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=0 -DLWIP_IPV6=0
+nodemcuv2.menu.ip.hb2n=v2 Higher Bandwidth (no features)
+nodemcuv2.menu.ip.hb2n.build.lwip_include=lwip2/include
+nodemcuv2.menu.ip.hb2n.build.lwip_lib=-llwip2-1460
+nodemcuv2.menu.ip.hb2n.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=0 -DLWIP_IPV6=0
+nodemcuv2.menu.ip.lm6f=v2 IPv6 Lower Memory
+nodemcuv2.menu.ip.lm6f.build.lwip_include=lwip2/include
+nodemcuv2.menu.ip.lm6f.build.lwip_lib=-llwip6-536-feat
+nodemcuv2.menu.ip.lm6f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=1
+nodemcuv2.menu.ip.hb6f=v2 IPv6 Higher Bandwidth
+nodemcuv2.menu.ip.hb6f.build.lwip_include=lwip2/include
+nodemcuv2.menu.ip.hb6f.build.lwip_lib=-llwip6-1460-feat
+nodemcuv2.menu.ip.hb6f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=1 -DLWIP_IPV6=1
+nodemcuv2.menu.dbg.Disabled=Disabled
+nodemcuv2.menu.dbg.Disabled.build.debug_port=
+nodemcuv2.menu.dbg.Serial=Serial
+nodemcuv2.menu.dbg.Serial.build.debug_port=-DDEBUG_ESP_PORT=Serial
+nodemcuv2.menu.dbg.Serial1=Serial1
+nodemcuv2.menu.dbg.Serial1.build.debug_port=-DDEBUG_ESP_PORT=Serial1
+nodemcuv2.menu.lvl.None____=None
+nodemcuv2.menu.lvl.None____.build.debug_level=
+nodemcuv2.menu.lvl.SSL=SSL
+nodemcuv2.menu.lvl.SSL.build.debug_level= -DDEBUG_ESP_SSL
+nodemcuv2.menu.lvl.TLS_MEM=TLS_MEM
+nodemcuv2.menu.lvl.TLS_MEM.build.debug_level= -DDEBUG_ESP_TLS_MEM
+nodemcuv2.menu.lvl.HTTP_CLIENT=HTTP_CLIENT
+nodemcuv2.menu.lvl.HTTP_CLIENT.build.debug_level= -DDEBUG_ESP_HTTP_CLIENT
+nodemcuv2.menu.lvl.HTTP_SERVER=HTTP_SERVER
+nodemcuv2.menu.lvl.HTTP_SERVER.build.debug_level= -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.SSLTLS_MEM=SSL+TLS_MEM
+nodemcuv2.menu.lvl.SSLTLS_MEM.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM
+nodemcuv2.menu.lvl.SSLHTTP_CLIENT=SSL+HTTP_CLIENT
+nodemcuv2.menu.lvl.SSLHTTP_CLIENT.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_HTTP_CLIENT
+nodemcuv2.menu.lvl.SSLHTTP_SERVER=SSL+HTTP_SERVER
+nodemcuv2.menu.lvl.SSLHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.TLS_MEMHTTP_CLIENT=TLS_MEM+HTTP_CLIENT
+nodemcuv2.menu.lvl.TLS_MEMHTTP_CLIENT.build.debug_level= -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT
+nodemcuv2.menu.lvl.TLS_MEMHTTP_SERVER=TLS_MEM+HTTP_SERVER
+nodemcuv2.menu.lvl.TLS_MEMHTTP_SERVER.build.debug_level= -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.HTTP_CLIENTHTTP_SERVER=HTTP_CLIENT+HTTP_SERVER
+nodemcuv2.menu.lvl.HTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENT=SSL+TLS_MEM+HTTP_CLIENT
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENT.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_SERVER=SSL+TLS_MEM+HTTP_SERVER
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.SSLHTTP_CLIENTHTTP_SERVER=SSL+HTTP_CLIENT+HTTP_SERVER
+nodemcuv2.menu.lvl.SSLHTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.TLS_MEMHTTP_CLIENTHTTP_SERVER=TLS_MEM+HTTP_CLIENT+HTTP_SERVER
+nodemcuv2.menu.lvl.TLS_MEMHTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVER=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+nodemcuv2.menu.lvl.CORE=CORE
+nodemcuv2.menu.lvl.CORE.build.debug_level= -DDEBUG_ESP_CORE
+nodemcuv2.menu.lvl.WIFI=WIFI
+nodemcuv2.menu.lvl.WIFI.build.debug_level= -DDEBUG_ESP_WIFI
+nodemcuv2.menu.lvl.HTTP_UPDATE=HTTP_UPDATE
+nodemcuv2.menu.lvl.HTTP_UPDATE.build.debug_level= -DDEBUG_ESP_HTTP_UPDATE
+nodemcuv2.menu.lvl.UPDATER=UPDATER
+nodemcuv2.menu.lvl.UPDATER.build.debug_level= -DDEBUG_ESP_UPDATER
+nodemcuv2.menu.lvl.OTA=OTA
+nodemcuv2.menu.lvl.OTA.build.debug_level= -DDEBUG_ESP_OTA
+nodemcuv2.menu.lvl.OOM=OOM
+nodemcuv2.menu.lvl.OOM.build.debug_level= -DDEBUG_ESP_OOM
+nodemcuv2.menu.lvl.MDNS=MDNS
+nodemcuv2.menu.lvl.MDNS.build.debug_level= -DDEBUG_ESP_MDNS
+nodemcuv2.menu.lvl.HWDT=HWDT
+nodemcuv2.menu.lvl.HWDT.build.debug_level= -DDEBUG_ESP_HWDT
+nodemcuv2.menu.lvl.HWDT_NOEXTRA4K=HWDT_NOEXTRA4K
+nodemcuv2.menu.lvl.HWDT_NOEXTRA4K.build.debug_level= -DDEBUG_ESP_HWDT_NOEXTRA4K
+nodemcuv2.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS=CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS
+nodemcuv2.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS.build.debug_level= -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS
+nodemcuv2.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT=CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT
+nodemcuv2.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT.build.debug_level= -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT
+nodemcuv2.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K=CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT_NOEXTRA4K
+nodemcuv2.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K.build.debug_level= -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT_NOEXTRA4K
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER+CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER+CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER+CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT_NOEXTRA4K
+nodemcuv2.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT_NOEXTRA4K
+nodemcuv2.menu.lvl.NoAssert-NDEBUG=NoAssert-NDEBUG
+nodemcuv2.menu.lvl.NoAssert-NDEBUG.build.debug_level= -DNDEBUG
+nodemcuv2.menu.wipe.none=Only Sketch
+nodemcuv2.menu.wipe.none.upload.erase_cmd=
+nodemcuv2.menu.wipe.sdk=Sketch + WiFi Settings
+nodemcuv2.menu.wipe.sdk.upload.erase_cmd=erase_region "{build.rfcal_addr}" 0x4000
+nodemcuv2.menu.wipe.all=All Flash Contents
+nodemcuv2.menu.wipe.all.upload.erase_cmd=erase_flash
+nodemcuv2.menu.baud.115200=115200
+nodemcuv2.menu.baud.115200.upload.speed=115200
+nodemcuv2.menu.baud.57600=57600
+nodemcuv2.menu.baud.57600.upload.speed=57600
+nodemcuv2.menu.baud.230400.linux=230400
+nodemcuv2.menu.baud.230400.macosx=230400
+nodemcuv2.menu.baud.230400.upload.speed=230400
+nodemcuv2.menu.baud.256000.windows=256000
+nodemcuv2.menu.baud.256000.upload.speed=256000
+nodemcuv2.menu.baud.460800.linux=460800
+nodemcuv2.menu.baud.460800.macosx=460800
+nodemcuv2.menu.baud.460800.upload.speed=460800
+nodemcuv2.menu.baud.512000.windows=512000
+nodemcuv2.menu.baud.512000.upload.speed=512000
+nodemcuv2.menu.baud.921600=921600
+nodemcuv2.menu.baud.921600.upload.speed=921600
+nodemcuv2.menu.baud.3000000=3000000
+nodemcuv2.menu.baud.3000000.upload.speed=3000000
+nodemcuv2.menu.eesz.autoflash=Mapping defined by Hardware and Sketch
+nodemcuv2.menu.eesz.autoflash.build.flash_size=16M
+nodemcuv2.menu.eesz.autoflash.build.flash_ld=eagle.flash.auto.ld
+nodemcuv2.menu.eesz.autoflash.build.extra_flags=-DFLASH_MAP_SUPPORT=1
+nodemcuv2.menu.eesz.autoflash.upload.maximum_size=1044464
+
+
+
+
+
+###   ---------------------------------------------- zur Erzeugung des core.a, kompiliert komplett
+##############################################################
+octopus_core_cpp.name=Octopus_core_cpp 
+octopus_core_cpp.hide=true 
+
+octopus_core_cpp.build.board=ESP8266_NODEMCU_ESP12E
+octopus_core_cpp.build.variant=octopus
+octopus_core_cpp.build.extra_flags=-DCFG_sx1276_radio=1
+octopus_core_cpp.upload.speed=512000
+octopus_core_cpp.upload.tool=esptool
+octopus_core_cpp.upload.maximum_data_size=81920
+octopus_core_cpp.upload.wait_for_upload_port=true
+octopus_core_cpp.upload.erase_cmd=
+octopus_core_cpp.serial.disableDTR=true
+octopus_core_cpp.serial.disableRTS=true
+octopus_core_cpp.build.mcu=esp8266
+octopus_core_cpp.build.core=esp8266
+octopus_core_cpp.build.spiffs_pagesize=256
+octopus_core_cpp.build.debug_port=
+octopus_core_cpp.build.debug_level=
+octopus_core_cpp.menu.xtal.80=80 MHz
+octopus_core_cpp.menu.xtal.80.build.f_cpu=80000000L
+octopus_core_cpp.menu.xtal.160=160 MHz
+octopus_core_cpp.menu.xtal.160.build.f_cpu=160000000L
+octopus_core_cpp.menu.vt.flash=Flash
+octopus_core_cpp.menu.vt.flash.build.vtable_flags=-DVTABLES_IN_FLASH
+octopus_core_cpp.menu.vt.heap=Heap
+octopus_core_cpp.menu.vt.heap.build.vtable_flags=-DVTABLES_IN_DRAM
+octopus_core_cpp.menu.vt.iram=IRAM
+octopus_core_cpp.menu.vt.iram.build.vtable_flags=-DVTABLES_IN_IRAM
+octopus_core_cpp.menu.exception.disabled=Disabled (new aborts on oom)
+octopus_core_cpp.menu.exception.disabled.build.exception_flags=-fno-exceptions
+octopus_core_cpp.menu.exception.disabled.build.stdcpp_lib=-lstdc++
+octopus_core_cpp.menu.exception.enabled=Enabled
+octopus_core_cpp.menu.exception.enabled.build.exception_flags=-fexceptions
+octopus_core_cpp.menu.exception.enabled.build.stdcpp_lib=-lstdc++-exc
+octopus_core_cpp.menu.stacksmash.disabled=Disabled
+octopus_core_cpp.menu.stacksmash.disabled.build.stacksmash_flags=
+octopus_core_cpp.menu.stacksmash.enabled=Enabled
+octopus_core_cpp.menu.stacksmash.enabled.build.stacksmash_flags=-fstack-protector
+octopus_core_cpp.menu.ssl.all=All SSL ciphers (most compatible)
+octopus_core_cpp.menu.ssl.all.build.sslflags=
+octopus_core_cpp.menu.ssl.basic=Basic SSL ciphers (lower ROM use)
+octopus_core_cpp.menu.ssl.basic.build.sslflags=-DBEARSSL_SSL_BASIC
+octopus_core_cpp.menu.mmu.3232=32KB cache + 32KB IRAM (balanced)
+octopus_core_cpp.menu.mmu.3232.build.mmuflags=-DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x8000
+octopus_core_cpp.menu.mmu.4816=16KB cache + 48KB IRAM (IRAM)
+octopus_core_cpp.menu.mmu.4816.build.mmuflags=-DMMU_IRAM_SIZE=0xC000 -DMMU_ICACHE_SIZE=0x4000
+octopus_core_cpp.menu.mmu.4816H=16KB cache + 48KB IRAM and 2nd Heap (shared)
+octopus_core_cpp.menu.mmu.4816H.build.mmuflags=-DMMU_IRAM_SIZE=0xC000 -DMMU_ICACHE_SIZE=0x4000 -DMMU_IRAM_HEAP
+octopus_core_cpp.menu.mmu.3216=16KB cache + 32KB IRAM + 16KB 2nd Heap (not shared)
+octopus_core_cpp.menu.mmu.3216.build.mmuflags=-DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x4000 -DMMU_SEC_HEAP=0x40108000 -DMMU_SEC_HEAP_SIZE=0x4000
+octopus_core_cpp.menu.mmu.ext128k=128K Heap External 23LC1024
+octopus_core_cpp.menu.mmu.ext128k.build.mmuflags=-DMMU_EXTERNAL_HEAP=128 -DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x8000
+octopus_core_cpp.menu.mmu.ext8192k=8M w/256K Heap External 64 MBit PSRAM
+octopus_core_cpp.menu.mmu.ext8192k.build.mmuflags=-DMMU_EXTERNAL_HEAP=256 -DMMU_IRAM_SIZE=0x8000 -DMMU_ICACHE_SIZE=0x8000
+octopus_core_cpp.menu.non32xfer.fast=Use pgm_read macros for IRAM/PROGMEM
+octopus_core_cpp.menu.non32xfer.fast.build.non32xferflags=
+octopus_core_cpp.menu.non32xfer.safe=Byte/Word access to IRAM/PROGMEM (very slow)
+octopus_core_cpp.menu.non32xfer.safe.build.non32xferflags=-DNON32XFER_HANDLER
+octopus_core_cpp.upload.resetmethod=--before default_reset --after hard_reset
+octopus_core_cpp.build.flash_mode=dio
+octopus_core_cpp.build.flash_flags=-DFLASHMODE_DIO
+octopus_core_cpp.build.flash_freq=40
+octopus_core_cpp.menu.eesz.4M2M=4MB (FS:2MB OTA:~1019KB)
+octopus_core_cpp.menu.eesz.4M2M.build.flash_size=4M
+octopus_core_cpp.menu.eesz.4M2M.build.flash_ld=eagle.flash.4m2m.ld
+octopus_core_cpp.menu.eesz.4M2M.build.spiffs_pagesize=256
+octopus_core_cpp.menu.eesz.4M2M.build.rfcal_addr=0x3FC000
+octopus_core_cpp.menu.eesz.4M2M.build.spiffs_start=0x200000
+octopus_core_cpp.menu.eesz.4M2M.build.spiffs_end=0x3FA000
+octopus_core_cpp.menu.eesz.4M2M.build.spiffs_blocksize=8192
+octopus_core_cpp.menu.eesz.4M3M=4MB (FS:3MB OTA:~512KB)
+octopus_core_cpp.menu.eesz.4M3M.build.flash_size=4M
+octopus_core_cpp.menu.eesz.4M3M.build.flash_ld=eagle.flash.4m3m.ld
+octopus_core_cpp.menu.eesz.4M3M.build.spiffs_pagesize=256
+octopus_core_cpp.menu.eesz.4M3M.build.rfcal_addr=0x3FC000
+octopus_core_cpp.menu.eesz.4M3M.build.spiffs_start=0x100000
+octopus_core_cpp.menu.eesz.4M3M.build.spiffs_end=0x3FA000
+octopus_core_cpp.menu.eesz.4M3M.build.spiffs_blocksize=8192
+octopus_core_cpp.menu.eesz.4M1M=4MB (FS:1MB OTA:~1019KB)
+octopus_core_cpp.menu.eesz.4M1M.build.flash_size=4M
+octopus_core_cpp.menu.eesz.4M1M.build.flash_ld=eagle.flash.4m1m.ld
+octopus_core_cpp.menu.eesz.4M1M.build.spiffs_pagesize=256
+octopus_core_cpp.menu.eesz.4M1M.build.rfcal_addr=0x3FC000
+octopus_core_cpp.menu.eesz.4M1M.build.spiffs_start=0x300000
+octopus_core_cpp.menu.eesz.4M1M.build.spiffs_end=0x3FA000
+octopus_core_cpp.menu.eesz.4M1M.build.spiffs_blocksize=8192
+octopus_core_cpp.menu.eesz.4M=4MB (FS:none OTA:~1019KB)
+octopus_core_cpp.menu.eesz.4M.build.flash_size=4M
+octopus_core_cpp.menu.eesz.4M.build.flash_ld=eagle.flash.4m.ld
+octopus_core_cpp.menu.eesz.4M.build.spiffs_pagesize=256
+octopus_core_cpp.menu.eesz.4M.build.rfcal_addr=0x3FC000
+octopus_core_cpp.menu.led.2=2
+octopus_core_cpp.menu.led.2.build.led=-DLED_BUILTIN=2
+octopus_core_cpp.menu.led.16=16
+octopus_core_cpp.menu.led.16.build.led=-DLED_BUILTIN=16
+octopus_core_cpp.menu.ip.lm2f=v2 Lower Memory
+octopus_core_cpp.menu.ip.lm2f.build.lwip_include=lwip2/include
+octopus_core_cpp.menu.ip.lm2f.build.lwip_lib=-llwip2-536-feat
+octopus_core_cpp.menu.ip.lm2f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+octopus_core_cpp.menu.ip.hb2f=v2 Higher Bandwidth
+octopus_core_cpp.menu.ip.hb2f.build.lwip_include=lwip2/include
+octopus_core_cpp.menu.ip.hb2f.build.lwip_lib=-llwip2-1460-feat
+octopus_core_cpp.menu.ip.hb2f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=1 -DLWIP_IPV6=0
+octopus_core_cpp.menu.ip.lm2n=v2 Lower Memory (no features)
+octopus_core_cpp.menu.ip.lm2n.build.lwip_include=lwip2/include
+octopus_core_cpp.menu.ip.lm2n.build.lwip_lib=-llwip2-536
+octopus_core_cpp.menu.ip.lm2n.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=0 -DLWIP_IPV6=0
+octopus_core_cpp.menu.ip.hb2n=v2 Higher Bandwidth (no features)
+octopus_core_cpp.menu.ip.hb2n.build.lwip_include=lwip2/include
+octopus_core_cpp.menu.ip.hb2n.build.lwip_lib=-llwip2-1460
+octopus_core_cpp.menu.ip.hb2n.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=0 -DLWIP_IPV6=0
+octopus_core_cpp.menu.ip.lm6f=v2 IPv6 Lower Memory
+octopus_core_cpp.menu.ip.lm6f.build.lwip_include=lwip2/include
+octopus_core_cpp.menu.ip.lm6f.build.lwip_lib=-llwip6-536-feat
+octopus_core_cpp.menu.ip.lm6f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=536 -DLWIP_FEATURES=1 -DLWIP_IPV6=1
+octopus_core_cpp.menu.ip.hb6f=v2 IPv6 Higher Bandwidth
+octopus_core_cpp.menu.ip.hb6f.build.lwip_include=lwip2/include
+octopus_core_cpp.menu.ip.hb6f.build.lwip_lib=-llwip6-1460-feat
+octopus_core_cpp.menu.ip.hb6f.build.lwip_flags=-DLWIP_OPEN_SRC -DTCP_MSS=1460 -DLWIP_FEATURES=1 -DLWIP_IPV6=1
+octopus_core_cpp.menu.dbg.Disabled=Disabled
+octopus_core_cpp.menu.dbg.Disabled.build.debug_port=
+octopus_core_cpp.menu.dbg.Serial=Serial
+octopus_core_cpp.menu.dbg.Serial.build.debug_port=-DDEBUG_ESP_PORT=Serial
+octopus_core_cpp.menu.dbg.Serial1=Serial1
+octopus_core_cpp.menu.dbg.Serial1.build.debug_port=-DDEBUG_ESP_PORT=Serial1
+octopus_core_cpp.menu.lvl.None____=None
+octopus_core_cpp.menu.lvl.None____.build.debug_level=
+octopus_core_cpp.menu.lvl.SSL=SSL
+octopus_core_cpp.menu.lvl.SSL.build.debug_level= -DDEBUG_ESP_SSL
+octopus_core_cpp.menu.lvl.TLS_MEM=TLS_MEM
+octopus_core_cpp.menu.lvl.TLS_MEM.build.debug_level= -DDEBUG_ESP_TLS_MEM
+octopus_core_cpp.menu.lvl.HTTP_CLIENT=HTTP_CLIENT
+octopus_core_cpp.menu.lvl.HTTP_CLIENT.build.debug_level= -DDEBUG_ESP_HTTP_CLIENT
+octopus_core_cpp.menu.lvl.HTTP_SERVER=HTTP_SERVER
+octopus_core_cpp.menu.lvl.HTTP_SERVER.build.debug_level= -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLTLS_MEM=SSL+TLS_MEM
+octopus_core_cpp.menu.lvl.SSLTLS_MEM.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM
+octopus_core_cpp.menu.lvl.SSLHTTP_CLIENT=SSL+HTTP_CLIENT
+octopus_core_cpp.menu.lvl.SSLHTTP_CLIENT.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_HTTP_CLIENT
+octopus_core_cpp.menu.lvl.SSLHTTP_SERVER=SSL+HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.TLS_MEMHTTP_CLIENT=TLS_MEM+HTTP_CLIENT
+octopus_core_cpp.menu.lvl.TLS_MEMHTTP_CLIENT.build.debug_level= -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT
+octopus_core_cpp.menu.lvl.TLS_MEMHTTP_SERVER=TLS_MEM+HTTP_SERVER
+octopus_core_cpp.menu.lvl.TLS_MEMHTTP_SERVER.build.debug_level= -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.HTTP_CLIENTHTTP_SERVER=HTTP_CLIENT+HTTP_SERVER
+octopus_core_cpp.menu.lvl.HTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENT=SSL+TLS_MEM+HTTP_CLIENT
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENT.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_SERVER=SSL+TLS_MEM+HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLHTTP_CLIENTHTTP_SERVER=SSL+HTTP_CLIENT+HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLHTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.TLS_MEMHTTP_CLIENTHTTP_SERVER=TLS_MEM+HTTP_CLIENT+HTTP_SERVER
+octopus_core_cpp.menu.lvl.TLS_MEMHTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVER=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVER.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER
+octopus_core_cpp.menu.lvl.CORE=CORE
+octopus_core_cpp.menu.lvl.CORE.build.debug_level= -DDEBUG_ESP_CORE
+octopus_core_cpp.menu.lvl.WIFI=WIFI
+octopus_core_cpp.menu.lvl.WIFI.build.debug_level= -DDEBUG_ESP_WIFI
+octopus_core_cpp.menu.lvl.HTTP_UPDATE=HTTP_UPDATE
+octopus_core_cpp.menu.lvl.HTTP_UPDATE.build.debug_level= -DDEBUG_ESP_HTTP_UPDATE
+octopus_core_cpp.menu.lvl.UPDATER=UPDATER
+octopus_core_cpp.menu.lvl.UPDATER.build.debug_level= -DDEBUG_ESP_UPDATER
+octopus_core_cpp.menu.lvl.OTA=OTA
+octopus_core_cpp.menu.lvl.OTA.build.debug_level= -DDEBUG_ESP_OTA
+octopus_core_cpp.menu.lvl.OOM=OOM
+octopus_core_cpp.menu.lvl.OOM.build.debug_level= -DDEBUG_ESP_OOM
+octopus_core_cpp.menu.lvl.MDNS=MDNS
+octopus_core_cpp.menu.lvl.MDNS.build.debug_level= -DDEBUG_ESP_MDNS
+octopus_core_cpp.menu.lvl.HWDT=HWDT
+octopus_core_cpp.menu.lvl.HWDT.build.debug_level= -DDEBUG_ESP_HWDT
+octopus_core_cpp.menu.lvl.HWDT_NOEXTRA4K=HWDT_NOEXTRA4K
+octopus_core_cpp.menu.lvl.HWDT_NOEXTRA4K.build.debug_level= -DDEBUG_ESP_HWDT_NOEXTRA4K
+octopus_core_cpp.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS=CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS
+octopus_core_cpp.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS.build.debug_level= -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS
+octopus_core_cpp.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT=CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT
+octopus_core_cpp.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT.build.debug_level= -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT
+octopus_core_cpp.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K=CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT_NOEXTRA4K
+octopus_core_cpp.menu.lvl.COREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K.build.debug_level= -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT_NOEXTRA4K
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER+CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNS.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER+CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K=SSL+TLS_MEM+HTTP_CLIENT+HTTP_SERVER+CORE+WIFI+HTTP_UPDATE+UPDATER+OTA+OOM+MDNS+HWDT_NOEXTRA4K
+octopus_core_cpp.menu.lvl.SSLTLS_MEMHTTP_CLIENTHTTP_SERVERCOREWIFIHTTP_UPDATEUPDATEROTAOOMMDNSHWDT_NOEXTRA4K.build.debug_level= -DDEBUG_ESP_SSL -DDEBUG_ESP_TLS_MEM -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_SERVER -DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_ESP_OOM -DDEBUG_ESP_MDNS -DDEBUG_ESP_HWDT_NOEXTRA4K
+octopus_core_cpp.menu.lvl.NoAssert-NDEBUG=NoAssert-NDEBUG
+octopus_core_cpp.menu.lvl.NoAssert-NDEBUG.build.debug_level= -DNDEBUG
+octopus_core_cpp.menu.wipe.none=Only Sketch
+octopus_core_cpp.menu.wipe.none.upload.erase_cmd=
+octopus_core_cpp.menu.wipe.sdk=Sketch + WiFi Settings
+octopus_core_cpp.menu.wipe.sdk.upload.erase_cmd=erase_region "{build.rfcal_addr}" 0x4000
+octopus_core_cpp.menu.wipe.all=All Flash Contents
+octopus_core_cpp.menu.wipe.all.upload.erase_cmd=erase_flash
+octopus_core_cpp.menu.baud.921600=921600
+octopus_core_cpp.menu.baud.921600.upload.speed=921600
+octopus_core_cpp.menu.baud.115200=115200
+octopus_core_cpp.menu.baud.115200.upload.speed=115200
+octopus_core_cpp.menu.eesz.autoflash=Mapping defined by Hardware and Sketch
+octopus_core_cpp.menu.eesz.autoflash.build.flash_size=16M
+octopus_core_cpp.menu.eesz.autoflash.build.flash_ld=eagle.flash.auto.ld
+octopus_core_cpp.menu.eesz.autoflash.build.extra_flags=-DFLASH_MAP_SUPPORT=1
+octopus_core_cpp.menu.eesz.autoflash.upload.maximum_size=1044464

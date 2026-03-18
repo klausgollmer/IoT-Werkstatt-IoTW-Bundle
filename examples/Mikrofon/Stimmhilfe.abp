@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="OLED_Print3" id="1512">
+                    <Location>
+                        <X>268</X>
+                        <Y>201</Y>
+                    </Location>
+                    <BeforeBlockId>1866</BeforeBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="1513" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="1862" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="1871" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="1514" connector-kind="socket" connector-type="string" init-type="string" label="size" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="OLED_FontSize12" id="1514">
+                    <Label>9pt</Label>
+                    <Location>
+                        <X>382</X>
+                        <Y>276</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1512" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1871">
+                    <Label>Hz</Label>
+                    <Location>
+                        <X>382</X>
+                        <Y>252</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1512" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="glue_sn" id="1862">
+                    <Location>
+                        <X>382</X>
+                        <Y>228</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1512" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1867" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1867">
+                    <Label>Frequenz</Label>
+                    <Location>
+                        <X>460</X>
+                        <Y>228</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1862" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1513">
+                    <Label>Frequenz</Label>
+                    <Location>
+                        <X>382</X>
+                        <Y>204</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1512" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1869">
+                    <Label>Frequenz</Label>
+                    <Location>
+                        <X>452</X>
+                        <Y>150</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1866" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="MIC_YIN" id="1863">
+                    <Location>
+                        <X>452</X>
+                        <Y>174</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1866" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1866">
+                    <Location>
+                        <X>268</X>
+                        <Y>147</Y>
+                    </Location>
+                    <BeforeBlockId>343</BeforeBlockId>
+                    <AfterBlockId>1512</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1869" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="1863" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="program" id="343">
+                    <Location>
+                        <X>104</X>
+                        <Y>104</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Lärm kann auch schön sein!
+Makey hilft Dir beim Stimmen Deines Musikinstrumentes
+Frequenzanalyse der Mikrofonsignals mit dem YIN-Algorithmus</Text>
+                        <Location>
+                            <X>101</X>
+                            <Y>31</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>514</Width>
+                            <Height>70</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="1866" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

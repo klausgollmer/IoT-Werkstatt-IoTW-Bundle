@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="variable_number" id="1108">
+                    <Label>claps</Label>
+                    <Location>
+                        <X>448</X>
+                        <Y>540</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1084" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1107">
+                    <Label>Bitte</Label>
+                    <Location>
+                        <X>375</X>
+                        <Y>198</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="736" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="1101">
+                    <Label>Neopixel</Label>
+                    <Location>
+                        <X>444</X>
+                        <Y>652</Y>
+                    </Location>
+                    <BeforeBlockId>1084</BeforeBlockId>
+                    <AfterBlockId>1104</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1102" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="1103" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="1104">
+                    <Label>Neopixel</Label>
+                    <Location>
+                        <X>444</X>
+                        <Y>706</Y>
+                    </Location>
+                    <BeforeBlockId>1101</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1105" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="1106" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="NEOVectorGreen" id="1106">
+                    <Location>
+                        <X>554</X>
+                        <Y>733</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1104" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-rechts" id="1105">
+                    <Label>Rechts</Label>
+                    <Location>
+                        <X>554</X>
+                        <Y>709</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1104" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="NEOVectorGreen" id="1103">
+                    <Location>
+                        <X>554</X>
+                        <Y>679</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1101" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-links" id="1102">
+                    <Label>Links</Label>
+                    <Location>
+                        <X>554</X>
+                        <Y>655</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1101" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="1095">
+                    <Label>Neopixel</Label>
+                    <Location>
+                        <X>443</X>
+                        <Y>795</Y>
+                    </Location>
+                    <BeforeBlockId>1084</BeforeBlockId>
+                    <AfterBlockId>1098</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1096" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="1097" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="1098">
+                    <Label>Neopixel</Label>
+                    <Location>
+                        <X>443</X>
+                        <Y>849</Y>
+                    </Location>
+                    <BeforeBlockId>1095</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1099" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="1100" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="NEOVectorYellow" id="1100">
+                    <Location>
+                        <X>553</X>
+                        <Y>876</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1098" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-rechts" id="1099">
+                    <Label>Rechts</Label>
+                    <Location>
+                        <X>553</X>
+                        <Y>852</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1098" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="NEOVectorYellow" id="1097">
+                    <Location>
+                        <X>553</X>
+                        <Y>822</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1095" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-links" id="1096">
+                    <Label>Links</Label>
+                    <Location>
+                        <X>553</X>
+                        <Y>798</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1095" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="1089">
+                    <Label>Neopixel</Label>
+                    <Location>
+                        <X>442</X>
+                        <Y>938</Y>
+                    </Location>
+                    <BeforeBlockId>1084</BeforeBlockId>
+                    <AfterBlockId>1092</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1090" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="1091" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="1092">
+                    <Label>Neopixel</Label>
+                    <Location>
+                        <X>442</X>
+                        <Y>992</Y>
+                    </Location>
+                    <BeforeBlockId>1089</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1093" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="1094" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="NEOVectorRed" id="1094">
+                    <Location>
+                        <X>552</X>
+                        <Y>1019</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1092" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-rechts" id="1093">
+                    <Label>Rechts</Label>
+                    <Location>
+                        <X>552</X>
+                        <Y>995</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1092" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="NEOVectorRed" id="1091">
+                    <Location>
+                        <X>552</X>
+                        <Y>965</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1089" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-links" id="1090">
+                    <Label>Links</Label>
+                    <Location>
+                        <X>552</X>
+                        <Y>941</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1089" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="727">
+                    <Location>
+                        <X>441</X>
+                        <Y>1057</Y>
+                    </Location>
+                    <BeforeBlockId>1084</BeforeBlockId>
+                    <AfterBlockId>724</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="728" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="729" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="724">
+                    <Location>
+                        <X>441</X>
+                        <Y>1111</Y>
+                    </Location>
+                    <BeforeBlockId>727</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="725" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="726" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="NEOVectorOff" id="726">
+                    <Location>
+                        <X>551</X>
+                        <Y>1138</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="724" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-rechts" id="725">
+                    <Label>Rechts</Label>
+                    <Location>
+                        <X>551</X>
+                        <Y>1114</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="724" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="NEOVectorOff" id="729">
+                    <Location>
+                        <X>551</X>
+                        <Y>1084</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="727" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="neo-links" id="728">
+                    <Location>
+                        <X>551</X>
+                        <Y>1060</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="727" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="switchcase" id="1084">
+                    <Location>
+                        <X>340</X>
+                        <Y>537</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Neopixel ansteuern</Text>
+                        <Location>
+                            <X>513</X>
+                            <Y>589</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>160</Width>
+                            <Height>43</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>715</BeforeBlockId>
+                    <AfterBlockId>742</AfterBlockId>
+                    <Sockets num-sockets="10">
+                        <BlockConnector con-block-id="1108" connector-kind="socket" connector-type="number" init-type="number" label="switch" position-type="single"/>
+                        <BlockConnector con-block-id="1085" connector-kind="socket" connector-type="number" init-type="number" label="case" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="" position-type="single"/>
+                        <BlockConnector con-block-id="1086" connector-kind="socket" connector-type="number" init-type="number" label="case" position-type="single"/>
+                        <BlockConnector con-block-id="1101" connector-kind="socket" connector-type="cmd" init-type="cmd" label="" position-type="single"/>
+                        <BlockConnector con-block-id="1087" connector-kind="socket" connector-type="number" init-type="number" label="case" position-type="single"/>
+                        <BlockConnector con-block-id="1095" connector-kind="socket" connector-type="cmd" init-type="cmd" label="" position-type="single"/>
+                        <BlockConnector con-block-id="1088" connector-kind="socket" connector-type="number" init-type="number" label="case" position-type="single"/>
+                        <BlockConnector con-block-id="1089" connector-kind="socket" connector-type="cmd" init-type="cmd" label="" position-type="single"/>
+                        <BlockConnector con-block-id="727" connector-kind="socket" connector-type="cmd" init-type="cmd" label="default" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1088">
+                    <Label>3</Label>
+                    <Location>
+                        <X>445</X>
+                        <Y>909</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1084" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1087">
+                    <Label>2</Label>
+                    <Location>
+                        <X>446</X>
+                        <Y>766</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1084" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1086">
+                    <Label>1</Label>
+                    <Location>
+                        <X>447</X>
+                        <Y>623</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1084" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1085">
+                    <Label>0</Label>
+                    <Location>
+                        <X>448</X>
+                        <Y>564</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1084" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_Print3" id="736">
+                    <Location>
+                        <X>261</X>
+                        <Y>195</Y>
+                    </Location>
+                    <BeforeBlockId>338</BeforeBlockId>
+                    <AfterBlockId>357</AfterBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="1107" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="737" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="740" connector-kind="socket" connector-type="string" init-type="string" label="size" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="setter_variable_number" id="357">
+                    <Location>
+                        <X>261</X>
+                        <Y>297</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Klatschdetektor</Text>
+                        <Location>
+                            <X>537</X>
+                            <Y>286</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>154</Width>
+                            <Height>38</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>736</BeforeBlockId>
+                    <AfterBlockId>732</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="358" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="711" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="if" id="732">
+                    <Location>
+                        <X>261</X>
+                        <Y>399</Y>
+                    </Location>
+                    <BeforeBlockId>357</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="733" connector-kind="socket" connector-type="boolean" init-type="boolean" label="teste" position-type="single"/>
+                        <BlockConnector con-block-id="715" connector-kind="socket" connector-type="cmd" init-type="cmd" label="dann" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="OLED_Print3" id="715">
+                    <Location>
+                        <X>340</X>
+                        <Y>435</Y>
+                    </Location>
+                    <BeforeBlockId>732</BeforeBlockId>
+                    <AfterBlockId>1084</AfterBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="722" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="717" connector-kind="socket" connector-type="string" init-type="string" label="size" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay" id="742">
+                    <Location>
+                        <X>340</X>
+                        <Y>1174</Y>
+                    </Location>
+                    <BeforeBlockId>1084</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="743" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="743">
+                    <Label>1000</Label>
+                    <Location>
+                        <X>462</X>
+                        <Y>1177</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="742" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_FontSize18" id="717">
+                    <Location>
+                        <X>454</X>
+                        <Y>510</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="715" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="722">
+                    <Label>n =\u0020</Label>
+                    <Location>
+                        <X>454</X>
+                        <Y>462</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="715" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="718" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="glue_sn" id="718">
+                    <Location>
+                        <X>538</X>
+                        <Y>462</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="722" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="719" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="719">
+                    <Label>claps</Label>
+                    <Location>
+                        <X>616</X>
+                        <Y>462</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="718" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="greater" id="733">
+                    <Location>
+                        <X>343</X>
+                        <Y>402</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="732" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="734" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                        <BlockConnector con-block-id="735" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="735">
+                    <Label>0</Label>
+                    <Location>
+                        <X>457</X>
+                        <Y>405</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="733" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="734">
+                    <Label>claps</Label>
+                    <Location>
+                        <X>353</X>
+                        <Y>405</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="733" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="MIC_Claps" id="711">
+                    <Location>
+                        <X>459</X>
+                        <Y>324</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="357" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="712" connector-kind="socket" connector-type="number" init-type="number" label="level" position-type="single"/>
+                        <BlockConnector con-block-id="713" connector-kind="socket" connector-type="number" init-type="number" label="min [s]" position-type="single"/>
+                        <BlockConnector con-block-id="714" connector-kind="socket" connector-type="number" init-type="number" label="max [s]" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="714">
+                    <Label>2.0</Label>
+                    <Location>
+                        <X>621</X>
+                        <Y>372</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="711" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="713">
+                    <Label>0.2</Label>
+                    <Location>
+                        <X>621</X>
+                        <Y>348</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="711" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="712">
+                    <Label>1200</Label>
+                    <Location>
+                        <X>621</X>
+                        <Y>324</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="711" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="358">
+                    <Label>claps</Label>
+                    <Location>
+                        <X>459</X>
+                        <Y>300</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="357" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_FontSize12" id="740">
+                    <Location>
+                        <X>375</X>
+                        <Y>270</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="736" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="737">
+                    <Label>Klatschen</Label>
+                    <Location>
+                        <X>375</X>
+                        <Y>222</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="736" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="program" id="338">
+                    <Location>
+                        <X>97</X>
+                        <Y>152</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Klatschdetektor:
+Nutzung des Mikrofons um die Anzahl von Klatschern zu erkennen und einen Neopixel anzusteuern
+
+Bei einem Klatscher: Neopixel grün
+Bei zwei Klatschern: Neopixel gelb
+Bei drei Klatschern: Neopixel rot
+Bei vier und mehr: Neopixel aus</Text>
+                        <Location>
+                            <X>92</X>
+                            <Y>1</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>765</Width>
+                            <Height>142</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="736" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

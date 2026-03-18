@@ -1,0 +1,21 @@
+Version V2.0
+Feetech Wheel-Mode, final Makey
+
+Version 1.0.1j 
+Smart-Servos
+
+Version 1.0.1h
+CH9102 für Makey, Englische Version Bugfix
+
+Version 1.0.1g: 16.12.2025
+SMARD Daten: auf Thingspeak-Kanal umgestellt
+
+Version 1.0.1f: 12.12.2025
+Makey on battery: Bugfix serielle Schnittstelle
+
+Version 1.0.1e: 03.12.2025
+Whatsapp: Bugfix ESP8266 Server
+
+
+
+ 

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2752">
+            <PageBlocks>
+                <Block genus-name="askGPT" id="1678">
+                    <Location>
+                        <X>493</X>
+                        <Y>165</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1684" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="1679" connector-kind="socket" connector-type="string" init-type="string" label="API-Key" position-type="single"/>
+                        <BlockConnector con-block-id="1680" connector-kind="socket" connector-type="string" init-type="string" label="model" position-type="single"/>
+                        <BlockConnector con-block-id="1681" connector-kind="socket" connector-type="string" init-type="string" label="promt" position-type="single"/>
+                        <BlockConnector con-block-id="1682" connector-kind="socket" connector-type="boolean" init-type="boolean" label="print all" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="false" id="1682">
+                    <Label>false</Label>
+                    <Location>
+                        <X>619</X>
+                        <Y>237</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1678" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="1681">
+                    <Label>Planning a 3-day trip to San Diego</Label>
+                    <Location>
+                        <X>619</X>
+                        <Y>213</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1678" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="1680">
+                    <Label>gpt-3.5-turbo</Label>
+                    <Location>
+                        <X>619</X>
+                        <Y>189</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1678" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="apikey" id="1679">
+                    <Label>mein API Key</Label>
+                    <Location>
+                        <X>619</X>
+                        <Y>165</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1678" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print" id="1683">
+                    <Location>
+                        <X>265</X>
+                        <Y>162</Y>
+                    </Location>
+                    <BeforeBlockId>1384</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1684" connector-kind="socket" connector-type="string" init-type="string" label="Nachricht" position-type="single"/>
+                        <BlockConnector con-block-id="1685" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="1685">
+                    <Label>true</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>261</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1683" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1684">
+                    <Label>message</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>165</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1683" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1678" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="connectWLANAP" id="1384">
+                    <Location>
+                        <X>265</X>
+                        <Y>108</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Chat mit ChatGPT
+API-Key kostenpflichtig</Text>
+                        <Location>
+                            <X>513</X>
+                            <Y>104</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>360</Width>
+                            <Height>56</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>191</BeforeBlockId>
+                    <AfterBlockId>1683</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1385" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="1386" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="passwort" id="1386">
+                    <Label>IoTWerkstatt</Label>
+                    <Location>
+                        <X>395</X>
+                        <Y>135</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1384" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="1385">
+                    <Label>hackathon</Label>
+                    <Location>
+                        <X>395</X>
+                        <Y>111</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1384" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="191">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1384" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

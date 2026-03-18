@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="variable_String" id="1245">
+                    <Label>Server</Label>
+                    <Location>
+                        <X>685</X>
+                        <Y>576</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="313" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print_num" id="318">
+                    <Location>
+                        <X>259</X>
+                        <Y>573</Y>
+                    </Location>
+                    <BeforeBlockId>305</BeforeBlockId>
+                    <AfterBlockId>322</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="320" connector-kind="socket" connector-type="number" init-type="number" label="Nachricht" position-type="single"/>
+                        <BlockConnector con-block-id="319" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay" id="322">
+                    <Location>
+                        <X>259</X>
+                        <Y>699</Y>
+                    </Location>
+                    <BeforeBlockId>318</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="323" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="323">
+                    <Label>5000</Label>
+                    <Location>
+                        <X>385</X>
+                        <Y>702</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="322" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="true" id="319">
+                    <Label>true</Label>
+                    <Location>
+                        <X>403</X>
+                        <Y>672</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="318" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="glue_ns" id="320">
+                    <Location>
+                        <X>403</X>
+                        <Y>576</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="318" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="313" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="askThingsboard" id="313">
+                    <Location>
+                        <X>481</X>
+                        <Y>576</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="320" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="1245" connector-kind="socket" connector-type="string" init-type="string" label="host" position-type="single"/>
+                        <BlockConnector con-block-id="315" connector-kind="socket" connector-type="string" init-type="string" label="device" position-type="single"/>
+                        <BlockConnector con-block-id="316" connector-kind="socket" connector-type="string" init-type="string" label="key" position-type="single"/>
+                        <BlockConnector con-block-id="321" connector-kind="socket" connector-type="string" init-type="string" label="JWT" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_String" id="321">
+                    <Label>JWT</Label>
+                    <Location>
+                        <X>685</X>
+                        <Y>648</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="313" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="316">
+                    <Label>Temperature</Label>
+                    <Location>
+                        <X>685</X>
+                        <Y>624</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="313" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="315">
+                    <Label>5c94af80-6489-11ef-90b4-5f9b68f86761</Label>
+                    <Location>
+                        <X>685</X>
+                        <Y>600</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="313" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String" id="1244">
+                    <Label>Server</Label>
+                    <Location>
+                        <X>580</X>
+                        <Y>288</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="301" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_String" id="298">
+                    <Location>
+                        <X>260</X>
+                        <Y>261</Y>
+                    </Location>
+                    <BeforeBlockId>295</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="299" connector-kind="socket" connector-type="string" init-type="string" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="301" connector-kind="socket" connector-type="string" init-type="string" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="requestJWT" id="301">
+                    <Location>
+                        <X>444</X>
+                        <Y>288</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="298" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="1244" connector-kind="socket" connector-type="string" init-type="string" label="host" position-type="single"/>
+                        <BlockConnector con-block-id="303" connector-kind="socket" connector-type="string" init-type="string" label="user" position-type="single"/>
+                        <BlockConnector con-block-id="304" connector-kind="socket" connector-type="string" init-type="string" label="pass" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="apikey" id="304">
+                    <Label>tenant</Label>
+                    <Location>
+                        <X>580</X>
+                        <Y>336</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="301" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="303">
+                    <Label>tenant@thingsboard.org</Label>
+                    <Location>
+                        <X>580</X>
+                        <Y>312</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="301" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String" id="299">
+                    <Label>JWT</Label>
+                    <Location>
+                        <X>444</X>
+                        <Y>264</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="298" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String" id="927">
+                    <Label>Server</Label>
+                    <Location>
+                        <X>465</X>
+                        <Y>378</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="305" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_String" id="924">
+                    <Location>
+                        <X>260</X>
+                        <Y>153</Y>
+                    </Location>
+                    <BeforeBlockId>294</BeforeBlockId>
+                    <AfterBlockId>295</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="925" connector-kind="socket" connector-type="string" init-type="string" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="926" connector-kind="socket" connector-type="string" init-type="string" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="message" id="926">
+                    <Label>192.168.137.50:8080</Label>
+                    <Location>
+                        <X>444</X>
+                        <Y>180</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="924" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_String" id="925">
+                    <Label>Server</Label>
+                    <Location>
+                        <X>444</X>
+                        <Y>156</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="924" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="pin-read-analog" id="922">
+                    <Location>
+                        <X>527</X>
+                        <Y>450</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="309" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="923" connector-kind="socket" connector-type="number" init-type="number" label="Pin" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="923">
+                    <Label>0</Label>
+                    <Location>
+                        <X>757</X>
+                        <Y>450</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="922" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="GetBSEC" id="311">
+                    <Location>
+                        <X>745</X>
+                        <Y>396</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="312" connector-kind="socket" connector-type="number" init-type="number" label="Sensor" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BSECVectorTemp" id="312">
+                    <Location>
+                        <X>967</X>
+                        <Y>396</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="311" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="294">
+                    <Location>
+                        <X>95</X>
+                        <Y>145</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="924" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="305" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="sendThingsboard" id="305">
+                    <Location>
+                        <X>259</X>
+                        <Y>375</Y>
+                    </Location>
+                    <BeforeBlockId>294</BeforeBlockId>
+                    <AfterBlockId>318</AfterBlockId>
+                    <Sockets num-sockets="8">
+                        <BlockConnector con-block-id="927" connector-kind="socket" connector-type="string" init-type="string" label="Server" position-type="single"/>
+                        <BlockConnector con-block-id="605" connector-kind="socket" connector-type="string" init-type="string" label="Access Token" position-type="single"/>
+                        <BlockConnector con-block-id="308" connector-kind="socket" connector-type="string" init-type="string" label="Name" position-type="single"/>
+                        <BlockConnector con-block-id="309" connector-kind="socket" connector-type="string" init-type="string" label="Data" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="Name" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="Data" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="Name" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="Data" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="glue_sn" id="309">
+                    <Label>Value</Label>
+                    <Location>
+                        <X>465</X>
+                        <Y>450</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="305" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="922" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="text" id="308">
+                    <Label>Temperature</Label>
+                    <Location>
+                        <X>465</X>
+                        <Y>426</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="305" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="apikey" id="605">
+                    <Label>vy2z9etpo8nx6md59txl</Label>
+                    <Location>
+                        <X>465</X>
+                        <Y>402</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="305" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="connectWLANAP" id="295">
+                    <Location>
+                        <X>260</X>
+                        <Y>207</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Kommunikation mit Thingsboard. 
+Hier lokales Thingsboard im Intranet (Raspi)
+HTTP-REST (alternativ auch MQTT möglich)
+Beispiel schreibt und liest den gleichen Key Temperature
+(Normalerweise eher zwei verschiedene Keys)</Text>
+                        <Location>
+                            <X>703</X>
+                            <Y>181</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>479</Width>
+                            <Height>120</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>924</BeforeBlockId>
+                    <AfterBlockId>298</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="296" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="297" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="passwort" id="297">
+                    <Label>IoTWerkstatt</Label>
+                    <Location>
+                        <X>390</X>
+                        <Y>234</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="295" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="296">
+                    <Label>hackathon</Label>
+                    <Location>
+                        <X>390</X>
+                        <Y>210</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="295" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

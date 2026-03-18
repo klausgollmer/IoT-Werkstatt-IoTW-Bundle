@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="SMTP_Config" id="672">
+                    <Location>
+                        <X>265</X>
+                        <Y>162</Y>
+                    </Location>
+                    <BeforeBlockId>330</BeforeBlockId>
+                    <Sockets num-sockets="5">
+                        <BlockConnector con-block-id="673" connector-kind="socket" connector-type="string" init-type="string" label="smtp host" position-type="single"/>
+                        <BlockConnector con-block-id="674" connector-kind="socket" connector-type="number" init-type="number" label="port" position-type="single"/>
+                        <BlockConnector con-block-id="336" connector-kind="socket" connector-type="string" init-type="string" label="author" position-type="single"/>
+                        <BlockConnector con-block-id="337" connector-kind="socket" connector-type="string" init-type="string" label="app pass" position-type="single"/>
+                        <BlockConnector con-block-id="677" connector-kind="socket" connector-type="number" init-type="number" label="rate mail/h" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="677">
+                    <Label>5</Label>
+                    <Location>
+                        <X>423</X>
+                        <Y>261</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="672" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="GPRSpass" id="337">
+                    <Label>mein gmail app passwort (nicht das gmail passwort)</Label>
+                    <Location>
+                        <X>423</X>
+                        <Y>237</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="672" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="336">
+                    <Label>xxxxt@gmail.com</Label>
+                    <Location>
+                        <X>423</X>
+                        <Y>213</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="672" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="674">
+                    <Label>587</Label>
+                    <Location>
+                        <X>423</X>
+                        <Y>189</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="672" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="673">
+                    <Label>smtp.gmail.com</Label>
+                    <Location>
+                        <X>423</X>
+                        <Y>165</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="672" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="delay" id="342">
+                    <Location>
+                        <X>264</X>
+                        <Y>377</Y>
+                    </Location>
+                    <BeforeBlockId>338</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="343" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="343">
+                    <Label>60000</Label>
+                    <Location>
+                        <X>386</X>
+                        <Y>380</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="342" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SMTP_Send" id="338">
+                    <Location>
+                        <X>264</X>
+                        <Y>299</Y>
+                    </Location>
+                    <BeforeBlockId>329</BeforeBlockId>
+                    <AfterBlockId>342</AfterBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="339" connector-kind="socket" connector-type="string" init-type="string" label="recipient" position-type="single"/>
+                        <BlockConnector con-block-id="340" connector-kind="socket" connector-type="string" init-type="string" label="subject" position-type="single"/>
+                        <BlockConnector con-block-id="341" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="text" id="341">
+                    <Label>Message Text, hello Makey</Label>
+                    <Location>
+                        <X>406</X>
+                        <Y>350</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="338" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="340">
+                    <Label>Subject from Makey:Lab</Label>
+                    <Location>
+                        <X>406</X>
+                        <Y>326</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="338" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="339">
+                    <Label>xxxx@mailyxz.de</Label>
+                    <Location>
+                        <X>406</X>
+                        <Y>302</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="338" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="connectWLANAP" id="330">
+                    <Location>
+                        <X>265</X>
+                        <Y>108</Y>
+                    </Location>
+                    <BeforeBlockId>329</BeforeBlockId>
+                    <AfterBlockId>672</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="331" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="332" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="passwort" id="332">
+                    <Label>IoTWerkstatt</Label>
+                    <Location>
+                        <X>381</X>
+                        <Y>135</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="330" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="331">
+                    <Label>hackathon</Label>
+                    <Location>
+                        <X>381</X>
+                        <Y>111</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="330" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="329">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="330" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="338" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

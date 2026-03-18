@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="pin-read-analog" id="306">
+                    <Location>
+                        <X>434</X>
+                        <Y>146</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="302" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="307" connector-kind="socket" connector-type="number" init-type="number" label="Pin" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="307">
+                    <Label>0</Label>
+                    <Location>
+                        <X>664</X>
+                        <Y>146</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="306" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_DispArray" id="302">
+                    <Location>
+                        <X>264</X>
+                        <Y>143</Y>
+                    </Location>
+                    <BeforeBlockId>301</BeforeBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="306" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+                        <BlockConnector con-block-id="303" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="304" connector-kind="socket" connector-type="number" init-type="number" label="min" position-type="single"/>
+                        <BlockConnector con-block-id="305" connector-kind="socket" connector-type="number" init-type="number" label="max" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="305">
+                    <Label>45</Label>
+                    <Location>
+                        <X>434</X>
+                        <Y>218</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="302" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="304">
+                    <Label>0</Label>
+                    <Location>
+                        <X>434</X>
+                        <Y>194</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="302" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="303">
+                    <Label>my data</Label>
+                    <Location>
+                        <X>434</X>
+                        <Y>170</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="302" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="program" id="301">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="302" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

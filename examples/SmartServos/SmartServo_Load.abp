@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="variable_number" id="1152">
+                    <Label>id</Label>
+                    <Location>
+                        <X>547</X>
+                        <Y>530</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="778" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="1151">
+                    <Label>id</Label>
+                    <Location>
+                        <X>547</X>
+                        <Y>452</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="774" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="1150">
+                    <Label>id</Label>
+                    <Location>
+                        <X>400</X>
+                        <Y>362</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="768" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1149">
+                    <Label>2</Label>
+                    <Location>
+                        <X>452</X>
+                        <Y>206</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1147" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1147">
+                    <Location>
+                        <X>268</X>
+                        <Y>179</Y>
+                    </Location>
+                    <BeforeBlockId>365</BeforeBlockId>
+                    <AfterBlockId>366</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1148" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="1149" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1148">
+                    <Label>id</Label>
+                    <Location>
+                        <X>452</X>
+                        <Y>182</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1147" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SmartServoVectorFeetechSCS" id="367">
+                    <Location>
+                        <X>430</X>
+                        <Y>236</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="366" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="delay" id="782">
+                    <Location>
+                        <X>267</X>
+                        <Y>605</Y>
+                    </Location>
+                    <BeforeBlockId>777</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="783" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="783">
+                    <Label>300</Label>
+                    <Location>
+                        <X>389</X>
+                        <Y>608</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="782" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print_num" id="777">
+                    <Label>serial print</Label>
+                    <Location>
+                        <X>267</X>
+                        <Y>527</Y>
+                    </Location>
+                    <BeforeBlockId>772</BeforeBlockId>
+                    <AfterBlockId>782</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="778" connector-kind="socket" connector-type="number" init-type="number" label="Message" position-type="single"/>
+                        <BlockConnector con-block-id="781" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="781">
+                    <Label>true</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>578</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="777" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SmartServoGet" id="778">
+                    <Label>Smart Servo</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>530</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="777" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1152" connector-kind="socket" connector-type="number" init-type="number" label="id" position-type="single"/>
+                        <BlockConnector con-block-id="780" connector-kind="socket" connector-type="number" init-type="number" label="mode" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="SmartServoVectorTorqueGet" id="780">
+                    <Location>
+                        <X>547</X>
+                        <Y>554</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="778" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SmartServoGet" id="774">
+                    <Label>Smart Servo</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>452</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="772" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1151" connector-kind="socket" connector-type="number" init-type="number" label="id" position-type="single"/>
+                        <BlockConnector con-block-id="776" connector-kind="socket" connector-type="number" init-type="number" label="mode" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="SmartServoVectorPositionGetDeg" id="776">
+                    <Location>
+                        <X>547</X>
+                        <Y>476</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="774" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print_num" id="772">
+                    <Location>
+                        <X>267</X>
+                        <Y>449</Y>
+                    </Location>
+                    <BeforeBlockId>365</BeforeBlockId>
+                    <AfterBlockId>777</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="774" connector-kind="socket" connector-type="number" init-type="number" label="Message" position-type="single"/>
+                        <BlockConnector con-block-id="773" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="773">
+                    <Label>true</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>500</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="772" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SmartServoSet" id="768">
+                    <Location>
+                        <X>268</X>
+                        <Y>359</Y>
+                    </Location>
+                    <BeforeBlockId>366</BeforeBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="1150" connector-kind="socket" connector-type="number" init-type="number" label="id" position-type="single"/>
+                        <BlockConnector con-block-id="770" connector-kind="socket" connector-type="number" init-type="number" label="mode" position-type="single"/>
+                        <BlockConnector con-block-id="771" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="771">
+                    <Label>150</Label>
+                    <Location>
+                        <X>400</X>
+                        <Y>410</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="768" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SmartServoVectorPositionSetDeg" id="770">
+                    <Location>
+                        <X>400</X>
+                        <Y>386</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="768" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="365">
+                    <Location>
+                        <X>103</X>
+                        <Y>171</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Lastmessung am Servo id 2</Text>
+                        <Location>
+                            <X>102</X>
+                            <Y>121</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>481</Width>
+                            <Height>35</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1147" connector-kind="socket" connector-type="cmd" init-type="cmd" label="setup" position-type="single"/>
+                        <BlockConnector con-block-id="772" connector-kind="socket" connector-type="cmd" init-type="cmd" label="loop" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="SmartServoStart" id="366">
+                    <Location>
+                        <X>268</X>
+                        <Y>233</Y>
+                    </Location>
+                    <BeforeBlockId>1147</BeforeBlockId>
+                    <AfterBlockId>768</AfterBlockId>
+                    <Sockets num-sockets="5">
+                        <BlockConnector con-block-id="367" connector-kind="socket" connector-type="number" init-type="number" label="type" position-type="single"/>
+                        <BlockConnector con-block-id="368" connector-kind="socket" connector-type="number" init-type="number" label="serial" position-type="single"/>
+                        <BlockConnector con-block-id="369" connector-kind="socket" connector-type="number" init-type="number" label="rx" position-type="single"/>
+                        <BlockConnector con-block-id="370" connector-kind="socket" connector-type="number" init-type="number" label="tx" position-type="single"/>
+                        <BlockConnector con-block-id="371" connector-kind="socket" connector-type="number" init-type="number" label="baud" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="371">
+                    <Label>1000000</Label>
+                    <Location>
+                        <X>430</X>
+                        <Y>332</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="366" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="370">
+                    <Label>17</Label>
+                    <Location>
+                        <X>430</X>
+                        <Y>308</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="366" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="369">
+                    <Label>16</Label>
+                    <Location>
+                        <X>430</X>
+                        <Y>284</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="366" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="368">
+                    <Label>2</Label>
+                    <Location>
+                        <X>430</X>
+                        <Y>260</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="366" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

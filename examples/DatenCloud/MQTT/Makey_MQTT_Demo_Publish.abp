@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2752">
+            <PageBlocks>
+                <Block genus-name="message" id="1464">
+                    <Label>Makey/Temp</Label>
+                    <Location>
+                        <X>409</X>
+                        <Y>327</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1460" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay" id="112">
+                    <Label>Warte</Label>
+                    <Location>
+                        <X>249</X>
+                        <Y>402</Y>
+                    </Location>
+                    <BeforeBlockId>1460</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="113" connector-kind="socket" connector-type="number" init-type="number" label="Millisekunden" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="113">
+                    <Label>5000</Label>
+                    <Location>
+                        <X>385</X>
+                        <Y>405</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="112" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="glue_sn" id="571">
+                    <Label>verbinde</Label>
+                    <Location>
+                        <X>409</X>
+                        <Y>351</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1460" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1177" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="GetBSEC" id="1177">
+                    <Location>
+                        <X>487</X>
+                        <Y>351</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="571" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1178" connector-kind="socket" connector-type="number" init-type="number" label="Sensor" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BSECVectorTemp" id="1178">
+                    <Location>
+                        <X>709</X>
+                        <Y>351</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1177" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="mqttpublish" id="1460">
+                    <Location>
+                        <X>249</X>
+                        <Y>324</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Anzeige der Daten über einen beliebigen mqtt-Client, z.B. mit mqtt-spy 
+https://kamilfb.github.io/mqtt-spy/
+Oder das Consumer-Beispiel von Makey:Lab</Text>
+                        <Location>
+                            <X>567</X>
+                            <Y>258</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>695</Width>
+                            <Height>70</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>81</BeforeBlockId>
+                    <AfterBlockId>112</AfterBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="1464" connector-kind="socket" connector-type="string" init-type="string" label="Topic" position-type="single"/>
+                        <BlockConnector con-block-id="571" connector-kind="socket" connector-type="string" init-type="string" label="Text" position-type="single"/>
+                        <BlockConnector con-block-id="1463" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Retained" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="1463">
+                    <Label>true</Label>
+                    <Location>
+                        <X>409</X>
+                        <Y>375</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1460" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="81">
+                    <Location>
+                        <X>85</X>
+                        <Y>148</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="258" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="1460" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="connectWLANAP" id="258">
+                    <Location>
+                        <X>250</X>
+                        <Y>156</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Demo zur Einführung in MQTT mit Producer und Consumer. Dies ist der Producer (d.h. der Erzeuger der Daten). Producer und Consumer nutzen das gleiche Topic. Das Topic identifiziert die Nachricht
+www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices
+Bitte ein eigenes Topic wählen. Das Topic darf nicht in einer Varaiblen definiert werden.</Text>
+                        <Location>
+                            <X>560</X>
+                            <Y>99</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>693</Width>
+                            <Height>89</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>81</BeforeBlockId>
+                    <AfterBlockId>85</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="259" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="260" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="mqttconnect" id="85">
+                    <Location>
+                        <X>250</X>
+                        <Y>210</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Verbindung zum MQTT-Broker herstellen, der Broker speichert und vermittelt die Nachrichten. Wir Nutzen hier den öffenlichen Demo-Broker von HIVEMW: http://www.mqtt-dashboard.com/</Text>
+                        <Location>
+                            <X>564</X>
+                            <Y>197</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>690</Width>
+                            <Height>55</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>258</BeforeBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="86" connector-kind="socket" connector-type="string" init-type="string" label="Broker" position-type="single"/>
+                        <BlockConnector con-block-id="87" connector-kind="socket" connector-type="string" init-type="string" label="Client" position-type="single"/>
+                        <BlockConnector con-block-id="88" connector-kind="socket" connector-type="string" init-type="string" label="Key" position-type="single"/>
+                        <BlockConnector con-block-id="89" connector-kind="socket" connector-type="string" init-type="string" label="Key" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="ssid" id="89">
+                    <Label>passwort</Label>
+                    <Location>
+                        <X>356</X>
+                        <Y>285</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="88">
+                    <Label>user</Label>
+                    <Location>
+                        <X>356</X>
+                        <Y>261</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="mqttclient" id="87">
+                    <Label>MyProducer</Label>
+                    <Location>
+                        <X>356</X>
+                        <Y>237</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="mqttbroker" id="86">
+                    <Label>broker.mqtt-dashboard.com</Label>
+                    <Location>
+                        <X>356</X>
+                        <Y>213</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="passwort" id="260">
+                    <Label>IoTWerkstatt</Label>
+                    <Location>
+                        <X>380</X>
+                        <Y>183</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="258" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="259">
+                    <Label>hackathon</Label>
+                    <Location>
+                        <X>380</X>
+                        <Y>159</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="258" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

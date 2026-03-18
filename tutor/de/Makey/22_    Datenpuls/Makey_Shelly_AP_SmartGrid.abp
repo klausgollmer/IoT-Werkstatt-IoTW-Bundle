@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2867">
+            <PageBlocks>
+                <Block genus-name="program" id="193">
+                    <Location>
+                        <X>69</X>
+                        <Y>231</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Unsere Idee: Intelligentes Stromnetz
+
+Frage bei der Bundesnetzagentur (SMARD.de) nach der aktuellen Stromproduktion in Deutschland. Abhänging vom Anteil regenerativer Energie schalte zuhause eine IoT-Steckdose (Shelley) um z.B. den elektrischen Rasenmäher zu laden. 
+
+Wir nutzen das studentische Projekt datenpuls.umwelt-campus.de zur Berechnung des Anteils an erneuerbaren Energien.
+
+Gestartet im Makerspace. Natürlich könnte man so ähnlich auch Waschmaschine, Geschirrspüler oder andere Haushaltsgeräte quasi im Retrofit an unserem intelligenten Stromnetz in Deutschland mitspielen lassen.</Text>
+                        <Location>
+                            <X>61</X>
+                            <Y>25</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>1021</Width>
+                            <Height>191</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="1089" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="connectWLANAP" id="1089">
+                    <Location>
+                        <X>233</X>
+                        <Y>274</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Den Anteil erneuerbarer Energie aus dem Internet abfragen und einen lokalen Shelly schalten. DIY Smart Grid</Text>
+                        <Location>
+                            <X>647</X>
+                            <Y>270</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>446</Width>
+                            <Height>72</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>193</BeforeBlockId>
+                    <AfterBlockId>1106</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1090" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="1091" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1106">
+                    <Location>
+                        <X>233</X>
+                        <Y>328</Y>
+                    </Location>
+                    <BeforeBlockId>1089</BeforeBlockId>
+                    <AfterBlockId>1125</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1127" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="1103" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="serial_print_num" id="1125">
+                    <Location>
+                        <X>233</X>
+                        <Y>406</Y>
+                    </Location>
+                    <BeforeBlockId>1106</BeforeBlockId>
+                    <AfterBlockId>406</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1109" connector-kind="socket" connector-type="number" init-type="number" label="Nachricht" position-type="single"/>
+                        <BlockConnector con-block-id="1126" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="connectWLANAP" id="406">
+                    <Label>WLAN</Label>
+                    <Location>
+                        <X>233</X>
+                        <Y>460</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Kommunikation mit dem Shelly Plug (eigene SSID ergänzen)
+IoT steuerbare Steckdose</Text>
+                        <Location>
+                            <X>667</X>
+                            <Y>436</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>434</Width>
+                            <Height>55</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>1125</BeforeBlockId>
+                    <AfterBlockId>1113</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="407" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="ifelse" id="1113">
+                    <Location>
+                        <X>233</X>
+                        <Y>514</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Bei mehr als 50 % schalten wir den elektrischen Verbraucher am Shelly an</Text>
+                        <Location>
+                            <X>673</X>
+                            <Y>515</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>431</Width>
+                            <Height>76</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>406</BeforeBlockId>
+                    <AfterBlockId>1123</AfterBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="1114" connector-kind="socket" connector-type="boolean" init-type="boolean" label="teste" position-type="single"/>
+                        <BlockConnector con-block-id="1117" connector-kind="socket" connector-type="cmd" init-type="cmd" label="dann" position-type="single"/>
+                        <BlockConnector con-block-id="1120" connector-kind="socket" connector-type="cmd" init-type="cmd" label="sonst" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay" id="1123">
+                    <Location>
+                        <X>233</X>
+                        <Y>678</Y>
+                    </Location>
+                    <BeforeBlockId>1113</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1124" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1124">
+                    <Label>60000</Label>
+                    <Location>
+                        <X>355</X>
+                        <Y>681</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1123" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="sendShelly" id="1120">
+                    <Location>
+                        <X>363</X>
+                        <Y>615</Y>
+                    </Location>
+                    <BeforeBlockId>1113</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1121" connector-kind="socket" connector-type="string" init-type="string" label="Server" position-type="single"/>
+                        <BlockConnector con-block-id="1122" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="digital-low" id="1122">
+                    <Location>
+                        <X>505</X>
+                        <Y>642</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1120" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="host" id="1121">
+                    <Label>192.168.33.1</Label>
+                    <Location>
+                        <X>505</X>
+                        <Y>618</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1120" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="sendShelly" id="1117">
+                    <Location>
+                        <X>364</X>
+                        <Y>550</Y>
+                    </Location>
+                    <BeforeBlockId>1113</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1118" connector-kind="socket" connector-type="string" init-type="string" label="Server" position-type="single"/>
+                        <BlockConnector con-block-id="1119" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="digital-high" id="1119">
+                    <Label>HIGH</Label>
+                    <Location>
+                        <X>506</X>
+                        <Y>577</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1117" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="host" id="1118">
+                    <Label>192.168.33.1</Label>
+                    <Location>
+                        <X>506</X>
+                        <Y>553</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1117" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="greater" id="1114">
+                    <Location>
+                        <X>367</X>
+                        <Y>517</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1113" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1115" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                        <BlockConnector con-block-id="1116" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1116">
+                    <Label>50</Label>
+                    <Location>
+                        <X>483</X>
+                        <Y>520</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1114" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number_double" id="1115">
+                    <Label>Anteil</Label>
+                    <Location>
+                        <X>377</X>
+                        <Y>520</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1114" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="407">
+                    <Label>shellyplug-s-88561B</Label>
+                    <Location>
+                        <X>363</X>
+                        <Y>463</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="406" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="true" id="1126">
+                    <Label>true</Label>
+                    <Location>
+                        <X>377</X>
+                        <Y>433</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1125" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number_double" id="1109">
+                    <Label>Anteil</Label>
+                    <Location>
+                        <X>377</X>
+                        <Y>409</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1125" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="askSMARD" id="1103">
+                    <Location>
+                        <X>417</X>
+                        <Y>355</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1106" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1104" connector-kind="socket" connector-type="number" init-type="number" label="Typ" position-type="single"/>
+                        <BlockConnector con-block-id="1105" connector-kind="socket" connector-type="number" init-type="number" label="Vorhersagezeit (h)" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1105">
+                    <Label>0</Label>
+                    <Location>
+                        <X>657</X>
+                        <Y>379</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Aktueller Anteil erneuerbarer Energie abfragen (Vorhersagezeit = 0)</Text>
+                        <Location>
+                            <X>815</X>
+                            <Y>351</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>282</Width>
+                            <Height>65</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Plug>
+                        <BlockConnector con-block-id="1103" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SMARDVectRen" id="1104">
+                    <Location>
+                        <X>657</X>
+                        <Y>355</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1103" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number_double" id="1127">
+                    <Label>Anteil</Label>
+                    <Location>
+                        <X>417</X>
+                        <Y>331</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1106" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="passwort" id="1091">
+                    <Label>IoTWerkstatt</Label>
+                    <Location>
+                        <X>363</X>
+                        <Y>301</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1089" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="1090">
+                    <Label>hackathon</Label>
+                    <Location>
+                        <X>363</X>
+                        <Y>277</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1089" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

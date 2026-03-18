@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="program" id="284">
+                    <Location>
+                        <X>53</X>
+                        <Y>290</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Hier fehlt Deine Idee !
+
+Lass Deine Idee Wirklichkeit werden. Auf der Webseite der IoT-Werkstatt am Umwelt-Campus Birkenfeld findest Du Inspiration aus verschieden Hackathon Veranstaltungen, studentischen Initiativen oder Forschungsprojekten. 
+Makey:Lab ist der ideale Innovationscoach von der Grundschule über Schule / Berufsschule bis hin zum Studium und Beruf.</Text>
+                        <Location>
+                            <X>46</X>
+                            <Y>148</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>891</Width>
+                            <Height>121</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

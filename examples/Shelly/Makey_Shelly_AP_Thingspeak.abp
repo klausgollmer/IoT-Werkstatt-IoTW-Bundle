@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2752">
+            <PageBlocks>
+                <Block genus-name="variable_number" id="1099">
+                    <Label>Leistung</Label>
+                    <Location>
+                        <X>396</X>
+                        <Y>435</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1092" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="1098">
+                    <Label>Leistung</Label>
+                    <Location>
+                        <X>368</X>
+                        <Y>231</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1083" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1095">
+                    <Location>
+                        <X>184</X>
+                        <Y>126</Y>
+                    </Location>
+                    <BeforeBlockId>406</BeforeBlockId>
+                    <AfterBlockId>1083</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1096" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="698" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="getShelly2" id="698">
+                    <Location>
+                        <X>368</X>
+                        <Y>153</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Daten auslesen
+und merken</Text>
+                        <Location>
+                            <X>684</X>
+                            <Y>156</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>152</Width>
+                            <Height>62</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Plug>
+                        <BlockConnector con-block-id="1095" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="699" connector-kind="socket" connector-type="string" init-type="string" label="Server" position-type="single"/>
+                        <BlockConnector con-block-id="700" connector-kind="socket" connector-type="number" init-type="number" label="Generation" position-type="single"/>
+                        <BlockConnector con-block-id="701" connector-kind="socket" connector-type="number" init-type="number" label="Val" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="ShellyVectorPower" id="701">
+                    <Label>Power [W]</Label>
+                    <Location>
+                        <X>544</X>
+                        <Y>201</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="698" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ShellyVectorGen1" id="700">
+                    <Location>
+                        <X>544</X>
+                        <Y>177</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="698" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="host" id="699">
+                    <Label>192.168.33.1</Label>
+                    <Location>
+                        <X>544</X>
+                        <Y>153</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="698" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="1096">
+                    <Label>Leistung</Label>
+                    <Location>
+                        <X>368</X>
+                        <Y>129</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1095" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="connectWLANAP" id="406">
+                    <Label>WLAN</Label>
+                    <Location>
+                        <X>184</X>
+                        <Y>72</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Kommunikation mit dem Shelly Plug (eigene SSID ergänzen)
+Daten als Zeitreihe visualisieren und in die Cloud senden</Text>
+                        <Location>
+                            <X>492</X>
+                            <Y>68</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>346</Width>
+                            <Height>52</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>193</BeforeBlockId>
+                    <AfterBlockId>1095</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="407" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="ssid" id="407">
+                    <Label>shellyplug-s-88561B</Label>
+                    <Location>
+                        <X>314</X>
+                        <Y>75</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="406" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="delay" id="1087">
+                    <Location>
+                        <X>184</X>
+                        <Y>630</Y>
+                    </Location>
+                    <BeforeBlockId>1092</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1088" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1088">
+                    <Label>2000</Label>
+                    <Location>
+                        <X>308</X>
+                        <Y>633</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1087" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="sendThingspeak" id="1092">
+                    <Location>
+                        <X>184</X>
+                        <Y>384</Y>
+                    </Location>
+                    <Comment>
+                        <Text>In Thingspeak-Cloud senden (eigenen API-Key ergänzen)</Text>
+                        <Location>
+                            <X>680</X>
+                            <Y>432</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>163</Width>
+                            <Height>79</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>1089</BeforeBlockId>
+                    <AfterBlockId>1087</AfterBlockId>
+                    <Sockets num-sockets="10">
+                        <BlockConnector con-block-id="1093" connector-kind="socket" connector-type="string" init-type="string" label="Server" position-type="single"/>
+                        <BlockConnector con-block-id="1094" connector-kind="socket" connector-type="string" init-type="string" label="API-Key" position-type="single"/>
+                        <BlockConnector con-block-id="1099" connector-kind="socket" connector-type="number" init-type="number" label="Feld 1" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 2" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 3" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 4" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 5" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 6" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 7" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 8" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="apikey" id="1094">
+                    <Label>Mein Api-Key</Label>
+                    <Location>
+                        <X>396</X>
+                        <Y>411</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1092" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="host" id="1093">
+                    <Label>api.thingspeak.com</Label>
+                    <Location>
+                        <X>396</X>
+                        <Y>387</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1092" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="connectWLANAP" id="1089">
+                    <Location>
+                        <X>184</X>
+                        <Y>330</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Mit Internet verbinden</Text>
+                        <Location>
+                            <X>681</X>
+                            <Y>362</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>161</Width>
+                            <Height>57</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>1083</BeforeBlockId>
+                    <AfterBlockId>1092</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1090" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="1091" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="passwort" id="1091">
+                    <Label>IoTWerkstatt</Label>
+                    <Location>
+                        <X>314</X>
+                        <Y>357</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1089" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="1090">
+                    <Label>hackathon</Label>
+                    <Location>
+                        <X>314</X>
+                        <Y>333</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1089" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_DispArray" id="1083">
+                    <Location>
+                        <X>184</X>
+                        <Y>228</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Visualisieren</Text>
+                        <Location>
+                            <X>683</X>
+                            <Y>263</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>156</Width>
+                            <Height>40</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>1095</BeforeBlockId>
+                    <AfterBlockId>1089</AfterBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="1098" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+                        <BlockConnector con-block-id="1084" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="1085" connector-kind="socket" connector-type="number" init-type="number" label="min" position-type="single"/>
+                        <BlockConnector con-block-id="1086" connector-kind="socket" connector-type="number" init-type="number" label="max" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1086">
+                    <Label>45</Label>
+                    <Location>
+                        <X>368</X>
+                        <Y>303</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1083" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1085">
+                    <Label>0</Label>
+                    <Location>
+                        <X>368</X>
+                        <Y>279</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1083" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1084">
+                    <Label>my data</Label>
+                    <Location>
+                        <X>368</X>
+                        <Y>255</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1083" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="program" id="193">
+                    <Location>
+                        <X>20</X>
+                        <Y>29</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="406" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

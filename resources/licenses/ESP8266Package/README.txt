@@ -1,0 +1,40 @@
+## ESP8266 Arduino Package
+
+Dieses Repository enthält das ESP8266-Arduino-Board-Package
+**in exakt der Form, wie es durch den Arduino Boardmanager installiert wurde**.
+Das Paket wurde **nicht verändert** und wird lediglich zur vereinfachten
+Nutzung innerhalb dieser Entwicklungsumgebung mitgeliefert.
+
+**Quelle (Upstream-Projekt):**  
+https://github.com/esp8266/Arduino
+
+### Lizenzhinweis
+
+Das ESP8266-Arduino-Package umfasst verschiedene Komponenten
+(ESP8266 Arduino Core, Toolchain, esptool, SDKs, Bibliotheken usw.),
+die jeweils unter ihren **ursprünglichen Lizenzen** stehen.
+
+Da das vollständige Paket unverändert aus der Boardmanager-Installation übernommen wurde,
+kann dieses Repository **keine Aussagen über die enthaltenen oder fehlenden
+Lizenzdateien machen**.  
+Für Lizenzinformationen gelten ausschließlich die Bedingungen und
+Dokumentationen des jeweiligen Originalprojekts.
+
+Bitte beachten Sie die Lizenzhinweise im Upstream-Repository:
+https://github.com/esp8266/Arduino
+
+License and credits
+
+Arduino IDE is developed and maintained by the Arduino team. The IDE is licensed under GPL.
+ESP8266 core includes an xtensa gcc toolchain, which is also under GPL.
+Esptool.py was initially created by Fredrik Ahlberg (@themadinventor, @kongo), and is currently maintained by Angus Gratton (@projectgus) under GPL 2.0 license.
+Espressif's NONOS SDK included in this build is under Espressif MIT License.
+ESP8266 core files are licensed under LGPL.
+SPI Flash File System (SPIFFS) written by Peter Andersson is used in this project. It is distributed under the MIT license.
+umm_malloc memory management library written by Ralph Hempel is used in this project. It is distributed under the MIT license.
+SoftwareSerial library and examples written by Peter Lerup. Distributed under LGPL 2.1.
+BearSSL library written by Thomas Pornin, built from https://github.com/earlephilhower/bearssl-esp8266, is used in this project. It is distributed under the MIT License.
+LittleFS library written by ARM Limited and released under the BSD 3-clause license.
+uzlib library written and (c) 2014-2018 Paul Sokolovsky, licensed under the ZLib license (https://www.zlib.net/zlib_license.html). 
+uzlib is based on: tinf library by Joergen Ibsen (Deflate decompression); Deflate Static Huffman tree routines by Simon Tatham; 
+LZ77 compressor by Paul Sokolovsky; with library integrated and maintained by Paul Sokolovsky.

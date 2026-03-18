@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2752">
+            <PageBlocks>
+                <Block genus-name="freeRTOS_task" id="4271">
+                    <Location>
+                        <X>40</X>
+                        <Y>631</Y>
+                    </Location>
+                    <Sockets num-sockets="5">
+                        <BlockConnector con-block-id="4272" connector-kind="socket" connector-type="string" init-type="string" label="Taskname" position-type="single"/>
+                        <BlockConnector con-block-id="4273" connector-kind="socket" connector-type="number" init-type="number" label="prio" position-type="single"/>
+                        <BlockConnector con-block-id="4274" connector-kind="socket" connector-type="number" init-type="number" label="stack" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="4276" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="freeRTOS_semaTake" id="4276">
+                    <Location>
+                        <X>204</X>
+                        <Y>746</Y>
+                    </Location>
+                    <BeforeBlockId>4271</BeforeBlockId>
+                    <AfterBlockId>4275</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4277" connector-kind="socket" connector-type="string" init-type="string" label="name" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="OLED_AddArray" id="4275">
+                    <Location>
+                        <X>204</X>
+                        <Y>776</Y>
+                    </Location>
+                    <BeforeBlockId>4276</BeforeBlockId>
+                    <AfterBlockId>4279</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4283" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="freeRTOS_semaGive" id="4279">
+                    <Location>
+                        <X>204</X>
+                        <Y>806</Y>
+                    </Location>
+                    <BeforeBlockId>4275</BeforeBlockId>
+                    <AfterBlockId>4281</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4280" connector-kind="socket" connector-type="string" init-type="string" label="name" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="freeRTOS_vTaskDelay" id="4281">
+                    <Location>
+                        <X>204</X>
+                        <Y>836</Y>
+                    </Location>
+                    <BeforeBlockId>4279</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4282" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="4282">
+                    <Label>3000</Label>
+                    <Location>
+                        <X>310</X>
+                        <Y>839</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4281" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="4280">
+                    <Label>SemaI2C</Label>
+                    <Location>
+                        <X>320</X>
+                        <Y>809</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4279" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="GetBSEC" id="4283">
+                    <Location>
+                        <X>408</X>
+                        <Y>779</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4275" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4284" connector-kind="socket" connector-type="number" init-type="number" label="Sensor" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BSECVectorTemp" id="4284">
+                    <Location>
+                        <X>630</X>
+                        <Y>779</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4283" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="4277">
+                    <Label>SemaI2C</Label>
+                    <Location>
+                        <X>324</X>
+                        <Y>749</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4276" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="4274">
+                    <Label>2048</Label>
+                    <Location>
+                        <X>208</X>
+                        <Y>682</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4271" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="4273">
+                    <Label>5</Label>
+                    <Location>
+                        <X>208</X>
+                        <Y>658</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4271" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="4272">
+                    <Label>Task1</Label>
+                    <Location>
+                        <X>208</X>
+                        <Y>634</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4271" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ifelse" id="4297">
+                    <Location>
+                        <X>200</X>
+                        <Y>286</Y>
+                    </Location>
+                    <BeforeBlockId>4285</BeforeBlockId>
+                    <AfterBlockId>4290</AfterBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="4300" connector-kind="socket" connector-type="boolean" init-type="boolean" label="teste" position-type="single"/>
+                        <BlockConnector con-block-id="3580" connector-kind="socket" connector-type="cmd" init-type="cmd" label="dann" position-type="single"/>
+                        <BlockConnector con-block-id="3559" connector-kind="socket" connector-type="cmd" init-type="cmd" label="sonst" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="freeRTOS_semaGive" id="4290">
+                    <Location>
+                        <X>200</X>
+                        <Y>544</Y>
+                    </Location>
+                    <BeforeBlockId>4297</BeforeBlockId>
+                    <AfterBlockId>4292</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4291" connector-kind="socket" connector-type="string" init-type="string" label="name" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="freeRTOS_vTaskDelay" id="4292">
+                    <Location>
+                        <X>200</X>
+                        <Y>574</Y>
+                    </Location>
+                    <BeforeBlockId>4290</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4293" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="4293">
+                    <Label>1000</Label>
+                    <Location>
+                        <X>306</X>
+                        <Y>577</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4292" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="text" id="4291">
+                    <Label>SemaI2C</Label>
+                    <Location>
+                        <X>316</X>
+                        <Y>547</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4290" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_Print3" id="3559">
+                    <Location>
+                        <X>316</X>
+                        <Y>432</Y>
+                    </Location>
+                    <BeforeBlockId>4297</BeforeBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="3560" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="3562" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="3563" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="3561" connector-kind="socket" connector-type="string" init-type="string" label="size" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="OLED_FontSize9" id="3561">
+                    <Location>
+                        <X>430</X>
+                        <Y>507</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3559" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="3563">
+                    <Label>p:\u0020</Label>
+                    <Location>
+                        <X>430</X>
+                        <Y>483</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3559" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3566" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="glue_sn" id="3566">
+                    <Label>verbinde</Label>
+                    <Location>
+                        <X>508</X>
+                        <Y>483</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3563" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3571" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="GetBSEC" id="3571">
+                    <Label>Umwelt (T,F,p,VOC) BSEC2</Label>
+                    <Location>
+                        <X>586</X>
+                        <Y>483</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3566" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3572" connector-kind="socket" connector-type="number" init-type="number" label="Sensor" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BSECVectorPress" id="3572">
+                    <Location>
+                        <X>808</X>
+                        <Y>483</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3571" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="3562">
+                    <Label>F:\u0020</Label>
+                    <Location>
+                        <X>430</X>
+                        <Y>459</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3559" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3565" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="glue_sn" id="3565">
+                    <Label>verbinde</Label>
+                    <Location>
+                        <X>506</X>
+                        <Y>459</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3562" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3569" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="GetBSEC" id="3569">
+                    <Label>Umwelt (T,F,p,VOC) BSEC2</Label>
+                    <Location>
+                        <X>584</X>
+                        <Y>459</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3565" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3570" connector-kind="socket" connector-type="number" init-type="number" label="Sensor" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BSECVectorHum" id="3570">
+                    <Location>
+                        <X>806</X>
+                        <Y>459</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3569" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="3560">
+                    <Label>T:\u0020</Label>
+                    <Location>
+                        <X>430</X>
+                        <Y>435</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3559" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3564" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="glue_sn" id="3564">
+                    <Location>
+                        <X>508</X>
+                        <Y>435</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3560" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3567" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="GetBSEC" id="3567">
+                    <Location>
+                        <X>586</X>
+                        <Y>435</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3564" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="3568" connector-kind="socket" connector-type="number" init-type="number" label="Sensor" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BSECVectorTemp" id="3568">
+                    <Location>
+                        <X>808</X>
+                        <Y>435</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3567" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_DispArray" id="3580">
+                    <Location>
+                        <X>317</X>
+                        <Y>318</Y>
+                    </Location>
+                    <BeforeBlockId>4297</BeforeBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+                        <BlockConnector con-block-id="3581" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="3582" connector-kind="socket" connector-type="number" init-type="number" label="min" position-type="single"/>
+                        <BlockConnector con-block-id="3583" connector-kind="socket" connector-type="number" init-type="number" label="max" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="3583">
+                    <Label>45</Label>
+                    <Location>
+                        <X>487</X>
+                        <Y>393</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3580" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="3582">
+                    <Label>0</Label>
+                    <Location>
+                        <X>487</X>
+                        <Y>369</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3580" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="3581">
+                    <Label>Temp</Label>
+                    <Location>
+                        <X>487</X>
+                        <Y>345</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="3580" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="button_press" id="4300">
+                    <Location>
+                        <X>320</X>
+                        <Y>289</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4297" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="freeRTOS_semaTake" id="4285">
+                    <Location>
+                        <X>200</X>
+                        <Y>256</Y>
+                    </Location>
+                    <BeforeBlockId>214</BeforeBlockId>
+                    <AfterBlockId>4297</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="4286" connector-kind="socket" connector-type="string" init-type="string" label="name" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="text" id="4286">
+                    <Label>SemaI2C</Label>
+                    <Location>
+                        <X>320</X>
+                        <Y>259</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="4285" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="214">
+                    <Location>
+                        <X>36</X>
+                        <Y>213</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Umweltdaten mit FreeRTOS:
+
+Dank FreeRTOS und die Multitaskingeigenschaften, können wir Bedienung und Datenerfassung trennen.
+Eine Task läuft im Hintergrund und speichert die Messdaten in ein Array. Dieses Array wird von der zweiten Task (Loop) angezeigt.
+Da beide Tasks auf die Ressource I2C-Bus zugreifen, muss dieser Zugriff durch eine Semaphore koordiniert werden.</Text>
+                        <Location>
+                            <X>40</X>
+                            <Y>105</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>772</Width>
+                            <Height>104</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="4285" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

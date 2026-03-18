@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="program" id="292">
+                    <Location>
+                        <X>95</X>
+                        <Y>204</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Insere Idee: Künstliche Nase zur Getränkeerkennung
+
+Bei verschiedenen Heiztemperaturen reagieren andere organische Bestandteile der Luft mit dem IAQ / VOC Sensor auf dem Makey Board. Maschine Learning Algorithmen nutzen diese Werte um eine künstliche Nase zu realisieren (s. Video).
+
+Gestartet als Idee im Makerspace. Mittlerweile Gegenstand verschiedener industrieller Forschungsprojekte und Patentanmeldungen.</Text>
+                        <Location>
+                            <X>92</X>
+                            <Y>27</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>669</Width>
+                            <Height>168</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1257" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="1250" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="OLED_DispArray" id="1250">
+                    <Location>
+                        <X>259</X>
+                        <Y>277</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Anzeige der organischen Bestandteile der Luft (ein wenig Alkohl z.B. im Wein oder Bier oder der Nagellackentferner erzeugt ein Signal)</Text>
+                        <Location>
+                            <X>572</X>
+                            <Y>366</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>296</Width>
+                            <Height>88</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>292</BeforeBlockId>
+                    <AfterBlockId>1255</AfterBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="1247" connector-kind="socket" connector-type="number" init-type="number" label="value" position-type="single"/>
+                        <BlockConnector con-block-id="1251" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="1252" connector-kind="socket" connector-type="number" init-type="number" label="min" position-type="single"/>
+                        <BlockConnector con-block-id="1253" connector-kind="socket" connector-type="number" init-type="number" label="max" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay" id="1255">
+                    <Location>
+                        <X>259</X>
+                        <Y>427</Y>
+                    </Location>
+                    <BeforeBlockId>1250</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1256" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1256">
+                    <Label>1000</Label>
+                    <Location>
+                        <X>381</X>
+                        <Y>430</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1255" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1253">
+                    <Label>1000</Label>
+                    <Location>
+                        <X>443</X>
+                        <Y>400</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1250" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1252">
+                    <Label>0</Label>
+                    <Location>
+                        <X>443</X>
+                        <Y>376</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1250" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1251">
+                    <Label>VOC</Label>
+                    <Location>
+                        <X>443</X>
+                        <Y>352</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1250" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="GetBME680offset" id="1247">
+                    <Location>
+                        <X>443</X>
+                        <Y>280</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1250" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="1248" connector-kind="socket" connector-type="number" init-type="number" label="Sensor" position-type="single"/>
+                        <BlockConnector con-block-id="1249" connector-kind="socket" connector-type="number" init-type="number" label="offset" position-type="single"/>
+                        <BlockConnector con-block-id="1260" connector-kind="socket" connector-type="number" init-type="number" label="gasheat" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1260">
+                    <Label>Heiztemperatur_C</Label>
+                    <Location>
+                        <X>677</X>
+                        <Y>328</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1247" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1249">
+                    <Label>0.0</Label>
+                    <Location>
+                        <X>677</X>
+                        <Y>304</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1247" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="BME680VectorGas" id="1248">
+                    <Location>
+                        <X>677</X>
+                        <Y>280</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1247" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1257">
+                    <Location>
+                        <X>260</X>
+                        <Y>212</Y>
+                    </Location>
+                    <BeforeBlockId>292</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1258" connector-kind="socket" connector-type="number" init-type="number" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="1259" connector-kind="socket" connector-type="number" init-type="number" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1259">
+                    <Label>400</Label>
+                    <Location>
+                        <X>444</X>
+                        <Y>239</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1257" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="1258">
+                    <Label>Heiztemperatu_C</Label>
+                    <Location>
+                        <X>444</X>
+                        <Y>215</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1257" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

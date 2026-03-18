@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="delay" id="314">
+                    <Location>
+                        <X>264</X>
+                        <Y>228</Y>
+                    </Location>
+                    <BeforeBlockId>622</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="315" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="315">
+                    <Label>1000</Label>
+                    <Location>
+                        <X>388</X>
+                        <Y>231</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="314" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SetScaleHX711" id="634">
+                    <Location>
+                        <X>265</X>
+                        <Y>132</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Kalibriersteigung aus vorheriger Kallibierung übernommen.</Text>
+                        <Location>
+                            <X>643</X>
+                            <Y>71</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>222</Width>
+                            <Height>67</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>300</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="635" connector-kind="socket" connector-type="number" init-type="number" label="scale" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="635">
+                    <Label>613.82</Label>
+                    <Location>
+                        <X>563</X>
+                        <Y>135</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="634" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print" id="622">
+                    <Location>
+                        <X>264</X>
+                        <Y>174</Y>
+                    </Location>
+                    <BeforeBlockId>299</BeforeBlockId>
+                    <AfterBlockId>314</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="623" connector-kind="socket" connector-type="string" init-type="string" label="Nachricht" position-type="single"/>
+                        <BlockConnector con-block-id="624" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="624">
+                    <Label>true</Label>
+                    <Location>
+                        <X>410</X>
+                        <Y>201</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="622" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="623">
+                    <Label>Gewicht =</Label>
+                    <Location>
+                        <X>410</X>
+                        <Y>177</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="622" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="625" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="glue_sn" id="625">
+                    <Location>
+                        <X>496</X>
+                        <Y>177</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="623" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="312" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="GetHX711" id="312">
+                    <Location>
+                        <X>574</X>
+                        <Y>177</Y>
+                    </Location>
+                    <Comment>
+                        <Text>ggf. Pins anpassen</Text>
+                        <Location>
+                            <X>729</X>
+                            <Y>203</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>176</Width>
+                            <Height>34</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Plug>
+                        <BlockConnector con-block-id="625" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="313" connector-kind="socket" connector-type="string" init-type="string" label="DT,CLK" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="text" id="313">
+                    <Label>12,14</Label>
+                    <Location>
+                        <X>804</X>
+                        <Y>177</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="312" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TaraHX711" id="300">
+                    <Location>
+                        <X>265</X>
+                        <Y>108</Y>
+                    </Location>
+                    <BeforeBlockId>299</BeforeBlockId>
+                    <AfterBlockId>634</AfterBlockId>
+                </Block>
+                <Block genus-name="program" id="299">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="300" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="622" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

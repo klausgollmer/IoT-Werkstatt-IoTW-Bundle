@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2752">
+            <PageBlocks>
+                <Block genus-name="variable_String" id="2296">
+                    <Label>Server</Label>
+                    <Location>
+                        <X>603</X>
+                        <Y>297</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="2291" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print" id="1968">
+                    <Label>Serial print</Label>
+                    <Location>
+                        <X>265</X>
+                        <Y>426</Y>
+                    </Location>
+                    <BeforeBlockId>1191</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1973" connector-kind="socket" connector-type="string" init-type="string" label="Nachricht" position-type="single"/>
+                        <BlockConnector con-block-id="1970" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="1970">
+                    <Label>true</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>477</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1968" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1973">
+                    <Label>userId=</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>429</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1968" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1971" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="JSONGet" id="1971">
+                    <Location>
+                        <X>483</X>
+                        <Y>429</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1973" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1969" connector-kind="socket" connector-type="string" init-type="string" label="string" position-type="single"/>
+                        <BlockConnector con-block-id="1972" connector-kind="socket" connector-type="string" init-type="string" label="key" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="URI" id="1972">
+                    <Label>userId</Label>
+                    <Location>
+                        <X>581</X>
+                        <Y>453</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1971" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String" id="1969">
+                    <Label>Test</Label>
+                    <Location>
+                        <X>581</X>
+                        <Y>429</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1971" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print" id="1191">
+                    <Location>
+                        <X>265</X>
+                        <Y>372</Y>
+                    </Location>
+                    <BeforeBlockId>1964</BeforeBlockId>
+                    <AfterBlockId>1968</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1967" connector-kind="socket" connector-type="string" init-type="string" label="Text" position-type="single"/>
+                        <BlockConnector con-block-id="1193" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="1193">
+                    <Label>true</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>399</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1191" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String" id="1967">
+                    <Label>Test</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>375</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1191" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="serial_print" id="1978">
+                    <Label>Serial print</Label>
+                    <Location>
+                        <X>265</X>
+                        <Y>216</Y>
+                    </Location>
+                    <BeforeBlockId>1974</BeforeBlockId>
+                    <AfterBlockId>1964</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1987" connector-kind="socket" connector-type="string" init-type="string" label="Nachricht" position-type="single"/>
+                        <BlockConnector con-block-id="1980" connector-kind="socket" connector-type="boolean" init-type="boolean" label="neue Zeile" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="setter_variable_String" id="1964">
+                    <Location>
+                        <X>265</X>
+                        <Y>270</Y>
+                    </Location>
+                    <BeforeBlockId>1978</BeforeBlockId>
+                    <AfterBlockId>1191</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1965" connector-kind="socket" connector-type="string" init-type="string" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="2291" connector-kind="socket" connector-type="string" init-type="string" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="sendHTTPSGet" id="2291">
+                    <Location>
+                        <X>449</X>
+                        <Y>297</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1964" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="2296" connector-kind="socket" connector-type="string" init-type="string" label="Server" position-type="single"/>
+                        <BlockConnector con-block-id="2293" connector-kind="socket" connector-type="string" init-type="string" label="URI" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="Fingerprint" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="URI" id="2293">
+                    <Label>/posts/1</Label>
+                    <Location>
+                        <X>603</X>
+                        <Y>321</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="2291" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String" id="1965">
+                    <Label>Test</Label>
+                    <Location>
+                        <X>449</X>
+                        <Y>273</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1964" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="true" id="1980">
+                    <Label>true</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>243</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1978" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="1987">
+                    <Label>Server=</Label>
+                    <Location>
+                        <X>411</X>
+                        <Y>219</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1978" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1988" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_String" id="1988">
+                    <Label>Server</Label>
+                    <Location>
+                        <X>485</X>
+                        <Y>219</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1987" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="setter_variable_String" id="1974">
+                    <Location>
+                        <X>265</X>
+                        <Y>162</Y>
+                    </Location>
+                    <BeforeBlockId>1384</BeforeBlockId>
+                    <AfterBlockId>1978</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1975" connector-kind="socket" connector-type="string" init-type="string" label="Variable" position-type="single"/>
+                        <BlockConnector con-block-id="198" connector-kind="socket" connector-type="string" init-type="string" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="host" id="198">
+                    <Label>http://jsonplaceholder.typicode.com</Label>
+                    <Location>
+                        <X>449</X>
+                        <Y>189</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1974" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String" id="1975">
+                    <Label>Server</Label>
+                    <Location>
+                        <X>449</X>
+                        <Y>165</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1974" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="connectWLANAP" id="1384">
+                    <Location>
+                        <X>265</X>
+                        <Y>108</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Das http-REST API liefert häufig strukturierten Text zurück,
+welcher mittels JSON Blöckchen analysiert werden kann. 
+Hier die Suche nach der UserID</Text>
+                        <Location>
+                            <X>556</X>
+                            <Y>94</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>462</Width>
+                            <Height>90</Height>
+                        </BoxSize>
+                    </Comment>
+                    <BeforeBlockId>191</BeforeBlockId>
+                    <AfterBlockId>1974</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1385" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="1386" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="passwort" id="1386">
+                    <Label>IoTWerkstatt</Label>
+                    <Location>
+                        <X>395</X>
+                        <Y>135</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1384" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="ssid" id="1385">
+                    <Label>hackathon</Label>
+                    <Location>
+                        <X>395</X>
+                        <Y>111</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1384" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="191">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1384" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

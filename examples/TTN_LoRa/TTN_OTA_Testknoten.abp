@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="number" id="19577">
+                    <Label>815</Label>
+                    <Location>
+                        <X>802</X>
+                        <Y>367</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19570" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="19576">
+                    <Label>4711</Label>
+                    <Location>
+                        <X>802</X>
+                        <Y>343</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19570" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="sendTTN_RFM95_abp2" id="19570">
+                    <Location>
+                        <X>666</X>
+                        <Y>220</Y>
+                    </Location>
+                    <Sockets num-sockets="11">
+                        <BlockConnector con-block-id="19571" connector-kind="socket" connector-type="string" init-type="string" label="Dev Addr" position-type="single"/>
+                        <BlockConnector con-block-id="19572" connector-kind="socket" connector-type="string" init-type="string" label="NetS Key" position-type="single"/>
+                        <BlockConnector con-block-id="19573" connector-kind="socket" connector-type="string" init-type="string" label="AppS Key" position-type="single"/>
+                        <BlockConnector con-block-id="19574" connector-kind="socket" connector-type="number" init-type="number" label="Tx SF" position-type="single"/>
+                        <BlockConnector con-block-id="19575" connector-kind="socket" connector-type="number" init-type="number" label="Port" position-type="single"/>
+                        <BlockConnector con-block-id="19576" connector-kind="socket" connector-type="number" init-type="number" label="Feld 1" position-type="single"/>
+                        <BlockConnector con-block-id="19577" connector-kind="socket" connector-type="number" init-type="number" label="Feld 2" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 3" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 4" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 5" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 6" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="19575">
+                    <Label>10</Label>
+                    <Location>
+                        <X>802</X>
+                        <Y>319</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19570" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_SF_Auto" id="19574">
+                    <Label>Auto (ADR on)</Label>
+                    <Location>
+                        <X>802</X>
+                        <Y>295</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19570" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_APPSKEY" id="19573">
+                    <Label>00000000000000000000000000000000 (16 Byte AppSKey)</Label>
+                    <Location>
+                        <X>802</X>
+                        <Y>271</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19570" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_NETSKEY" id="19572">
+                    <Label>00000000000000000000000000000000 (16 Byte NwkSKey)</Label>
+                    <Location>
+                        <X>802</X>
+                        <Y>247</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19570" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_DEVADD" id="19571">
+                    <Label>00000000 (4 Byte Device address)</Label>
+                    <Location>
+                        <X>802</X>
+                        <Y>223</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19570" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="sendTTN_RFM95_ota2" id="19564">
+                    <Location>
+                        <X>197</X>
+                        <Y>94</Y>
+                    </Location>
+                    <BeforeBlockId>284</BeforeBlockId>
+                    <AfterBlockId>19214</AfterBlockId>
+                    <Sockets num-sockets="11">
+                        <BlockConnector con-block-id="19565" connector-kind="socket" connector-type="string" init-type="string" label="Dev EUI" position-type="single"/>
+                        <BlockConnector con-block-id="19566" connector-kind="socket" connector-type="string" init-type="string" label="App EUI" position-type="single"/>
+                        <BlockConnector con-block-id="19567" connector-kind="socket" connector-type="string" init-type="string" label="App Key" position-type="single"/>
+                        <BlockConnector con-block-id="19568" connector-kind="socket" connector-type="number" init-type="number" label="Tx SF" position-type="single"/>
+                        <BlockConnector con-block-id="19569" connector-kind="socket" connector-type="number" init-type="number" label="Port" position-type="single"/>
+                        <BlockConnector con-block-id="18862" connector-kind="socket" connector-type="number" init-type="number" label="Feld 1" position-type="single"/>
+                        <BlockConnector con-block-id="18863" connector-kind="socket" connector-type="number" init-type="number" label="Feld 2" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 3" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 4" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 5" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="number" init-type="number" label="Feld 6" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="sleep32" id="19214">
+                    <Location>
+                        <X>197</X>
+                        <Y>364</Y>
+                    </Location>
+                    <BeforeBlockId>19564</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="19215" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="19215">
+                    <Label>20000</Label>
+                    <Location>
+                        <X>323</X>
+                        <Y>367</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19214" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="18863">
+                    <Label>815</Label>
+                    <Location>
+                        <X>335</X>
+                        <Y>241</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19564" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="18862">
+                    <Label>4711</Label>
+                    <Location>
+                        <X>335</X>
+                        <Y>217</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19564" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="19569">
+                    <Label>10</Label>
+                    <Location>
+                        <X>335</X>
+                        <Y>193</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19564" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_SF_Auto" id="19568">
+                    <Location>
+                        <X>335</X>
+                        <Y>169</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19564" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_APPKEY" id="19567">
+                    <Label>00000000000000000000000000000000 (16 Byte)</Label>
+                    <Location>
+                        <X>335</X>
+                        <Y>145</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19564" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_APPEUI" id="19566">
+                    <Label>0000000000000000</Label>
+                    <Location>
+                        <X>335</X>
+                        <Y>121</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19564" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_DEVEUI" id="19565">
+                    <Label>0000000000000000 (8 Byte)</Label>
+                    <Location>
+                        <X>335</X>
+                        <Y>97</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="19564" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="284">
+                    <Location>
+                        <X>33</X>
+                        <Y>51</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="19564" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>
