@@ -76,7 +76,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | Feetech Servos | FTServo_Arduino | **MIT** | ftservo, https://github.com/ftservo/FTServo_Arduino |
 
 ## Important Notes
-- **Repository code** (configs, boards.txt, MIT libs): **MIT License** ([LICENSE](LICENSE))
+- **Repository code** (configs, boards.txt, MIT libs): **MIT License** 
 - **Modified third-party components** retain their **original licenses** (documented above)
 - **GPL/LGPL source availability**: Via linked repositories and IoT² Workshop forks
 - **Complete license texts**: `resources/licences/`
