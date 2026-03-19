@@ -27,7 +27,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | NFC/RFID | Seeed PN532 | **BSD-3-Clause** | Seeed Studio, https://github.com/Seeed-Studio/PN532 |
 | Gassensor Multichannel | Seeed Multichannel Gas | **GNU** | Jacky Zhang, Seeed, https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor|
 | Dreh/Drück Rotary-Encoder | Paul Stoffregen Encoder | **MIT** | Paul Stoffregen, https://github.com/PaulStoffregen/Encoder |
-| | ESP32Encoder | **MIT** | Kevin Harrington, https://github.com/madhephaestus/ESP32Encoder/ |
+| Dreh/Drück Rotary-Encoder | ESP32Encoder | **MIT** | Kevin Harrington, https://github.com/madhephaestus/ESP32Encoder/ |
 | LED-Matrix Charlieplex | Adafruit IS31FL3731 | **MIT** | Adafruit, https://github.com/adafruit/Adafruit_IS31FL3731 |
 | Textausgabe | Adafruit GFX V1.1.5 | **BSD** | Adafruit, https://github.com/adafruit/Adafruit-GFX-Library |
 | MQTT | PubSubClient v2.6 | **MIT** | Nick O'Leary, github.com/knolleary/pubsubclient/releases/tag/v2.6 |
@@ -66,7 +66,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | EDGEImpulse| EDGEImpulse | **Clear BSD License and other** | https://docs.edgeimpulse.com/docs/run-inference/arduino-library |
 | Webserver SensorPlot| SensorPlot_WebInterface | **MIT** |Jason Rietzke, https://github.com/jason-rietzke/SensorPlot_WebInterface  |
 | WiFi| WiFiManager | **MIT** | Tzapu, https://github.com/tzapu/WiFiManager |
-| SAM| ESP8266SAM | **  ** | https://github.com/earlephilhower/ESP8266SAM |
+| SAM| ESP8266SAM |  | https://github.com/earlephilhower/ESP8266SAM |
 | SMTP mail| ESP-mail-client | **MIT** | bobizt, https://github.com/mobizt/ESP-Mail-Client |
 | Whatsapp| urlencode | **MIT** | Masayuki Sugahara, https://github.com/plageoj/urlencode |
 | Temperature | Arduino-Temperature-Control-Library | **MIT** | Miles Burton, https://github.com/milesburton/Arduino-Temperature-Control-Library|
