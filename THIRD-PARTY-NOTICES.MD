@@ -75,14 +75,10 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | Dynamixel Servos | Dynamixel2Arduino | **Apache 2.0** | ROBOTIS, https://github.com/ROBOTIS-GIT/Dynamixel2Arduino |
 | Feetech Servos | FTServo_Arduino | **MIT** | ftservo, https://github.com/ftservo/FTServo_Arduino |
 
-**Hinweis**: Vollständige Tabelle mit Links auf die im Bundle verwendeten Repros unter `resources/THIRD-PARTY-NOTICES.pdf`.   
-Lizenztexte in `resources/licences/`bzw. unter den angegebenen Links. 
-
 ## Important Notes
 - **Repository code** (configs, boards.txt, MIT libs): **MIT License** ([LICENSE](LICENSE))
 - **Modified third-party components** retain their **original licenses** (documented above)
 - **GPL/LGPL source availability**: Via linked repositories and IoT² Workshop forks
-- **Full library list with repo links**: `resources/THIRD-PARTY-NOTICES.pdf`
 - **Complete license texts**: `resources/licences/`
 
 **Generated C code**: MIT unless libraries impose additional restrictions (notices in code).
