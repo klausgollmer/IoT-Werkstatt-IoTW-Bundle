@@ -60,9 +60,7 @@ Die neuste Version des Code-Generators kann separat installiert werden: https://
 
 ## Third Party Notices
 **Complete details**: [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)  
-**PDF list**: `resources/THIRD-PARTY-NOTICES.pdf`  
 **License files**: `resources/licences/`
-Repository library code: MIT ([LICENSE](LICENSE)). Third-party retains original licenses.
 
 ## Autor
 Klaus-Uwe Gollmer  
@@ -119,9 +117,7 @@ For language settings use Arduino IDE preferences (english/german only)
 
 ## Third Party Notices
 **Complete details**: [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)  
-**PDF list**: `resources/THIRD-PARTY-NOTICES.pdf`  
 **License files**: `resources/licences/`
-Repository library code: MIT ([LICENSE](LICENSE)). Third-party retains original licenses.
 
 ## Author
 Klaus-Uwe Gollmer  
