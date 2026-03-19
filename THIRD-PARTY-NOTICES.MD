@@ -63,7 +63,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | Licht | BH1750 | **MIT** | claws, https://github.com/claws/BH1750 |
 | Licht | TSL2561 | **OpenSource** | Kevin (KTOWN) Townsend Adafruit, https://github.com/adafruit/Adafruit_TSL2561 |
 | Gewicht | HX711 | **MIT** | Rob Tillaart, https://github.com/RobTillaart/HX711 |
-| EDGEImpulse| EDGEImpulse | **  ** | https://docs.edgeimpulse.com/docs/run-inference/arduino-library |
+| EDGEImpulse| EDGEImpulse | **Clear BSD License and other** | https://docs.edgeimpulse.com/docs/run-inference/arduino-library |
 | Webserver SensorPlot| SensorPlot_WebInterface | **MIT** |Jason Rietzke, https://github.com/jason-rietzke/SensorPlot_WebInterface  |
 | WiFi| WiFiManager | **MIT** | Tzapu, https://github.com/tzapu/WiFiManager |
 | SAM| ESP8266SAM | **  ** | https://github.com/earlephilhower/ESP8266SAM |
