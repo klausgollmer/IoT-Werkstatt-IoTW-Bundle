@@ -116,7 +116,7 @@ For language settings use Arduino IDE preferences (english/german only)
 - Manually install application libraries (list in `resources/THIRD-PARTY-NOTICES.pdf`), optionally precompile cores
 
 ## Third Party Notices
-**Complete details**: [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)  
+**Complete details**: [THIRD-PARTY-NOTICES.MD](THIRD-PARTY-NOTICES.MD)  
 **License files**: `resources/licences/`
 
 ## Author
