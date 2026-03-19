@@ -66,7 +66,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | EDGEImpulse| EDGEImpulse | **Clear BSD License and other** | https://docs.edgeimpulse.com/docs/run-inference/arduino-library |
 | Webserver SensorPlot| SensorPlot_WebInterface | **MIT** |Jason Rietzke, https://github.com/jason-rietzke/SensorPlot_WebInterface  |
 | WiFi| WiFiManager | **MIT** | Tzapu, https://github.com/tzapu/WiFiManager |
-| SAM| ESP8266SAM | FairUse | https://github.com/earlephilhower/ESP8266SAM |
+| SAM| ESP8266SAM | **FairUse** | https://github.com/earlephilhower/ESP8266SAM |
 | SMTP mail| ESP-mail-client | **MIT** | bobizt, https://github.com/mobizt/ESP-Mail-Client |
 | Whatsapp| urlencode | **MIT** | Masayuki Sugahara, https://github.com/plageoj/urlencode |
 | Temperature | Arduino-Temperature-Control-Library | **MIT** | Miles Burton, https://github.com/milesburton/Arduino-Temperature-Control-Library|
