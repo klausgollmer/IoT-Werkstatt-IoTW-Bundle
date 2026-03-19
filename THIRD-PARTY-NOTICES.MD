@@ -19,7 +19,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | Umweltdaten BME280 | SparkFun_BME280_Arduino_Library | **MIT** | Marshall Taylor @ SparkFun, https://github.com/sparkfun/SparkFun_BME280_Arduino_Library |
 | Umweltdaten BME680 | AdafruitBME680 | **BSD** | Limor Fried/Ladyada, https://github.com/adafruit/Adafruit_BME680 |
 | | Adafruit_Unified_Sensor | **Apache 2.0** | Adafruit, https://github.com/adafruit/Adafruit_Sensor |
-| Umweltdaten BSEC | Bosch BSEC2/BME68x | **BSD-3-Clause** | Bosch Sensortec, https://github.com/boschsensortec/Bosch-BSEC2-Library |
+| Umweltdaten BSEC | Bosch BSEC2/BME68x | **BSD-3-Clause and other** | Bosch Sensortec, https://github.com/boschsensortec/Bosch-BSEC2-Library |
 | Beschleunigung | AdafruitBNO055 | **MIT** | Kevin (KTOWN), https://github.com/adafruit/Adafruit_BNO055 |
 | Beschleunigung | Accelerometer_MMA7660 | **MIT** | Frankie Chu, Seeed Studio, https://github.com/Seeed-Studio/Accelerometer_MMA7660 |
 | RGB-LED | Adafruit NeoPixel | **LGPL-3** | Phil Burgess, Adafruit https://github.com/adafruit/Adafruit_NeoPixel |
