@@ -11,7 +11,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 **ESP8266 Package**: LGPL 2.1 [https://github.com/esp8266/Arduino](https://github.com/esp8266/Arduino)  
 **ESP32 Package**: LGPL 2.1 [https://github.com/espressif/arduino-esp32](https://github.com/espressif/arduino-esp32)  
 **USB Driver**: CP210x Silicon Labs VCP Driver (**proprietary EULA**) [https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)  
-**Installer**: NSIS (Nullsoft Scriptable Install System) (https://nsis.sourceforge.io/Main_Page)
+**Installer**: NSIS (Nullsoft Scriptable Install System) ttps://nsis.sourceforge.io/Main_Page
 
 ## Bundle Components
 | Interface | Library | Lizenz | Autor/Quelle |
