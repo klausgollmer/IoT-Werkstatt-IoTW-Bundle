@@ -36,7 +36,6 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | BusIO, I2C | Adafruit_BusIO | **MIT** | Adafruit, https://github.com/adafruit/Adafruit_BusIO |
 | MQTT | PubSubClient v2.8 | **MIT** | Nick O'Leary, github.com/knolleary/pubsubclient/releases/tag/v2.8 |
 | GSM Mobilfunk | TinyGSM 0.1.7 | **LGPL-3** | Volodymyr Shymanskyy, https://github.com/vshymanskyy/TinyGSM |
-| Steam Debug | SteamDebugger | **MIT** | Volodymyr Shymanskyy, https://github.com/vshymanskyy/StreamDebugger/tree/master|
 | OTA | ArduinoOTA | **LGPL 2.1** | ESP8266 Arduino Core, https://github.com/esp8266/Arduino |
 | LoRaWAN LMIC | MCCI arduino-lmic | **MIT** | MCCI Corporation (kgo mods), https://github.com/mcci-catena/arduino-lmic |
 | Digital I/O Extender | SparkFun SX1509 | **Open Source** | Jim Lindblom, https://github.com/sparkfun/SparkFun_SX1509_Arduino_Library |
@@ -86,6 +85,7 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | Servo PWM | Servo | **LGPL 2.1** | Arduino,  https://github.com/arduino-libraries/Servo |
 | SD-Karte | SD | **GPL 3** | Arduino,  https://github.com/arduino-libraries/SD |
 | Spektrometer | | | HAW Hamburg, Ulrich Scheffler, https://www.haw-hamburg.de/hochschule/life-sciences/forschung/projekte-schullabor/schullabor-mobile-analytik/smartphone-photometer/ |
+| Umweltdaten AHT | Adafruit_AHTX0 | **BSD** | Adafruit,  https://github.com/adafruit/Adafruit_AHTX0 |
 
 
 ## Important Notes
