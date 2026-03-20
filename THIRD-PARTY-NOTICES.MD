@@ -18,20 +18,25 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 |-----------|---------|--------|-------------|
 | Umweltdaten BME280 | SparkFun_BME280_Arduino_Library | **MIT** | Marshall Taylor @ SparkFun, https://github.com/sparkfun/SparkFun_BME280_Arduino_Library |
 | Umweltdaten BME680 | AdafruitBME680 | **BSD** | Limor Fried/Ladyada, https://github.com/adafruit/Adafruit_BME680 |
-| | Adafruit_Unified_Sensor | **Apache 2.0** | Adafruit, https://github.com/adafruit/Adafruit_Sensor |
+| Sensor Helper| Adafruit_Unified_Sensor | **Apache 2.0** | Adafruit, https://github.com/adafruit/Adafruit_Sensor |
 | Umweltdaten BSEC | Bosch BSEC2/BME68x | **BSD-3-Clause and other** | Bosch Sensortec, https://github.com/boschsensortec/Bosch-BSEC2-Library |
 | Beschleunigung | AdafruitBNO055 | **MIT** | Kevin (KTOWN), https://github.com/adafruit/Adafruit_BNO055 |
 | Beschleunigung | Accelerometer_MMA7660 | **MIT** | Frankie Chu, Seeed Studio, https://github.com/Seeed-Studio/Accelerometer_MMA7660 |
 | RGB-LED | Adafruit NeoPixel | **LGPL-3** | Phil Burgess, Adafruit https://github.com/adafruit/Adafruit_NeoPixel |
 | RGB-LED | Adafruit WS2801 | **MIT** | Limor Fried/Ladyada, https://github.com/adafruit/Adafruit-WS2801-Library |
 | NFC/RFID | Seeed PN532 | **BSD-3-Clause** | Seeed Studio, https://github.com/Seeed-Studio/PN532 |
+| NFC/RFID | NDEF | **BSD** | Don Coleman, https://github.com/don/NDEF |
 | Gassensor Multichannel | Seeed Multichannel Gas | **GNU** | Jacky Zhang, Seeed, https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor|
+| One-Wire Temperatur | Esp32-ds18b20 | **MIT** | Junkfix, https://github.com/junkfix/esp32-ds18b20 |
+| One-Wire Temperatur | OneWire |  | Paul Stoffregen, Jim Studt et al., https://github.com/PaulStoffregen/OneWire |
 | Dreh/Drück Rotary-Encoder | Paul Stoffregen Encoder | **MIT** | Paul Stoffregen, https://github.com/PaulStoffregen/Encoder |
 | Dreh/Drück Rotary-Encoder | ESP32Encoder | **MIT** | Kevin Harrington, https://github.com/madhephaestus/ESP32Encoder/ |
 | LED-Matrix Charlieplex | Adafruit IS31FL3731 | **MIT** | Adafruit, https://github.com/adafruit/Adafruit_IS31FL3731 |
-| Textausgabe | Adafruit GFX V1.1.5 | **BSD** | Adafruit, https://github.com/adafruit/Adafruit-GFX-Library |
-| MQTT | PubSubClient v2.6 | **MIT** | Nick O'Leary, github.com/knolleary/pubsubclient/releases/tag/v2.6 |
+| Grafik, Text | Adafruit GFX V1.1.5 | **BSD** | Adafruit, https://github.com/adafruit/Adafruit-GFX-Library |
+| BusIO, I2C | Adafruit_BusIO | **MIT** | Adafruit, https://github.com/adafruit/Adafruit_BusIO |
+| MQTT | PubSubClient v2.8 | **MIT** | Nick O'Leary, github.com/knolleary/pubsubclient/releases/tag/v2.8 |
 | GSM Mobilfunk | TinyGSM 0.1.7 | **LGPL-3** | Volodymyr Shymanskyy, https://github.com/vshymanskyy/TinyGSM |
+| Steam Debug | SteamDebugger | **MIT** | Volodymyr Shymanskyy, https://github.com/vshymanskyy/StreamDebugger/tree/master|
 | OTA | ArduinoOTA | **LGPL 2.1** | ESP8266 Arduino Core, https://github.com/esp8266/Arduino |
 | LoRaWAN LMIC | MCCI arduino-lmic | **MIT** | MCCI Corporation (kgo mods), https://github.com/mcci-catena/arduino-lmic |
 | Digital I/O Extender | SparkFun SX1509 | **Open Source** | Jim Lindblom, https://github.com/sparkfun/SparkFun_SX1509_Arduino_Library |
@@ -47,16 +52,20 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | Touch-Sensor | Adafruit MPR121 | **MIT** | Adafruit, Limor / Fried, https://github.com/adafruit/Adafruit_MPR121 |
 | InfluxDB | InfluxDB-Client-for-Arduino | **MIT** | Tobias Schürg, https://github.com/tobiasschuerg/InfluxDB-Client-for-Arduino |
 | WiFi-Sniffer PaxCounter | SensorIot Wi-Fi Sniffer | **MIT OpenSource** | Spiess, Burnette https://github.com/SensorsIot/Wi-Fi-Sniffer-as-a-Human-detector |
+| WiFi-Sniffer | esp8266sniffer | **Unlicense, OpenSource** | Kalanda, https://github.com/kalanda/esp8266-sniffer |
 | CurveFit Polynomfit | arduinoCurveFitting | **MIT** | Rotario, https://github.com/Rotario/arduinoCurveFitting |
 | ESP8266Audio | ESP8266Audio | **GPL-3** | Earle F. Philhower, https://github.com/earlephilhower/ESP8266Audio |
 | RF24 | RF24 | **GPL-2** | Brendan Doherty, https://github.com/nRF24/RF24/  |
 | Hoymiles | Hoymiles DTU | **GPL-3** | hmsoft, https://github.com/hm-soft/Hoymiles-DTU-Simulation |
 | Useful Sensor | Camera | **Apache-2** | https://github.com/moonshine-ai/person_sensor_arduino |
-| ToF VL53L0X | Time of Flight | **OpenSource** | https://github.com/pololu/vl53l0x-arduino |
+| Time of Flight, VL53L0X | vl53l0x-arduino | **OpenSource** | https://github.com/pololu/vl53l0x-arduino |
 | OLED | Display | **BSD** | Ladyada, adafruit, https://github.com/adafruit/Adafruit_SH110x |
-| GPS | Position | **BSD** | Limor/Fried/Ladyada, adafruit, https://github.com/adafruit/Adafruit_GPS |
-| TCS34725 | RGB | **BSD** | adafruit, https://github.com/adafruit/Adafruit_TCS34725 |
-| INA219 | Current | **BSD** | adafruit, https://github.com/adafruit/Adafruit_INA219 |
+| GPS Position | Adafruit_GPS | **BSD** | Limor/Fried/Ladyada, adafruit, https://github.com/adafruit/Adafruit_GPS |
+| GPS Position | TinyGPSPlus | **LGPL-2.1** | mikalhart, https://github.com/mikalhart/TinyGPSPlus |
+| Farbe TCS34725 | Adafruit_TCS34725 | **BSD** | adafruit, https://github.com/adafruit/Adafruit_TCS34725 |
+| Current, INA219 | Adafruit_INA219 | **BSD** | adafruit, https://github.com/adafruit/Adafruit_INA219 |
+| MIDI | Adafruit_VS1053 | **BSD** | adafruit, https://github.com/adafruit/Adafruit_VS1053_Library |
+| ADC, I2C | Adafruit_ADS1X15 | **BSD** | adafruit, https://github.com/adafruit/Adafruit_ADS1X15 |
 | ChatGPT | genAI | **MIT** | Eric Nam, https://github.com/0015/ChatGPT_Client_For_Arduino |
 | JSON | ArduinoJSON | **MIT** | Benoît Blanchon, https://github.com/bblanchon/ArduinoJson |
 | Serial | espsoftwareserial | **LGPL-2.1** | Dirk Kaar, Peter Lerup, https://github.com/plerup/espsoftwareserial |
@@ -70,10 +79,14 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | SMTP mail| ESP-mail-client | **MIT** | bobizt, https://github.com/mobizt/ESP-Mail-Client |
 | Whatsapp| urlencode | **MIT** | Masayuki Sugahara, https://github.com/plageoj/urlencode |
 | Temperature | Arduino-Temperature-Control-Library | **MIT** | Miles Burton, https://github.com/milesburton/Arduino-Temperature-Control-Library|
-| Temperature | Arduino-Temperature-Control-Library | **MIT** | Miles Burton, https://github.com/milesburton/Arduino-Temperature-Control-Library|
 | Phyphox Arduino | phyphox-arduino | **LGPL-3.0/GPL-3.0** | phyphox.org, https://github.com/phyphox/phyphox-arduino |
+| Blynk | blynk-library | **MIT** | Volodymyr Shymanskyy, https://github.com/Blynk-Technologies/blynk-library |
 | Dynamixel Servos | Dynamixel2Arduino | **Apache 2.0** | ROBOTIS, https://github.com/ROBOTIS-GIT/Dynamixel2Arduino |
 | Feetech Servos | FTServo_Arduino | **MIT** | ftservo, https://github.com/ftservo/FTServo_Arduino |
+| Servo PWM | Servo | **LGPL 2.1** | Arduino,  https://github.com/arduino-libraries/Servo |
+| SD-Karte | SD | **GPL 3** | Arduino,  https://github.com/arduino-libraries/SD |
+| Spektrometer | | | HAW Hamburg, Ulrich Scheffler, https://www.haw-hamburg.de/hochschule/life-sciences/forschung/projekte-schullabor/schullabor-mobile-analytik/smartphone-photometer/ |
+
 
 ## Important Notes
 - **Repository code** (configs, boards.txt, own libs IoTW_xxx): **MIT License** 
