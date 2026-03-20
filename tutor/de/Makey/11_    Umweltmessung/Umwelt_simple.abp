@@ -11,7 +11,7 @@
                     <Comment>
                         <Text>Umweltdaten:
 
-Dank Bosch Umweltsensor ist der Makey in der Lage, Umweltdaten wie Temperatur, relative Luftfechte und Luftdruck zu ermitteln. Über den Dreh-Encoder können wir die Zeitreihen einer Messgröße zur Beobachtung auswählen.</Text>
+Dank Bosch Sensor ist der Mikrocontroller in der Lage, Umweltdaten wie Temperatur, relative Luftfechte und Luftdruck zu ermitteln. Über den Dreh-Encoder können wir die Zeitreihen einer Messgröße zur Beobachtung auf dem OLED-Display auswählen.</Text>
                         <Location>
                             <X>45</X>
                             <Y>0</Y>
