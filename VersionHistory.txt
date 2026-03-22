@@ -1,3 +1,6 @@
+Version V2.0f
+White on White Bug GTK Linux, Windows Size Linux x64  
+
 Version V2.0e
 THIRD-PARTY-NOTICES 
 

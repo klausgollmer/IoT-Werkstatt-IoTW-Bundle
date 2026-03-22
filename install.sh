@@ -28,5 +28,8 @@ chmod +x "$DESKTOP_FILE"
 if command -v gio >/dev/null; then
   gio set "$DESKTOP_FILE" metadata::trusted true
 fi
+echo "add user to dialout to access serial port"
+sudo adduser $USER dialout
+echo "please reboot"
 
 echo "✅ MakeyLab Desktop-Icon wurde erstellt."
