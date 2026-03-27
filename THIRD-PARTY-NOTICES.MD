@@ -86,6 +86,8 @@ Arduino uses GNU avr-gcc, avr-libc, avrdude etc. (see Arduino license).
 | SD-Karte | SD | **GPL 3** | Arduino,  https://github.com/arduino-libraries/SD |
 | Spektrometer | | | HAW Hamburg, Ulrich Scheffler, https://www.haw-hamburg.de/hochschule/life-sciences/forschung/projekte-schullabor/schullabor-mobile-analytik/smartphone-photometer/ |
 | Umweltdaten AHT | Adafruit_AHTX0 | **BSD** | Adafruit,  https://github.com/adafruit/Adafruit_AHTX0 |
+| Signalgenerator | DacTone | **MIT** | Bruce E. Hall,  https://github.com/bhall66/DacTone/tree/main |
+| xy-Scope Makey | esp-scopelogo | **MIT** | Simonyi Károly,  https://github.com/simonyiszk/esp-scopelogo/tree/main |
 
 
 ## Important Notes
