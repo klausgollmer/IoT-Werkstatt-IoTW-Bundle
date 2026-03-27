@@ -98,14 +98,8 @@ extern int PlayStopMS;   // stop playing
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
 
-
-void HappyBirthday(int);
-void Song1(int);
-void Song2(int);
-void Song3(int);
-void Song4(int);
-void Song5(int);
-void BuzzerTone(int,int);
-
+void IoTW_Tone_BuzzerTone(int,int);
+void IoTW_Tone_SignalGen(int, int, float);
+void IoTW_Tone_PlaySong(int,int);
 
 #endif
