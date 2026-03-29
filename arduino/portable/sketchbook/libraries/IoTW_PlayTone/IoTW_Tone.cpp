@@ -41,23 +41,16 @@ void beep(int f, int dur) {
     ledcDetach(IOTW_GPIO_AUDIO_OUT); // Detatch pin to stop the tone   
     delay(dur*0.25);
   }
-/*
-    if (millis() < PlayStopMS) {
-	   audio.tone(8*f);
-	   delay(dur);
-	   audio.noTone();
-	}
-	*/
 }
 
 
-void IoTW_Tone_BuzzerTone(int f, int dur) {
+void IoTW_Tone_BuzzerTone(int f, int dur, float vol) {
 	#if !defined(ESP32)
    	    Serial.println(F("ESP32 only"));
 		return;
     #endif	
 
-/*	
+	
    if (f > 0) {
     ledcAttach(IOTW_GPIO_AUDIO_OUT, 50, LEDC_RESOLUTION); // Attach pin before starting tone
     ledcWriteTone(IOTW_GPIO_AUDIO_OUT, f);
@@ -68,10 +61,11 @@ void IoTW_Tone_BuzzerTone(int f, int dur) {
    } else {
     ledcDetach(IOTW_GPIO_AUDIO_OUT); // Detatch pin to stop the tone   
   }
-  */
- 
+  
+  /*
+  audio.setVolume((int) vol);
   if (f > 0) {
-    audio.tone(10*f);
+    audio.tone(f);
     if  (dur>0) { 
 		delay(dur); 
 	   audio.noTone();
@@ -79,7 +73,7 @@ void IoTW_Tone_BuzzerTone(int f, int dur) {
    } else {
      audio.noTone();
   }
- 
+ */
 
  
 }
@@ -206,7 +200,8 @@ void IoTW_Tone_SignalGen(int dac, int vol, float f) {
    } 
   }
   
-void IoTW_Tone_PlaySong(int song, int dur) {
+void IoTW_Tone_PlaySong(int song, int dur, float vol) {
+  audio.setVolume((int) vol);
   switch (song) {
   case 0:
     HappyBirthday(dur);
