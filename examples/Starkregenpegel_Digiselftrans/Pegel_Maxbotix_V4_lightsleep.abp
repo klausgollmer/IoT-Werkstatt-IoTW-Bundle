@@ -3,44 +3,74 @@
     <Pages collapsible-pages="yes" drawer-with-page="yes">
         <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
             <PageBlocks>
-                <Block genus-name="TTN_APPKEY" id="17167">
-                    <Label>Eigene EUI</Label>
+                <Block genus-name="TTN_APPSKEY" id="17544">
+                    <Label>00000000000000000000000000000000 (16 Byte AppSKey)</Label>
                     <Location>
-                        <X>439</X>
-                        <Y>979</Y>
+                        <X>441</X>
+                        <Y>1442</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="16813" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_NETSKEY" id="17543">
+                    <Label>00000000000000000000000000000000 (16 Byte NwkSKey)</Label>
+                    <Location>
+                        <X>441</X>
+                        <Y>1418</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="16813" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_DEVADD" id="17542">
+                    <Label>00000000 (4 Byte Device address)</Label>
+                    <Location>
+                        <X>441</X>
+                        <Y>1394</Y>
                     </Location>
                     <Comment>
-                        <Text>Eigene EUI</Text>
+                        <Text>Eigene Addr und Keys</Text>
                         <Location>
-                            <X>651</X>
-                            <Y>1014</Y>
+                            <X>601</X>
+                            <Y>1354</Y>
                         </Location>
                         <BoxSize>
-                            <Width>156</Width>
-                            <Height>32</Height>
+                            <Width>206</Width>
+                            <Height>35</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Plug>
+                        <BlockConnector con-block-id="16813" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="TTN_DEVEUI" id="17536">
+                    <Label>0000000000000000 (8 Byte)</Label>
+                    <Location>
+                        <X>441</X>
+                        <Y>931</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Eigene EUI und Keys</Text>
+                        <Location>
+                            <X>690</X>
+                            <Y>930</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>186</Width>
+                            <Height>35</Height>
                         </BoxSize>
                     </Comment>
                     <Plug>
                         <BlockConnector con-block-id="16460" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
                     </Plug>
                 </Block>
-                <Block genus-name="TTN_DEVEUI" id="17166">
-                    <Label>Eigene EUI</Label>
+                <Block genus-name="TTN_APPKEY" id="17532">
+                    <Label>00000000000000000000000000000000 (16 Byte)</Label>
                     <Location>
-                        <X>439</X>
-                        <Y>931</Y>
+                        <X>441</X>
+                        <Y>979</Y>
                     </Location>
-                    <Comment>
-                        <Text>Eigene EUI</Text>
-                        <Location>
-                            <X>604</X>
-                            <Y>933</Y>
-                        </Location>
-                        <BoxSize>
-                            <Width>127</Width>
-                            <Height>37</Height>
-                        </BoxSize>
-                    </Comment>
                     <Plug>
                         <BlockConnector con-block-id="16460" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
                     </Plug>
@@ -53,9 +83,9 @@
                     <BeforeBlockId>14364</BeforeBlockId>
                     <AfterBlockId>14361</AfterBlockId>
                     <Sockets num-sockets="11">
-                        <BlockConnector con-block-id="14349" connector-kind="socket" connector-type="string" init-type="string" label="Dev Addr" position-type="single"/>
-                        <BlockConnector con-block-id="14350" connector-kind="socket" connector-type="string" init-type="string" label="NetS Key" position-type="single"/>
-                        <BlockConnector con-block-id="14351" connector-kind="socket" connector-type="string" init-type="string" label="AppS Key" position-type="single"/>
+                        <BlockConnector con-block-id="17542" connector-kind="socket" connector-type="string" init-type="string" label="Dev Addr" position-type="single"/>
+                        <BlockConnector con-block-id="17543" connector-kind="socket" connector-type="string" init-type="string" label="NetS Key" position-type="single"/>
+                        <BlockConnector con-block-id="17544" connector-kind="socket" connector-type="string" init-type="string" label="AppS Key" position-type="single"/>
                         <BlockConnector con-block-id="16817" connector-kind="socket" connector-type="number" init-type="number" label="Tx SF" position-type="single"/>
                         <BlockConnector con-block-id="16818" connector-kind="socket" connector-type="number" init-type="number" label="Port" position-type="single"/>
                         <BlockConnector con-block-id="14353" connector-kind="socket" connector-type="number" init-type="number" label="Feld 1" position-type="single"/>
@@ -101,7 +131,7 @@
                 <Block genus-name="division" id="14358">
                     <Label>÷</Label>
                     <Location>
-                        <X>437</X>
+                        <X>441</X>
                         <Y>1590</Y>
                     </Location>
                     <Plug>
@@ -115,7 +145,7 @@
                 <Block genus-name="number" id="14360">
                     <Label>1000.</Label>
                     <Location>
-                        <X>553</X>
+                        <X>557</X>
                         <Y>1593</Y>
                     </Location>
                     <Plug>
@@ -125,7 +155,7 @@
                 <Block genus-name="variable_number" id="14359">
                     <Label>Count</Label>
                     <Location>
-                        <X>447</X>
+                        <X>451</X>
                         <Y>1593</Y>
                     </Location>
                     <Plug>
@@ -135,7 +165,7 @@
                 <Block genus-name="variable_number_double" id="14357">
                     <Label>Temperature_C</Label>
                     <Location>
-                        <X>437</X>
+                        <X>441</X>
                         <Y>1566</Y>
                     </Location>
                     <Plug>
@@ -145,7 +175,7 @@
                 <Block genus-name="variable_number_double" id="14356">
                     <Label>Battery_V</Label>
                     <Location>
-                        <X>437</X>
+                        <X>441</X>
                         <Y>1542</Y>
                     </Location>
                     <Plug>
@@ -155,7 +185,7 @@
                 <Block genus-name="division" id="14353">
                     <Label>÷</Label>
                     <Location>
-                        <X>437</X>
+                        <X>441</X>
                         <Y>1514</Y>
                     </Location>
                     <Plug>
@@ -169,7 +199,7 @@
                 <Block genus-name="number" id="14355">
                     <Label>10.</Label>
                     <Location>
-                        <X>579</X>
+                        <X>583</X>
                         <Y>1517</Y>
                     </Location>
                     <Plug>
@@ -179,7 +209,7 @@
                 <Block genus-name="variable_number" id="14354">
                     <Label>Level_mm</Label>
                     <Location>
-                        <X>447</X>
+                        <X>451</X>
                         <Y>1517</Y>
                     </Location>
                     <Plug>
@@ -189,7 +219,7 @@
                 <Block genus-name="number" id="16818">
                     <Label>10</Label>
                     <Location>
-                        <X>437</X>
+                        <X>441</X>
                         <Y>1490</Y>
                     </Location>
                     <Plug>
@@ -198,41 +228,11 @@
                 </Block>
                 <Block genus-name="TTN_SF_Auto" id="16817">
                     <Location>
-                        <X>437</X>
+                        <X>441</X>
                         <Y>1466</Y>
                     </Location>
                     <Plug>
                         <BlockConnector con-block-id="16813" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="TTN_APPSKEY" id="14351">
-                    <Label>Eigener Key</Label>
-                    <Location>
-                        <X>437</X>
-                        <Y>1442</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="16813" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="TTN_NETSKEY" id="14350">
-                    <Label>Eigener Key</Label>
-                    <Location>
-                        <X>437</X>
-                        <Y>1418</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="16813" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="TTN_DEVADD" id="14349">
-                    <Label>Eigene Adr</Label>
-                    <Location>
-                        <X>437</X>
-                        <Y>1394</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="16813" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
                     </Plug>
                 </Block>
                 <Block genus-name="subroutine" id="14383">
@@ -289,9 +289,9 @@
                     <BeforeBlockId>9041</BeforeBlockId>
                     <AfterBlockId>9999</AfterBlockId>
                     <Sockets num-sockets="11">
-                        <BlockConnector con-block-id="17166" connector-kind="socket" connector-type="string" init-type="string" label="Dev EUI" position-type="single"/>
+                        <BlockConnector con-block-id="17536" connector-kind="socket" connector-type="string" init-type="string" label="Dev EUI" position-type="single"/>
                         <BlockConnector con-block-id="16462" connector-kind="socket" connector-type="string" init-type="string" label="App EUI" position-type="single"/>
-                        <BlockConnector con-block-id="17167" connector-kind="socket" connector-type="string" init-type="string" label="App Key" position-type="single"/>
+                        <BlockConnector con-block-id="17532" connector-kind="socket" connector-type="string" init-type="string" label="App Key" position-type="single"/>
                         <BlockConnector con-block-id="16464" connector-kind="socket" connector-type="number" init-type="number" label="Tx SF" position-type="single"/>
                         <BlockConnector con-block-id="16465" connector-kind="socket" connector-type="number" init-type="number" label="Port" position-type="single"/>
                         <BlockConnector con-block-id="6765" connector-kind="socket" connector-type="number" init-type="number" label="Feld 1" position-type="single"/>
@@ -337,7 +337,7 @@
                 <Block genus-name="division" id="9996">
                     <Label>÷</Label>
                     <Location>
-                        <X>439</X>
+                        <X>441</X>
                         <Y>1127</Y>
                     </Location>
                     <Plug>
@@ -351,7 +351,7 @@
                 <Block genus-name="number" id="9998">
                     <Label>1000.</Label>
                     <Location>
-                        <X>555</X>
+                        <X>557</X>
                         <Y>1130</Y>
                     </Location>
                     <Plug>
@@ -361,7 +361,7 @@
                 <Block genus-name="variable_number" id="9997">
                     <Label>Count</Label>
                     <Location>
-                        <X>449</X>
+                        <X>451</X>
                         <Y>1130</Y>
                     </Location>
                     <Plug>
@@ -371,7 +371,7 @@
                 <Block genus-name="variable_number_double" id="8966">
                     <Label>Temperature_C</Label>
                     <Location>
-                        <X>439</X>
+                        <X>441</X>
                         <Y>1103</Y>
                     </Location>
                     <Plug>
@@ -381,7 +381,7 @@
                 <Block genus-name="variable_number_double" id="6018">
                     <Label>Battery_V</Label>
                     <Location>
-                        <X>439</X>
+                        <X>441</X>
                         <Y>1079</Y>
                     </Location>
                     <Plug>
@@ -391,7 +391,7 @@
                 <Block genus-name="division" id="6765">
                     <Label>÷</Label>
                     <Location>
-                        <X>439</X>
+                        <X>441</X>
                         <Y>1051</Y>
                     </Location>
                     <Plug>
@@ -405,7 +405,7 @@
                 <Block genus-name="number" id="6767">
                     <Label>10.</Label>
                     <Location>
-                        <X>581</X>
+                        <X>583</X>
                         <Y>1054</Y>
                     </Location>
                     <Plug>
@@ -415,7 +415,7 @@
                 <Block genus-name="variable_number" id="6766">
                     <Label>Level_mm</Label>
                     <Location>
-                        <X>449</X>
+                        <X>451</X>
                         <Y>1054</Y>
                     </Location>
                     <Plug>
@@ -425,7 +425,7 @@
                 <Block genus-name="number" id="16465">
                     <Label>10</Label>
                     <Location>
-                        <X>439</X>
+                        <X>441</X>
                         <Y>1027</Y>
                     </Location>
                     <Plug>
@@ -434,7 +434,7 @@
                 </Block>
                 <Block genus-name="TTN_SF_Auto" id="16464">
                     <Location>
-                        <X>439</X>
+                        <X>441</X>
                         <Y>1003</Y>
                     </Location>
                     <Plug>
@@ -444,7 +444,7 @@
                 <Block genus-name="TTN_APPEUI" id="16462">
                     <Label>0000000000000000</Label>
                     <Location>
-                        <X>439</X>
+                        <X>441</X>
                         <Y>955</Y>
                     </Location>
                     <Plug>
@@ -454,21 +454,11 @@
                 <Block genus-name="predef_number" id="16110">
                     <Label>IOTW_WAIT_6H_IN_MS</Label>
                     <Location>
-                        <X>1420</X>
+                        <X>1424</X>
                         <Y>962</Y>
                     </Location>
                     <Plug>
                         <BlockConnector con-block-id="13601" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="predef_number" id="7515">
-                    <Label>IOTW_WAIT_30MIN_IN_MS</Label>
-                    <Location>
-                        <X>1874</X>
-                        <Y>948</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
                     </Plug>
                 </Block>
                 <Block genus-name="serial_print" id="8973">
@@ -694,7 +684,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="RTC_GPIO32" id="7542">
                     <Label>set RTC_GPIO</Label>
                     <Location>
-                        <X>1335</X>
+                        <X>1339</X>
                         <Y>535</Y>
                     </Location>
                     <BeforeBlockId>7529</BeforeBlockId>
@@ -705,7 +695,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="RTC_GPIO32_low" id="7544">
                     <Location>
-                        <X>1495</X>
+                        <X>1499</X>
                         <Y>562</Y>
                     </Location>
                     <Plug>
@@ -715,7 +705,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="predef_number" id="7543">
                     <Label>IOTW_GPIO_CHARGE_BATTERY</Label>
                     <Location>
-                        <X>1495</X>
+                        <X>1499</X>
                         <Y>538</Y>
                     </Location>
                     <Plug>
@@ -724,7 +714,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="serial_print" id="7551">
                     <Location>
-                        <X>1336</X>
+                        <X>1340</X>
                         <Y>416</Y>
                     </Location>
                     <BeforeBlockId>7529</BeforeBlockId>
@@ -737,7 +727,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="RTC_GPIO32" id="7537">
                     <Label>set RTC_GPIO</Label>
                     <Location>
-                        <X>1336</X>
+                        <X>1340</X>
                         <Y>470</Y>
                     </Location>
                     <BeforeBlockId>7551</BeforeBlockId>
@@ -748,7 +738,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="RTC_GPIO32_high" id="7539">
                     <Location>
-                        <X>1496</X>
+                        <X>1500</X>
                         <Y>497</Y>
                     </Location>
                     <Plug>
@@ -758,7 +748,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="predef_number" id="7538">
                     <Label>IOTW_GPIO_CHARGE_BATTERY</Label>
                     <Location>
-                        <X>1496</X>
+                        <X>1500</X>
                         <Y>473</Y>
                     </Location>
                     <Plug>
@@ -768,7 +758,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="true" id="7553">
                     <Label>true</Label>
                     <Location>
-                        <X>1484</X>
+                        <X>1488</X>
                         <Y>443</Y>
                     </Location>
                     <Plug>
@@ -778,7 +768,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="message" id="7552">
                     <Label>Charge</Label>
                     <Location>
-                        <X>1484</X>
+                        <X>1488</X>
                         <Y>419</Y>
                     </Location>
                     <Plug>
@@ -790,7 +780,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="and" id="7530">
                     <Location>
-                        <X>1339</X>
+                        <X>1343</X>
                         <Y>355</Y>
                     </Location>
                     <Plug>
@@ -804,7 +794,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="greater" id="7532">
                     <Label>&gt;</Label>
                     <Location>
-                        <X>1397</X>
+                        <X>1401</X>
                         <Y>383</Y>
                     </Location>
                     <Plug>
@@ -818,7 +808,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="number" id="7536">
                     <Label>0</Label>
                     <Location>
-                        <X>1569</X>
+                        <X>1573</X>
                         <Y>386</Y>
                     </Location>
                     <Plug>
@@ -828,7 +818,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="variable_number_double" id="7534">
                     <Label>Temperature_C</Label>
                     <Location>
-                        <X>1407</X>
+                        <X>1411</X>
                         <Y>386</Y>
                     </Location>
                     <Plug>
@@ -837,7 +827,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="less" id="7531">
                     <Location>
-                        <X>1397</X>
+                        <X>1401</X>
                         <Y>355</Y>
                     </Location>
                     <Plug>
@@ -851,7 +841,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="number" id="7535">
                     <Label>35</Label>
                     <Location>
-                        <X>1572</X>
+                        <X>1576</X>
                         <Y>358</Y>
                     </Location>
                     <Plug>
@@ -861,7 +851,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="variable_number_double" id="7533">
                     <Label>Temperature_C</Label>
                     <Location>
-                        <X>1407</X>
+                        <X>1411</X>
                         <Y>358</Y>
                     </Location>
                     <Plug>
@@ -870,7 +860,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="DS18B20Get32" id="8286">
                     <Location>
-                        <X>1403</X>
+                        <X>1409</X>
                         <Y>253</Y>
                     </Location>
                     <Plug>
@@ -885,7 +875,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="DS18B20_get" id="8290">
                     <Location>
-                        <X>1603</X>
+                        <X>1609</X>
                         <Y>325</Y>
                     </Location>
                     <Plug>
@@ -895,7 +885,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="number" id="8289">
                     <Label>12</Label>
                     <Location>
-                        <X>1603</X>
+                        <X>1609</X>
                         <Y>301</Y>
                     </Location>
                     <Plug>
@@ -905,7 +895,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="number" id="8288">
                     <Label>0</Label>
                     <Location>
-                        <X>1603</X>
+                        <X>1609</X>
                         <Y>277</Y>
                     </Location>
                     <Plug>
@@ -915,7 +905,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="predef_number" id="11069">
                     <Label>IOTW_GPIO_ONE_WIRE</Label>
                     <Location>
-                        <X>1603</X>
+                        <X>1609</X>
                         <Y>253</Y>
                     </Location>
                     <Plug>
@@ -925,7 +915,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="variable_number_double" id="7521">
                     <Label>Temperature_C</Label>
                     <Location>
-                        <X>1403</X>
+                        <X>1409</X>
                         <Y>229</Y>
                     </Location>
                     <Plug>
@@ -935,7 +925,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="number" id="15072">
                     <Label>1100</Label>
                     <Location>
-                        <X>1341</X>
+                        <X>1345</X>
                         <Y>199</Y>
                     </Location>
                     <Plug>
@@ -987,7 +977,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="predef_number" id="15419">
                     <Label>IOTW_GPIO_ONE_WIRE</Label>
                     <Location>
-                        <X>1371</X>
+                        <X>1373</X>
                         <Y>169</Y>
                     </Location>
                     <Plug>
@@ -1008,13 +998,13 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="ifelse" id="10391">
                     <Location>
-                        <X>1275</X>
+                        <X>1279</X>
                         <Y>1000</Y>
                     </Location>
                     <Comment>
                         <Text>Batterieversorgung genauer prüfen</Text>
                         <Location>
-                            <X>1773</X>
+                            <X>1777</X>
                             <Y>992</Y>
                         </Location>
                         <BoxSize>
@@ -1031,13 +1021,13 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="setter_variable_number" id="5159">
                     <Location>
-                        <X>1409</X>
+                        <X>1413</X>
                         <Y>1101</Y>
                     </Location>
                     <Comment>
                         <Text>Kapazität 10  - 25 % -&gt; Sparbetrieb</Text>
                         <Location>
-                            <X>1782</X>
+                            <X>1786</X>
                             <Y>1089</Y>
                         </Location>
                         <BoxSize>
@@ -1053,7 +1043,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="multiplication" id="9058">
                     <Location>
-                        <X>1613</X>
+                        <X>1617</X>
                         <Y>1128</Y>
                     </Location>
                     <Plug>
@@ -1067,7 +1057,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="number" id="9060">
                     <Label>2</Label>
                     <Location>
-                        <X>1796</X>
+                        <X>1800</X>
                         <Y>1131</Y>
                     </Location>
                     <Plug>
@@ -1077,7 +1067,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="predef_number" id="10389">
                     <Label>CYCLE_TIME_MS</Label>
                     <Location>
-                        <X>1623</X>
+                        <X>1627</X>
                         <Y>1131</Y>
                     </Location>
                     <Plug>
@@ -1087,7 +1077,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="variable_number" id="5160">
                     <Label>act_sleep_time_ms</Label>
                     <Location>
-                        <X>1613</X>
+                        <X>1617</X>
                         <Y>1104</Y>
                     </Location>
                     <Plug>
@@ -1097,13 +1087,13 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="setter_variable_number" id="10386">
                     <Label>Setze Zahl-Variable</Label>
                     <Location>
-                        <X>1410</X>
+                        <X>1414</X>
                         <Y>1036</Y>
                     </Location>
                     <Comment>
                         <Text>Kapazität &gt; 25 %, Normalbetrieb</Text>
                         <Location>
-                            <X>1781</X>
+                            <X>1785</X>
                             <Y>1051</Y>
                         </Location>
                         <BoxSize>
@@ -1120,7 +1110,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="predef_number" id="10388">
                     <Label>CYCLE_TIME_MS</Label>
                     <Location>
-                        <X>1608</X>
+                        <X>1612</X>
                         <Y>1063</Y>
                     </Location>
                     <Plug>
@@ -1130,7 +1120,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="variable_number" id="10387">
                     <Label>act_sleep_time_ms</Label>
                     <Location>
-                        <X>1608</X>
+                        <X>1612</X>
                         <Y>1039</Y>
                     </Location>
                     <Plug>
@@ -1139,7 +1129,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="greater" id="3476">
                     <Location>
-                        <X>1413</X>
+                        <X>1417</X>
                         <Y>1003</Y>
                     </Location>
                     <Plug>
@@ -1153,7 +1143,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="predef_number" id="4647">
                     <Label>IOTW_BATTERY_LIMIT_25</Label>
                     <Location>
-                        <X>1556</X>
+                        <X>1560</X>
                         <Y>1006</Y>
                     </Location>
                     <Plug>
@@ -1163,7 +1153,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="variable_number_double" id="3549">
                     <Label>Battery_V</Label>
                     <Location>
-                        <X>1423</X>
+                        <X>1427</X>
                         <Y>1006</Y>
                     </Location>
                     <Plug>
@@ -1173,7 +1163,7 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 <Block genus-name="RTC_GPIO32" id="13631">
                     <Label>set RTC_GPIO</Label>
                     <Location>
-                        <X>1276</X>
+                        <X>1280</X>
                         <Y>905</Y>
                     </Location>
                     <BeforeBlockId>9889</BeforeBlockId>
@@ -1185,14 +1175,14 @@ Hier 35 statt 40 Grad, um Überladen im Sommer zu begrenzen</Text>
                 </Block>
                 <Block genus-name="sleep32" id="13601">
                     <Location>
-                        <X>1276</X>
+                        <X>1280</X>
                         <Y>959</Y>
                     </Location>
                     <Comment>
                         <Text>ENERGIE KNAPP, 
 Abbruch und Winterschlaf</Text>
                         <Location>
-                            <X>1657</X>
+                            <X>1661</X>
                             <Y>919</Y>
                         </Location>
                         <BoxSize>
@@ -1207,7 +1197,7 @@ Abbruch und Winterschlaf</Text>
                 </Block>
                 <Block genus-name="RTC_GPIO32_low" id="13633">
                     <Location>
-                        <X>1436</X>
+                        <X>1440</X>
                         <Y>932</Y>
                     </Location>
                     <Plug>
@@ -1217,7 +1207,7 @@ Abbruch und Winterschlaf</Text>
                 <Block genus-name="predef_number" id="13632">
                     <Label>IOTW_GPIO_US_POWER</Label>
                     <Location>
-                        <X>1436</X>
+                        <X>1440</X>
                         <Y>908</Y>
                     </Location>
                     <Plug>
@@ -1226,13 +1216,13 @@ Abbruch und Winterschlaf</Text>
                 </Block>
                 <Block genus-name="less" id="7473">
                     <Location>
-                        <X>1279</X>
+                        <X>1283</X>
                         <Y>872</Y>
                     </Location>
                     <Comment>
                         <Text>Weniger als 10 % Restkapazität -</Text>
                         <Location>
-                            <X>1655</X>
+                            <X>1659</X>
                             <Y>858</Y>
                         </Location>
                         <BoxSize>
@@ -1251,7 +1241,7 @@ Abbruch und Winterschlaf</Text>
                 <Block genus-name="predef_number" id="7475">
                     <Label>IOTW_BATTERY_LIMIT_10</Label>
                     <Location>
-                        <X>1436</X>
+                        <X>1440</X>
                         <Y>875</Y>
                     </Location>
                     <Plug>
@@ -1261,7 +1251,7 @@ Abbruch und Winterschlaf</Text>
                 <Block genus-name="variable_number_double" id="7474">
                     <Label>Battery_V</Label>
                     <Location>
-                        <X>1289</X>
+                        <X>1293</X>
                         <Y>875</Y>
                     </Location>
                     <Plug>
@@ -1354,7 +1344,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 </Block>
                 <Block genus-name="equal" id="11112">
                     <Location>
-                        <X>1469</X>
+                        <X>1475</X>
                         <Y>1627</Y>
                     </Location>
                     <Plug>
@@ -1368,7 +1358,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="number" id="11114">
                     <Label>0</Label>
                     <Location>
-                        <X>1816</X>
+                        <X>1822</X>
                         <Y>1634</Y>
                     </Location>
                     <Plug>
@@ -1377,7 +1367,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 </Block>
                 <Block genus-name="modulo" id="11111">
                     <Location>
-                        <X>1479</X>
+                        <X>1485</X>
                         <Y>1630</Y>
                     </Location>
                     <Plug>
@@ -1391,7 +1381,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="predef_number" id="11107">
                     <Label>CYCLE_COUNT_SEND</Label>
                     <Location>
-                        <X>1600</X>
+                        <X>1606</X>
                         <Y>1633</Y>
                     </Location>
                     <Plug>
@@ -1401,7 +1391,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="variable_number" id="11113">
                     <Label>Count</Label>
                     <Location>
-                        <X>1489</X>
+                        <X>1495</X>
                         <Y>1633</Y>
                     </Location>
                     <Plug>
@@ -1411,7 +1401,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="variable_digital" id="9896">
                     <Label>Send_message</Label>
                     <Location>
-                        <X>1469</X>
+                        <X>1475</X>
                         <Y>1603</Y>
                     </Location>
                     <Plug>
@@ -1433,7 +1423,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="digital-high" id="11829">
                     <Label>HIGH</Label>
                     <Location>
-                        <X>1470</X>
+                        <X>1476</X>
                         <Y>1562</Y>
                     </Location>
                     <Plug>
@@ -1443,7 +1433,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="variable_digital" id="11828">
                     <Label>Send_message</Label>
                     <Location>
-                        <X>1470</X>
+                        <X>1476</X>
                         <Y>1538</Y>
                     </Location>
                     <Plug>
@@ -1669,7 +1659,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="variable_number" id="15075">
                     <Label>act_sleep_time_ms</Label>
                     <Location>
-                        <X>442</X>
+                        <X>446</X>
                         <Y>191</Y>
                     </Location>
                     <Plug>
@@ -1971,7 +1961,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="number" id="7459">
                     <Label>1</Label>
                     <Location>
-                        <X>1497</X>
+                        <X>1503</X>
                         <Y>788</Y>
                     </Location>
                     <Plug>
@@ -2013,7 +2003,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 </Block>
                 <Block genus-name="MEANsmooth" id="7457">
                     <Location>
-                        <X>1357</X>
+                        <X>1363</X>
                         <Y>732</Y>
                     </Location>
                     <Plug>
@@ -2028,7 +2018,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="number" id="7458">
                     <Label>10</Label>
                     <Location>
-                        <X>1497</X>
+                        <X>1503</X>
                         <Y>764</Y>
                     </Location>
                     <Plug>
@@ -2037,7 +2027,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 </Block>
                 <Block genus-name="multiplication" id="7467">
                     <Location>
-                        <X>1497</X>
+                        <X>1503</X>
                         <Y>732</Y>
                     </Location>
                     <Plug>
@@ -2051,7 +2041,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="predef_number" id="7468">
                     <Label>VBATT_FACTOR</Label>
                     <Location>
-                        <X>1863</X>
+                        <X>1869</X>
                         <Y>739</Y>
                     </Location>
                     <Plug>
@@ -2060,7 +2050,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 </Block>
                 <Block genus-name="multiplication" id="12517">
                     <Location>
-                        <X>1507</X>
+                        <X>1513</X>
                         <Y>735</Y>
                     </Location>
                     <Plug>
@@ -2074,7 +2064,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="number" id="12518">
                     <Label>0.002</Label>
                     <Location>
-                        <X>1738</X>
+                        <X>1744</X>
                         <Y>738</Y>
                     </Location>
                     <Plug>
@@ -2083,7 +2073,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 </Block>
                 <Block genus-name="analogReadmV_32" id="12172">
                     <Location>
-                        <X>1517</X>
+                        <X>1523</X>
                         <Y>738</Y>
                     </Location>
                     <Plug>
@@ -2096,7 +2086,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="number" id="12173">
                     <Label>4</Label>
                     <Location>
-                        <X>1655</X>
+                        <X>1661</X>
                         <Y>738</Y>
                     </Location>
                     <Plug>
@@ -2106,7 +2096,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="variable_number_double" id="3546">
                     <Label>Battery_V</Label>
                     <Location>
-                        <X>1357</X>
+                        <X>1363</X>
                         <Y>708</Y>
                     </Location>
                     <Plug>
@@ -2199,7 +2189,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="subroutine-ref" id="3554">
                     <Label>Send_TTN_OTA</Label>
                     <Location>
-                        <X>395</X>
+                        <X>399</X>
                         <Y>154</Y>
                     </Location>
                     <BeforeBlockId>9907</BeforeBlockId>
@@ -2207,7 +2197,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="variable_digital" id="9909">
                     <Label>Send_message</Label>
                     <Location>
-                        <X>398</X>
+                        <X>402</X>
                         <Y>125</Y>
                     </Location>
                     <Plug>
@@ -2645,7 +2635,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="true" id="3575">
                     <Label>true</Label>
                     <Location>
-                        <X>385</X>
+                        <X>387</X>
                         <Y>365</Y>
                     </Location>
                     <Plug>
@@ -2655,7 +2645,7 @@ Versorgung ausschalten (Energiesparen)</Text>
                 <Block genus-name="message" id="3574">
                     <Label>Do_Init</Label>
                     <Location>
-                        <X>385</X>
+                        <X>387</X>
                         <Y>341</Y>
                     </Location>
                     <Plug>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="delay_s" id="373">
+                    <Location>
+                        <X>264</X>
+                        <Y>256</Y>
+                    </Location>
+                    <BeforeBlockId>364</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="374" connector-kind="socket" connector-type="number" init-type="number" label="s" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="374">
+                    <Label>1</Label>
+                    <Location>
+                        <X>378</X>
+                        <Y>259</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="373" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot" id="372">
+                    <Location>
+                        <X>430</X>
+                        <Y>228</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="371" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="366">
+                    <Label>10</Label>
+                    <Location>
+                        <X>584</X>
+                        <Y>228</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="371" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="multiplication" id="371">
+                    <Location>
+                        <X>420</X>
+                        <Y>225</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="364" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="372" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                        <BlockConnector con-block-id="366" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="370">
+                    <Label>10</Label>
+                    <Location>
+                        <X>419</X>
+                        <Y>159</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="367" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot_minmax2" id="367">
+                    <Location>
+                        <X>265</X>
+                        <Y>108</Y>
+                    </Location>
+                    <BeforeBlockId>363</BeforeBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="368" connector-kind="socket" connector-type="number" init-type="number" label="start" position-type="single"/>
+                        <BlockConnector con-block-id="369" connector-kind="socket" connector-type="number" init-type="number" label="min" position-type="single"/>
+                        <BlockConnector con-block-id="370" connector-kind="socket" connector-type="number" init-type="number" label="max" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="369">
+                    <Label>0</Label>
+                    <Location>
+                        <X>419</X>
+                        <Y>135</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="367" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="368">
+                    <Label>4</Label>
+                    <Location>
+                        <X>419</X>
+                        <Y>111</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="367" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="SAM_Say" id="364">
+                    <Location>
+                        <X>264</X>
+                        <Y>198</Y>
+                    </Location>
+                    <BeforeBlockId>363</BeforeBlockId>
+                    <AfterBlockId>373</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="365" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="371" connector-kind="socket" connector-type="number" init-type="number" label="gain [%]" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="message" id="365">
+                    <Label>Hello Makey, lets play toogether!</Label>
+                    <Location>
+                        <X>420</X>
+                        <Y>201</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="364" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="program" id="363">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Sprachausgabe mit internem Sprachmodell
+https://github.com/earlephilhower/ESP8266SAM
+Laustärke über Drehencoder</Text>
+                        <Location>
+                            <X>100</X>
+                            <Y>18</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>370</Width>
+                            <Height>77</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="367" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="364" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

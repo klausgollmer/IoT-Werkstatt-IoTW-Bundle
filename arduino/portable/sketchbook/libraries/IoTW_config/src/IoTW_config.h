@@ -7,6 +7,10 @@
 #include <Arduino.h>   // keep lightweight, ensures Serial/vTaskDelay are declared
 #include <stdint.h>
 
+#define SH110X_DISPLAYOFF   0xAE
+#define SH110X_DISPLAYON    0xAF
+
+
 // --------------------------- Public constants ---------------------------
 #ifndef IOTW_SCREEN_WIDTH
 #  define IOTW_SCREEN_WIDTH 128
@@ -79,11 +83,13 @@
 
 // --------------------------- Public state & API ---------------------------
 extern bool preventDisplayClear;               // single definition lives in IOTW_config.cpp
+// Sleep OLED
+void IoTW_sleepOLED(int);
 
 // Initialize peripherals / banner / display depending on board
-void IoT_WerkstattInit();
+void IoTW_init();
 
 #ifdef ESP32
 // Prevent the clear-display FreeRTOS task from wiping the boot logo
-void IoT_WerkstattPreventDisplayClear();
+void IoTW_preventDisplayClear();
 #endif

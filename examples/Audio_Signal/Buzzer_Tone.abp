@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="multiplication" id="1508">
+                    <Location>
+                        <X>592</X>
+                        <Y>303</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1879" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1509" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                        <BlockConnector con-block-id="1501" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1501">
+                    <Label>100</Label>
+                    <Location>
+                        <X>756</X>
+                        <Y>306</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1508" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot" id="1509">
+                    <Location>
+                        <X>602</X>
+                        <Y>306</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1508" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="BuzzerTone" id="1879">
+                    <Location>
+                        <X>394</X>
+                        <Y>300</Y>
+                    </Location>
+                    <BeforeBlockId>1512</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1508" connector-kind="socket" connector-type="number" init-type="number" label="frequency (Hz)" position-type="single"/>
+                        <BlockConnector con-block-id="1881" connector-kind="socket" connector-type="number" init-type="number" label="duration (ms)" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1881">
+                    <Label>1000</Label>
+                    <Location>
+                        <X>592</X>
+                        <Y>331</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1879" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="multiplication" id="1516">
+                    <Label>x</Label>
+                    <Location>
+                        <X>586</X>
+                        <Y>221</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1515" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1517" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                        <BlockConnector con-block-id="1518" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1518">
+                    <Label>100</Label>
+                    <Location>
+                        <X>750</X>
+                        <Y>224</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1516" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot" id="1517">
+                    <Label>Encoder (turn)</Label>
+                    <Location>
+                        <X>596</X>
+                        <Y>224</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1516" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="glue_sn" id="1515">
+                    <Location>
+                        <X>508</X>
+                        <Y>221</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1512" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1516" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="OLED_Print3" id="1512">
+                    <Location>
+                        <X>394</X>
+                        <Y>194</Y>
+                    </Location>
+                    <BeforeBlockId>338</BeforeBlockId>
+                    <AfterBlockId>1879</AfterBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="1515" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="1514" connector-kind="socket" connector-type="string" init-type="string" label="size" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="OLED_FontSize9" id="1514">
+                    <Location>
+                        <X>508</X>
+                        <Y>273</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1512" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot_minmax2" id="1486">
+                    <Location>
+                        <X>395</X>
+                        <Y>104</Y>
+                    </Location>
+                    <BeforeBlockId>338</BeforeBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="1487" connector-kind="socket" connector-type="number" init-type="number" label="start" position-type="single"/>
+                        <BlockConnector con-block-id="1488" connector-kind="socket" connector-type="number" init-type="number" label="min" position-type="single"/>
+                        <BlockConnector con-block-id="1489" connector-kind="socket" connector-type="number" init-type="number" label="max" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1489">
+                    <Label>40</Label>
+                    <Location>
+                        <X>549</X>
+                        <Y>155</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1486" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1488">
+                    <Label>1</Label>
+                    <Location>
+                        <X>549</X>
+                        <Y>131</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1486" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1487">
+                    <Label>10</Label>
+                    <Location>
+                        <X>549</X>
+                        <Y>107</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1486" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="338">
+                    <Location>
+                        <X>230</X>
+                        <Y>96</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Erzeuge Rechtecksignal mit der gewünschten Frequenz (für Buzzer)
+Über digitalen Ausgang -&gt; Laustärkeregelung ohne Funktion
+Achtung: Absolute Vorsicht bei Anschluss eines Lautsprechers !!!!</Text>
+                        <Location>
+                            <X>232</X>
+                            <Y>15</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>678</Width>
+                            <Height>73</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1486" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="1512" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

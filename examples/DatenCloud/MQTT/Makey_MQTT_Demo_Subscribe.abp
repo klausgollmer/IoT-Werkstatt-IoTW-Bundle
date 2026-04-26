@@ -1,437 +1,321 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
     <Pages collapsible-pages="yes" drawer-with-page="yes">
-        <Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="2752">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
             <PageBlocks>
-                <Block genus-name="message" id="1250">
-                    <Label>Makey/Temp</Label>
+                <Block genus-name="iot_neopixel_light" id="749">
+                    <Label>Neopixel</Label>
                     <Location>
-                        <X>437</X>
-                        <Y>536</Y>
+                        <X>275</X>
+                        <Y>614</Y>
+                    </Location>
+                    <BeforeBlockId>747</BeforeBlockId>
+                    <AfterBlockId>752</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="750" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="751" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay" id="752">
+                    <Label>Delay (warte)</Label>
+                    <Location>
+                        <X>275</X>
+                        <Y>668</Y>
+                    </Location>
+                    <BeforeBlockId>749</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="753" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="753">
+                    <Label>250</Label>
+                    <Location>
+                        <X>397</X>
+                        <Y>671</Y>
                     </Location>
                     <Plug>
-                        <BlockConnector con-block-id="653" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                        <BlockConnector con-block-id="752" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
                     </Plug>
-                    <Sockets num-sockets="1">
-                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Sockets>
                 </Block>
-                <Block genus-name="message" id="960">
-                    <Label>Wait for Data</Label>
+                <Block genus-name="NEOVectorOff" id="751">
                     <Location>
-                        <X>419</X>
-                        <Y>434</Y>
+                        <X>385</X>
+                        <Y>641</Y>
                     </Location>
                     <Plug>
-                        <BlockConnector con-block-id="951" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                        <BlockConnector con-block-id="749" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
                     </Plug>
+                </Block>
+                <Block genus-name="neo-rechts" id="750">
+                    <Label>Rechts</Label>
+                    <Location>
+                        <X>385</X>
+                        <Y>617</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="749" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="delay" id="747">
+                    <Location>
+                        <X>275</X>
+                        <Y>584</Y>
+                    </Location>
+                    <BeforeBlockId>744</BeforeBlockId>
+                    <AfterBlockId>749</AfterBlockId>
                     <Sockets num-sockets="1">
-                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                        <BlockConnector con-block-id="748" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
                     </Sockets>
                 </Block>
-                <Block genus-name="mqttconnect" id="85">
+                <Block genus-name="number" id="748">
+                    <Label>250</Label>
                     <Location>
-                        <X>263</X>
-                        <Y>251</Y>
+                        <X>397</X>
+                        <Y>587</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="747" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="iot_neopixel_light" id="744">
+                    <Location>
+                        <X>275</X>
+                        <Y>530</Y>
                     </Location>
                     <Comment>
-                        <Text>Verbindung zum MQTT-Broker herstellen, der Broker speichert und vermittelt die Nachrichten. Wir Nutzen hier den öffenlichen Demo-Broker von HIVEMW: http://www.mqtt-dashboard.com/</Text>
+                        <Text>In der Schleife können wir andere Dinge tun, zum Beispiel blinken.</Text>
                         <Location>
-                            <X>576</X>
-                            <Y>265</Y>
+                            <X>487</X>
+                            <Y>551</Y>
                         </Location>
                         <BoxSize>
-                            <Width>383</Width>
-                            <Height>63</Height>
-                        </BoxSize>
-                    </Comment>
-                    <BeforeBlockId>346</BeforeBlockId>
-                    <AfterBlockId>964</AfterBlockId>
-                    <Sockets num-sockets="4">
-                        <BlockConnector con-block-id="86" connector-kind="socket" connector-type="string" init-type="string" label="Broker" position-type="single"/>
-                        <BlockConnector con-block-id="87" connector-kind="socket" connector-type="string" init-type="string" label="Client" position-type="single"/>
-                        <BlockConnector con-block-id="88" connector-kind="socket" connector-type="string" init-type="string" label="Key" position-type="single"/>
-                        <BlockConnector con-block-id="89" connector-kind="socket" connector-type="string" init-type="string" label="Key" position-type="single"/>
-                    </Sockets>
-                </Block>
-                <Block genus-name="OLED_Font" id="964">
-                    <Location>
-                        <X>263</X>
-                        <Y>353</Y>
-                    </Location>
-                    <BeforeBlockId>85</BeforeBlockId>
-                    <AfterBlockId>951</AfterBlockId>
-                    <Sockets num-sockets="3">
-                        <BlockConnector con-block-id="965" connector-kind="socket" connector-type="string" init-type="string" label="font" position-type="single"/>
-                        <BlockConnector con-block-id="966" connector-kind="socket" connector-type="string" init-type="string" label="type" position-type="single"/>
-                        <BlockConnector con-block-id="967" connector-kind="socket" connector-type="string" init-type="string" label="size" position-type="single"/>
-                    </Sockets>
-                </Block>
-                <Block genus-name="OLED_Print" id="951">
-                    <Location>
-                        <X>263</X>
-                        <Y>431</Y>
-                    </Location>
-                    <BeforeBlockId>964</BeforeBlockId>
-                    <AfterBlockId>956</AfterBlockId>
-                    <Sockets num-sockets="3">
-                        <BlockConnector con-block-id="960" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
-                        <BlockConnector con-block-id="953" connector-kind="socket" connector-type="number" init-type="number" label="x" position-type="single"/>
-                        <BlockConnector con-block-id="954" connector-kind="socket" connector-type="number" init-type="number" label="y" position-type="single"/>
-                    </Sockets>
-                </Block>
-                <Block genus-name="OLED_Display" id="956">
-                    <Location>
-                        <X>263</X>
-                        <Y>509</Y>
-                    </Location>
-                    <BeforeBlockId>951</BeforeBlockId>
-                    <AfterBlockId>653</AfterBlockId>
-                </Block>
-                <Block genus-name="mqttsubscribe" id="653">
-                    <Location>
-                        <X>263</X>
-                        <Y>533</Y>
-                    </Location>
-                    <Comment>
-                        <Text>Trifft eine neue Nachricht unter diesem Topic ein, so werden die im Setup angegebenen Befehlsblöcke ausgeführt (Callback-Funktion).In unserem Fall wird die Nachricht (payload) auf dem Display angezeigt. Das Topic darf nicht in einer Varaiblen definiert werden.</Text>
-                        <Location>
-                            <X>592</X>
-                            <Y>515</Y>
-                        </Location>
-                        <BoxSize>
-                            <Width>388</Width>
+                            <Width>140</Width>
                             <Height>91</Height>
                         </BoxSize>
                     </Comment>
-                    <BeforeBlockId>956</BeforeBlockId>
-                    <Sockets num-sockets="3">
-                        <BlockConnector con-block-id="1250" connector-kind="socket" connector-type="string" init-type="string" label="Topic" position-type="single"/>
-                        <BlockConnector con-block-id="655" connector-kind="socket" connector-type="number" init-type="number" label="QoS" position-type="single"/>
-                        <BlockConnector con-block-id="968" connector-kind="socket" connector-type="cmd" init-type="cmd" label="callback" position-type="single"/>
+                    <BeforeBlockId>364</BeforeBlockId>
+                    <AfterBlockId>747</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="745" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
+                        <BlockConnector con-block-id="746" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
                     </Sockets>
                 </Block>
-                <Block genus-name="OLED_Clear" id="968">
+                <Block genus-name="NEOVectorGreen" id="746">
                     <Location>
-                        <X>434</X>
-                        <Y>589</Y>
+                        <X>399</X>
+                        <Y>557</Y>
                     </Location>
-                    <BeforeBlockId>653</BeforeBlockId>
-                    <AfterBlockId>943</AfterBlockId>
+                    <Plug>
+                        <BlockConnector con-block-id="744" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+                    </Plug>
                 </Block>
-                <Block genus-name="OLED_Print" id="943">
+                <Block genus-name="neo-rechts" id="745">
+                    <Label>Rechts</Label>
                     <Location>
-                        <X>434</X>
-                        <Y>613</Y>
+                        <X>399</X>
+                        <Y>533</Y>
                     </Location>
-                    <BeforeBlockId>968</BeforeBlockId>
-                    <AfterBlockId>947</AfterBlockId>
-                    <Sockets num-sockets="3">
-                        <BlockConnector con-block-id="201" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
-                        <BlockConnector con-block-id="945" connector-kind="socket" connector-type="number" init-type="number" label="x" position-type="single"/>
-                        <BlockConnector con-block-id="946" connector-kind="socket" connector-type="number" init-type="number" label="y" position-type="single"/>
+                    <Plug>
+                        <BlockConnector con-block-id="744" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_String_Payload" id="382">
+                    <Location>
+                        <X>561</X>
+                        <Y>433</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="379" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="OLED_Print3" id="379">
+                    <Location>
+                        <X>447</X>
+                        <Y>406</Y>
+                    </Location>
+                    <BeforeBlockId>376</BeforeBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="380" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="382" connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="text" position-type="single"/>
+                        <BlockConnector con-block-id="381" connector-kind="socket" connector-type="string" init-type="string" label="size" position-type="single"/>
                     </Sockets>
                 </Block>
-                <Block genus-name="OLED_Display" id="947">
+                <Block genus-name="OLED_FontSize9" id="381">
                     <Location>
-                        <X>434</X>
-                        <Y>691</Y>
-                    </Location>
-                    <BeforeBlockId>943</BeforeBlockId>
-                </Block>
-                <Block genus-name="number" id="946">
-                    <Label>45</Label>
-                    <Location>
-                        <X>590</X>
-                        <Y>664</Y>
+                        <X>561</X>
+                        <Y>481</Y>
                     </Location>
                     <Plug>
-                        <BlockConnector con-block-id="943" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                        <BlockConnector con-block-id="379" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
                     </Plug>
                 </Block>
-                <Block genus-name="number" id="945">
-                    <Label>0</Label>
+                <Block genus-name="message" id="380">
+                    <Label>Temperatur:</Label>
                     <Location>
-                        <X>590</X>
-                        <Y>640</Y>
+                        <X>561</X>
+                        <Y>409</Y>
                     </Location>
                     <Plug>
-                        <BlockConnector con-block-id="943" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                        <BlockConnector con-block-id="379" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
                     </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
                 </Block>
-                <Block genus-name="variable_String_Payload" id="201">
-                    <Label>MQTT_Rx_Payload</Label>
+                <Block genus-name="mqttsubscribe" id="376">
                     <Location>
-                        <X>590</X>
-                        <Y>616</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="943" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="mirror"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="number" id="655">
-                    <Label>0</Label>
-                    <Location>
-                        <X>437</X>
-                        <Y>560</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="653" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="number" id="954">
-                    <Label>15</Label>
-                    <Location>
-                        <X>419</X>
-                        <Y>482</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="951" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="number" id="953">
-                    <Label>0</Label>
-                    <Location>
-                        <X>419</X>
-                        <Y>458</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="951" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="OLED_FontSize9" id="967">
-                    <Location>
-                        <X>419</X>
-                        <Y>404</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="964" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="OLED_FontTypePlain" id="966">
-                    <Location>
-                        <X>419</X>
-                        <Y>380</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="964" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="OLED_FontSans" id="965">
-                    <Location>
-                        <X>419</X>
-                        <Y>356</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="964" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="ssid" id="89">
-                    <Label>passwort</Label>
-                    <Location>
-                        <X>369</X>
-                        <Y>326</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="ssid" id="88">
-                    <Label>user</Label>
-                    <Location>
-                        <X>369</X>
-                        <Y>302</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="mqttclient" id="87">
-                    <Label>MyConsumer</Label>
-                    <Location>
-                        <X>369</X>
-                        <Y>278</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="mqttbroker" id="86">
-                    <Label>broker.mqtt-dashboard.com</Label>
-                    <Location>
-                        <X>369</X>
-                        <Y>254</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="85" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="connectWLANAP" id="346">
-                    <Location>
-                        <X>263</X>
-                        <Y>197</Y>
+                        <X>276</X>
+                        <Y>350</Y>
                     </Location>
                     <Comment>
-                        <Text>Demo zur Einführung in MQTT mit Producer und Consumer. Dies ist der Consumer (d.h. die Anzeige)
-Producer und Consumer nutzen das gleiche Topic
-Bitte ein eigenes Topic wählen</Text>
+                        <Text>Hier abonnieren wir das Topic. 
+WICHTIG: Topic anpassen</Text>
                         <Location>
-                            <X>572</X>
-                            <Y>156</Y>
+                            <X>644</X>
+                            <Y>351</Y>
                         </Location>
                         <BoxSize>
-                            <Width>387</Width>
-                            <Height>95</Height>
+                            <Width>242</Width>
+                            <Height>50</Height>
                         </BoxSize>
                     </Comment>
-                    <BeforeBlockId>937</BeforeBlockId>
-                    <AfterBlockId>85</AfterBlockId>
-                    <Sockets num-sockets="2">
-                        <BlockConnector con-block-id="347" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
-                        <BlockConnector con-block-id="348" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    <BeforeBlockId>365</BeforeBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="377" connector-kind="socket" connector-type="string" init-type="string" label="Topic" position-type="single"/>
+                        <BlockConnector con-block-id="378" connector-kind="socket" connector-type="number" init-type="number" label="QoS" position-type="single"/>
+                        <BlockConnector con-block-id="379" connector-kind="socket" connector-type="cmd" init-type="cmd" label="callback" position-type="single"/>
                     </Sockets>
                 </Block>
-                <Block genus-name="passwort" id="348">
+                <Block genus-name="number" id="378">
+                    <Label>0</Label>
+                    <Location>
+                        <X>450</X>
+                        <Y>377</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="376" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="mqtttopic" id="377">
+                    <Label>iotwerkstatt/temperatur</Label>
+                    <Location>
+                        <X>450</X>
+                        <Y>353</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="376" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="connectWLANAP" id="370">
+                    <Location>
+                        <X>276</X>
+                        <Y>194</Y>
+                    </Location>
+                    <BeforeBlockId>364</BeforeBlockId>
+                    <AfterBlockId>365</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="371" connector-kind="socket" connector-type="string" init-type="string" label="Netzname" position-type="single"/>
+                        <BlockConnector con-block-id="372" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="passwort" id="372">
                     <Label>IoTWerkstatt</Label>
                     <Location>
-                        <X>393</X>
-                        <Y>224</Y>
+                        <X>392</X>
+                        <Y>221</Y>
                     </Location>
                     <Plug>
-                        <BlockConnector con-block-id="346" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                        <BlockConnector con-block-id="370" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
                     </Plug>
                 </Block>
-                <Block genus-name="ssid" id="347">
+                <Block genus-name="ssid" id="371">
                     <Label>hackathon</Label>
                     <Location>
-                        <X>393</X>
-                        <Y>200</Y>
+                        <X>392</X>
+                        <Y>197</Y>
                     </Location>
                     <Plug>
-                        <BlockConnector con-block-id="346" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                        <BlockConnector con-block-id="370" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
                     </Plug>
                 </Block>
-                <Block genus-name="OLED_Clear" id="937">
+                <Block genus-name="mqttconnect" id="365">
                     <Location>
-                        <X>263</X>
-                        <Y>173</Y>
+                        <X>276</X>
+                        <Y>248</Y>
                     </Location>
-                    <BeforeBlockId>81</BeforeBlockId>
-                    <AfterBlockId>346</AfterBlockId>
+                    <BeforeBlockId>370</BeforeBlockId>
+                    <AfterBlockId>376</AfterBlockId>
+                    <Sockets num-sockets="4">
+                        <BlockConnector con-block-id="366" connector-kind="socket" connector-type="string" init-type="string" label="Broker" position-type="single"/>
+                        <BlockConnector con-block-id="367" connector-kind="socket" connector-type="string" init-type="string" label="Client" position-type="single"/>
+                        <BlockConnector con-block-id="368" connector-kind="socket" connector-type="string" init-type="string" label="User" position-type="single"/>
+                        <BlockConnector con-block-id="369" connector-kind="socket" connector-type="string" init-type="string" label="Passwort" position-type="single"/>
+                    </Sockets>
                 </Block>
-                <Block genus-name="iot_neopixel_light" id="354">
-                    <Label>Neopixel</Label>
+                <Block genus-name="GPRSpass" id="369">
+                    <Label>passwort</Label>
                     <Location>
-                        <X>262</X>
-                        <Y>827</Y>
+                        <X>382</X>
+                        <Y>323</Y>
                     </Location>
-                    <BeforeBlockId>352</BeforeBlockId>
-                    <AfterBlockId>357</AfterBlockId>
+                    <Plug>
+                        <BlockConnector con-block-id="365" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="GPRSuser" id="368">
+                    <Label>user</Label>
+                    <Location>
+                        <X>382</X>
+                        <Y>299</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="365" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="mqttclient" id="367">
+                    <Label>IoTWerkstatt_Consumer</Label>
+                    <Location>
+                        <X>382</X>
+                        <Y>275</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="365" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="mqttbroker" id="366">
+                    <Label>broker.mqtt-dashboard.com</Label>
+                    <Location>
+                        <X>382</X>
+                        <Y>251</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="365" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="364">
+                    <Location>
+                        <X>111</X>
+                        <Y>186</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Demo zur Einführung in die Kommunikation mit dem MQTT Protokoll. Dabei gibt es drei Akteure: Producer , Broker und Consumer. 
+
+Dies ist der Consumer (d.h. der Nutzer der Daten). Producer und Consumer nutzen das gleiche Topic. Das Topic identifiziert die Nachricht und muss als Textstring definiert werden (nicht als Inhalt in einer Variablen).
+Wir nutzen einen öffentlichen Demo-Broker ohne Anmeldung, d.h. alle Topics / Daten sind auch für Dritte sichtbar. Deshalb bitte eindeutige Topic-Namen vergeben (nicht test oder demo ...), anderweitig besteht die Gefahr der Überschneidung mit anderen Nutzern.
+Producer und Consumer brauchen unterschiedliche Client-Namen.</Text>
+                        <Location>
+                            <X>104</X>
+                            <Y>40</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>861</Width>
+                            <Height>137</Height>
+                        </BoxSize>
+                    </Comment>
                     <Sockets num-sockets="2">
-                        <BlockConnector con-block-id="355" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
-                        <BlockConnector con-block-id="356" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
-                    </Sockets>
-                </Block>
-                <Block genus-name="delay" id="357">
-                    <Label>Warte</Label>
-                    <Location>
-                        <X>262</X>
-                        <Y>881</Y>
-                    </Location>
-                    <BeforeBlockId>354</BeforeBlockId>
-                    <Sockets num-sockets="1">
-                        <BlockConnector con-block-id="358" connector-kind="socket" connector-type="number" init-type="number" label="Millisekunden" position-type="single"/>
-                    </Sockets>
-                </Block>
-                <Block genus-name="number" id="358">
-                    <Label>500</Label>
-                    <Location>
-                        <X>398</X>
-                        <Y>884</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="357" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="NEOVectorOff" id="356">
-                    <Location>
-                        <X>372</X>
-                        <Y>854</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="354" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="neo-rechts" id="355">
-                    <Label>Rechts</Label>
-                    <Location>
-                        <X>372</X>
-                        <Y>830</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="354" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="delay" id="352">
-                    <Location>
-                        <X>262</X>
-                        <Y>797</Y>
-                    </Location>
-                    <BeforeBlockId>349</BeforeBlockId>
-                    <AfterBlockId>354</AfterBlockId>
-                    <Sockets num-sockets="1">
-                        <BlockConnector con-block-id="353" connector-kind="socket" connector-type="number" init-type="number" label="Millisekunden" position-type="single"/>
-                    </Sockets>
-                </Block>
-                <Block genus-name="number" id="353">
-                    <Label>500</Label>
-                    <Location>
-                        <X>444</X>
-                        <Y>800</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="352" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="iot_neopixel_light" id="349">
-                    <Location>
-                        <X>262</X>
-                        <Y>743</Y>
-                    </Location>
-                    <BeforeBlockId>81</BeforeBlockId>
-                    <AfterBlockId>352</AfterBlockId>
-                    <Sockets num-sockets="2">
-                        <BlockConnector con-block-id="350" connector-kind="socket" connector-type="number" init-type="number" label="Ort" position-type="single"/>
-                        <BlockConnector con-block-id="351" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Farbe" position-type="single"/>
-                    </Sockets>
-                </Block>
-                <Block genus-name="NEOVectorGreen" id="351">
-                    <Location>
-                        <X>374</X>
-                        <Y>770</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="349" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="neo-rechts" id="350">
-                    <Label>Rechts</Label>
-                    <Location>
-                        <X>374</X>
-                        <Y>746</Y>
-                    </Location>
-                    <Plug>
-                        <BlockConnector con-block-id="349" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
-                    </Plug>
-                </Block>
-                <Block genus-name="program" id="81">
-                    <Location>
-                        <X>98</X>
-                        <Y>165</Y>
-                    </Location>
-                    <Sockets num-sockets="2">
-                        <BlockConnector con-block-id="937" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
-                        <BlockConnector con-block-id="349" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                        <BlockConnector con-block-id="370" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="744" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
                     </Sockets>
                 </Block>
             </PageBlocks>

@@ -40,12 +40,12 @@ echo Starte Precompile mit:
 echo   FQBN = %FQBN%
 echo.
 
-echo libs in: "%ROOT%precompile_win\IoT-Werkstatt-precompile-libs_AVR.ps1"
+echo libs in: "%ROOT%precompile_win\IoT-Werkstatt-precompile-libs.ps1"
 echo arduino in: "%ROOT%arduino"
 
 REM PowerShell-Skript mit PortableRoot starten
 powershell -NoLogo -NoProfile -ExecutionPolicy Bypass ^
-  -File "%ROOT%precompile_win\IoT-Werkstatt-precompile-libs_AVR.ps1" ^
+  -File "%ROOT%precompile_win\IoT-Werkstatt-precompile-libs.ps1" ^
   -PortableRoot "%ROOT%arduino" ^
   -FQBN "%FQBN%"
 

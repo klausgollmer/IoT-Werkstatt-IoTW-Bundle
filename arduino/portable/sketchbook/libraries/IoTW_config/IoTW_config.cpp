@@ -37,6 +37,14 @@ static inline bool i2cDevicePresent(uint8_t addr) {
   Wire.beginTransmission(addr);
   return (Wire.endTransmission() == 0);
 }
+    
+void IoTW_sleepOLED(int sleep) {
+  Wire.beginTransmission(0x3C);   // 0x3C = typische I2C‑Adresse
+  Wire.write(0x00);               // Control‑Byte: Kommando
+  if (sleep) Wire.write(SH110X_DISPLAYOFF); // Sleep‑Modus
+  else Wire.write(SH110X_DISPLAYON);
+  Wire.endTransmission();
+}
 
 #if defined(IOTW_BOARD_MAKEY)
   static void Makey_on_Terminal() {
@@ -75,6 +83,7 @@ static inline bool i2cDevicePresent(uint8_t addr) {
     if (!preventDisplayClear) {
       disp->clearDisplay();
       disp->display();
+	  IoTW_sleepOLED(true);
     }
     vTaskDelete(NULL);
   }
@@ -109,7 +118,7 @@ static inline bool i2cDevicePresent(uint8_t addr) {
 bool preventDisplayClear = false;   // single definition
 
 // --------------------------- Public API ---------------------------
-void IoT_WerkstattInit() {
+void IoTW_init() {
   // ESP8266 I2C bring-up (matches your original logic)
   #if defined(ESP8266)
     Wire.begin(SDA, SCL);
@@ -124,8 +133,9 @@ void IoT_WerkstattInit() {
 
   #if defined(ESP32) && defined(IOTW_BOARD_MAKEY)
     int reason = esp_reset_reason();
+	Wire.begin(SDA, SCL);
     if (reason == ESP_RST_POWERON) {
-      Wire.begin(SDA, SCL);
+       // Wire.begin(SDA, SCL); //in .a
 
       // If no OLED present, keep running without display
       if (!i2cDevicePresent(0x3C)) {
@@ -162,7 +172,7 @@ void IoT_WerkstattInit() {
 }
 
 #ifdef ESP32
-void IoT_WerkstattPreventDisplayClear() {
+void IoTW_preventDisplayClear() {
   preventDisplayClear = true;
 }
 #endif

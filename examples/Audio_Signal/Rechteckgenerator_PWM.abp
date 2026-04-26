@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="delay" id="773">
+                    <Label>Delay (warte)</Label>
+                    <Location>
+                        <X>264</X>
+                        <Y>198</Y>
+                    </Location>
+                    <BeforeBlockId>363</BeforeBlockId>
+                    <AfterBlockId>768</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="760" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="pin-write-digital" id="768">
+                    <Label>digitalWrite</Label>
+                    <Location>
+                        <X>264</X>
+                        <Y>228</Y>
+                    </Location>
+                    <BeforeBlockId>773</BeforeBlockId>
+                    <AfterBlockId>771</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="769" connector-kind="socket" connector-type="number" init-type="number" label="pin" position-type="single"/>
+                        <BlockConnector con-block-id="770" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay" id="771">
+                    <Location>
+                        <X>264</X>
+                        <Y>282</Y>
+                    </Location>
+                    <BeforeBlockId>768</BeforeBlockId>
+                    <AfterBlockId>753</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="776" connector-kind="socket" connector-type="number" init-type="number" label="ms" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="pin-write-digital" id="753">
+                    <Label>digitalWrite</Label>
+                    <Location>
+                        <X>264</X>
+                        <Y>312</Y>
+                    </Location>
+                    <BeforeBlockId>771</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="754" connector-kind="socket" connector-type="number" init-type="number" label="pin" position-type="single"/>
+                        <BlockConnector con-block-id="755" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="digital-low" id="755">
+                    <Location>
+                        <X>384</X>
+                        <Y>339</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="753" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="754">
+                    <Label>14</Label>
+                    <Location>
+                        <X>384</X>
+                        <Y>315</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="753" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot" id="776">
+                    <Label>Encoder (turn)</Label>
+                    <Location>
+                        <X>386</X>
+                        <Y>285</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="771" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="digital-high" id="770">
+                    <Label>HIGH</Label>
+                    <Location>
+                        <X>384</X>
+                        <Y>255</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="768" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="769">
+                    <Label>14</Label>
+                    <Location>
+                        <X>384</X>
+                        <Y>231</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="768" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot" id="760">
+                    <Label>Encoder (turn)</Label>
+                    <Location>
+                        <X>386</X>
+                        <Y>201</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="773" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="delay_micro" id="764">
+                    <Label>Delay (warte)</Label>
+                    <Location>
+                        <X>730</X>
+                        <Y>136</Y>
+                    </Location>
+                    <AfterBlockId>781</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="780" connector-kind="socket" connector-type="number" init-type="number" label="µs" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="pin-write-digital" id="781">
+                    <Label>digitalWrite</Label>
+                    <Location>
+                        <X>730</X>
+                        <Y>166</Y>
+                    </Location>
+                    <BeforeBlockId>764</BeforeBlockId>
+                    <AfterBlockId>777</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="782" connector-kind="socket" connector-type="number" init-type="number" label="pin" position-type="single"/>
+                        <BlockConnector con-block-id="783" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay_micro" id="777">
+                    <Label>Delay (warte)</Label>
+                    <Location>
+                        <X>730</X>
+                        <Y>220</Y>
+                    </Location>
+                    <BeforeBlockId>781</BeforeBlockId>
+                    <AfterBlockId>786</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="775" connector-kind="socket" connector-type="number" init-type="number" label="µs" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="pin-write-digital" id="786">
+                    <Label>digitalWrite</Label>
+                    <Location>
+                        <X>730</X>
+                        <Y>254</Y>
+                    </Location>
+                    <BeforeBlockId>777</BeforeBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="787" connector-kind="socket" connector-type="number" init-type="number" label="pin" position-type="single"/>
+                        <BlockConnector con-block-id="788" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Wert" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="digital-low" id="788">
+                    <Label>LOW (falsch)</Label>
+                    <Location>
+                        <X>850</X>
+                        <Y>281</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="786" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="787">
+                    <Label>14</Label>
+                    <Location>
+                        <X>850</X>
+                        <Y>257</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="786" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="subtraction" id="775">
+                    <Location>
+                        <X>850</X>
+                        <Y>223</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="777" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="767" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                        <BlockConnector con-block-id="778" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="button_rot" id="778">
+                    <Label>Encoder (turn)</Label>
+                    <Location>
+                        <X>951</X>
+                        <Y>226</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="775" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="767">
+                    <Label>100</Label>
+                    <Location>
+                        <X>860</X>
+                        <Y>226</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="775" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="digital-high" id="783">
+                    <Label>HIGH</Label>
+                    <Location>
+                        <X>850</X>
+                        <Y>193</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="781" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="782">
+                    <Label>14</Label>
+                    <Location>
+                        <X>850</X>
+                        <Y>169</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="781" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot" id="780">
+                    <Label>Encoder (turn)</Label>
+                    <Location>
+                        <X>850</X>
+                        <Y>139</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="764" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="button_rot_minmax2" id="742">
+                    <Location>
+                        <X>265</X>
+                        <Y>108</Y>
+                    </Location>
+                    <BeforeBlockId>363</BeforeBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="743" connector-kind="socket" connector-type="number" init-type="number" label="start" position-type="single"/>
+                        <BlockConnector con-block-id="744" connector-kind="socket" connector-type="number" init-type="number" label="min" position-type="single"/>
+                        <BlockConnector con-block-id="745" connector-kind="socket" connector-type="number" init-type="number" label="max" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="745">
+                    <Label>99</Label>
+                    <Location>
+                        <X>419</X>
+                        <Y>159</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="742" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="744">
+                    <Label>1</Label>
+                    <Location>
+                        <X>419</X>
+                        <Y>135</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="742" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="743">
+                    <Label>50</Label>
+                    <Location>
+                        <X>419</X>
+                        <Y>111</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="742" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="program" id="363">
+                    <Location>
+                        <X>100</X>
+                        <Y>100</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="742" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="773" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>

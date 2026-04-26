@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="210 210 210" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="4000">
+            <PageBlocks>
+                <Block genus-name="program" id="338">
+                    <Location>
+                        <X>233</X>
+                        <Y>113</Y>
+                    </Location>
+                    <Comment>
+                        <Text>Spiele verschiedene Melodien (über Rechtecksignal am Buzzer).
+Laustärkeregelung ohne Funktion!
+Absolute Vorsicht bei Anschluss eines Lautsprechers !!!!</Text>
+                        <Location>
+                            <X>230</X>
+                            <Y>44</Y>
+                        </Location>
+                        <BoxSize>
+                            <Width>472</Width>
+                            <Height>75</Height>
+                        </BoxSize>
+                    </Comment>
+                    <Sockets num-sockets="2">
+                        <BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Setup" position-type="single"/>
+                        <BlockConnector con-block-id="1860" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Schleife" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BuzzerSong" id="1860">
+                    <Location>
+                        <X>397</X>
+                        <Y>156</Y>
+                    </Location>
+                    <BeforeBlockId>338</BeforeBlockId>
+                    <AfterBlockId>1472</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1861" connector-kind="socket" connector-type="number" init-type="number" label="song" position-type="single"/>
+                        <BlockConnector con-block-id="1862" connector-kind="socket" connector-type="number" init-type="number" label="duration (s)" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay_s" id="1472">
+                    <Location>
+                        <X>397</X>
+                        <Y>210</Y>
+                    </Location>
+                    <BeforeBlockId>1860</BeforeBlockId>
+                    <AfterBlockId>1863</AfterBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1473" connector-kind="socket" connector-type="number" init-type="number" label="s" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="BuzzerSong" id="1863">
+                    <Location>
+                        <X>397</X>
+                        <Y>240</Y>
+                    </Location>
+                    <BeforeBlockId>1472</BeforeBlockId>
+                    <AfterBlockId>1866</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1864" connector-kind="socket" connector-type="number" init-type="number" label="song" position-type="single"/>
+                        <BlockConnector con-block-id="1865" connector-kind="socket" connector-type="number" init-type="number" label="duration (s)" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="delay_s" id="1866">
+                    <Label>Delay (warte)</Label>
+                    <Location>
+                        <X>397</X>
+                        <Y>294</Y>
+                    </Location>
+                    <BeforeBlockId>1863</BeforeBlockId>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1867" connector-kind="socket" connector-type="number" init-type="number" label="s" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1867">
+                    <Label>1</Label>
+                    <Location>
+                        <X>511</X>
+                        <Y>297</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1866" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1865">
+                    <Label>10</Label>
+                    <Location>
+                        <X>583</X>
+                        <Y>267</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1863" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="Buzzer2" id="1864">
+                    <Location>
+                        <X>583</X>
+                        <Y>243</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1863" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1473">
+                    <Label>1</Label>
+                    <Location>
+                        <X>511</X>
+                        <Y>213</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1472" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1862">
+                    <Label>10</Label>
+                    <Location>
+                        <X>583</X>
+                        <Y>183</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1860" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="Buzzer0" id="1861">
+                    <Location>
+                        <X>583</X>
+                        <Y>159</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1860" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>
