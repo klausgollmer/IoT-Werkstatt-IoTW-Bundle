@@ -1,3 +1,18 @@
+Version V2.1c
+SPIFF mit format, ADC Octi 1023
+
+Version V2.1b
+print ohne .trim(), splash raspi
+
+Version V2.1a
+Bugfix while, µs
+
+Version V2.1
+Sprachausgabe, Splash, AudioTones, Autostart, IoTW_Init
+
+Version V2.0f3
+Easter Egg, Signalgenerator, delayMicoseconds  
+
 Version V2.0f
 White on White Bug GTK Linux, Windows Size Linux x64  
 

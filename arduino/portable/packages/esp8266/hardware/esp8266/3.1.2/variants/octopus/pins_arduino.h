@@ -76,7 +76,7 @@ static const uint8_t D10  = 1;
 #define IOTW_GPIO_NEO 13
 #define IOTW_GPIO_NEOWING 15
 #define IOTW_GPIO_A0 A0
-#define IOTW_AI_SCALE 4
+#define IOTW_AI_SCALE 1
 
 // Number of maximal possible MQTT Subscriptions
 #define IOTW_MAX_MQTT_SUB 10 
