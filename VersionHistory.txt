@@ -1,3 +1,6 @@
+Version V2.1c2
+standalone .jar 
+
 Version V2.1c
 SPIFF mit format, ADC Octi 1023
 

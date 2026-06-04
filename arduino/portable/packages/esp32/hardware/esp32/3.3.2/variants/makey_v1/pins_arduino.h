@@ -5,7 +5,7 @@ CPU: WROOM
 Sensors: BME 680 (Temp/Humidity/Pressure/Gas, I2C), APDS-9999 (Proximity/RGB, I2C), Micro (I2S, BCK=GPIO12, WS=GPIO2, SD=GPIO27), Rotary-Encoder (A=GPIO32, B=GPIO35, Press=GPIO15)
 Actuators: NeoPixel (NEO_GRBW + NEO_KHZ800, right = index 0, left = index 1, GPIO13), Buzzer (DAC1)
 Display: SH1107 (OLED 128x64, I2C)
-Grove: Ain-Grove (GPIO34, GPIO39), I2C-Grove (GPIO21, GPIO22), Serial-Grove (GPIO16, GPIO16), Aout-Grove (GIOP26, GPIO26), Dio-Grove (GPIO33,GPIO14)
+Grove: Ain-Grove (GPIO34, GPIO39), I2C-Grove (GPIO21, GPIO22), Serial-Grove (GPIO16, GPIO17), Aout-Grove (GIOP26, GPIO26), Dio-Grove (GPIO33,GPIO14)
 Feather-Wing: Socket-Headers
 */
 
