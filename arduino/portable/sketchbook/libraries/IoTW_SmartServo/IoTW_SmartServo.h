@@ -17,7 +17,7 @@
 // =====================================================
 
 extern int IOTW_debug_level;
-static int Aktueller_Typ;
+static int Aktueller_Typ = -1;   // zuletzt gestarteter Typ (type < 0 nutzt diesen)
 
 // =====================================================
 // Externe Implementierungen (liegen in getrennten .cpp)
@@ -98,7 +98,7 @@ inline int SmartServo_scan(int type) {
             return 0;
     }
 #else
-    return NAN;
+    return 0;
 #endif
 }
 
